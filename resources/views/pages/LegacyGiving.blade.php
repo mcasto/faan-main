@@ -55,7 +55,32 @@
                                 {{ app()->getLocale() === 'es' ? 'Formulario de Donación Testamentaria e Intención de Donación Planificada' : 'Legacy Donation and Planned Giving Intention' }}
                             </h2>
 
-                            <form action="{{ route('donations.submit') }}" method="POST" class="space-y-6">
+                            {{-- Success Message --}}
+                            @if (session('success'))
+                                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6"
+                                    role="alert">
+                                    <span class="block sm:inline">{{ session('success') }}</span>
+                                </div>
+                            @endif
+
+                            {{-- Error Messages --}}
+                            @if ($errors->any())
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6"
+                                    role="alert">
+                                    <ul class="list-disc list-inside">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form action="{{ route('donations.submit') }}" method="POST" class="space-y-6"
+                                x-data="{
+                                    submitting: false,
+                                    donationType: '{{ old('donation_type', '') }}'
+                                }" @submit="submitting = true"
+                                :class="{ 'opacity-50 pointer-events-none': submitting }">
                                 @csrf
                                 <input type="hidden" name="type" value="legacy_giving">
 
@@ -67,6 +92,7 @@
                                             *
                                         </label>
                                         <input type="text" id="name" name="name" required
+                                            value="{{ old('name') }}"
                                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                                     </div>
 
@@ -76,6 +102,7 @@
                                             {{ app()->getLocale() === 'es' ? 'Número de Teléfono' : 'Phone Number' }} *
                                         </label>
                                         <input type="tel" id="phone" name="phone" required
+                                            value="{{ old('phone') }}"
                                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                                     </div>
 
@@ -86,6 +113,7 @@
                                             *
                                         </label>
                                         <input type="text" id="doc_num" name="doc_num" required
+                                            value="{{ old('doc_num') }}"
                                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                                     </div>
 
@@ -95,6 +123,7 @@
                                             {{ app()->getLocale() === 'es' ? 'Correo Electrónico' : 'Email' }} *
                                         </label>
                                         <input type="email" id="email" name="email" required
+                                            value="{{ old('email') }}"
                                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                                     </div>
                                 </div>
@@ -105,7 +134,7 @@
                                         {{ app()->getLocale() === 'es' ? 'Dirección' : 'Address' }} *
                                     </label>
                                     <textarea id="address" name="address" rows="3" required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">{{ old('address') }}</textarea>
                                 </div>
 
                                 {{-- Special Instructions --}}
@@ -114,12 +143,13 @@
                                         {{ app()->getLocale() === 'es' ? 'Instrucciones especiales' : 'Special Instructions' }}
                                     </label>
                                     <textarea id="special_instructions" name="special_instructions" rows="3"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">{{ old('special_instructions') }}</textarea>
                                 </div>
 
                                 {{-- Recognition Checkbox --}}
                                 <div class="flex items-center">
                                     <input type="checkbox" id="recognized" name="recognized" value="1"
+                                        {{ old('recognized') ? 'checked' : '' }}
                                         class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
                                     <label for="recognized" class="ml-2 block text-sm text-gray-700">
                                         {{ app()->getLocale() === 'es' ? 'Me gustaría ser reconocido como miembro de la Sociedad Legal de FAAN' : "I would like to be recognized as a member of FAAN's Legal Society" }}
@@ -127,7 +157,7 @@
                                 </div>
 
                                 {{-- Donation Type --}}
-                                <div x-data="{ donationType: '' }">
+                                <div x-data="{ donationType: '{{ old('donation_type', '') }}' }">
                                     <label for="donation_type" class="block text-sm font-medium text-gray-700 mb-2">
                                         {{ app()->getLocale() === 'es' ? 'Seleccione el tipo de donación' : 'Select Donation Type' }}
                                         *
@@ -137,13 +167,15 @@
                                         <option value="">
                                             {{ app()->getLocale() === 'es' ? 'Seleccione una opción' : 'Select an option' }}
                                         </option>
-                                        <option value="fixed">
+                                        <option value="fixed" {{ old('donation_type') == 'fixed' ? 'selected' : '' }}>
                                             {{ app()->getLocale() === 'es' ? 'Legado directo (importe fijo en $)' : 'Outright Bequest (Fixed $ Amount)' }}
                                         </option>
-                                        <option value="percentage">
+                                        <option value="percentage"
+                                            {{ old('donation_type') == 'percentage' ? 'selected' : '' }}>
                                             {{ app()->getLocale() === 'es' ? 'Legado directo (% del patrimonio)' : 'Outright Bequest (% of Estate)' }}
                                         </option>
-                                        <option value="specific">
+                                        <option value="specific"
+                                            {{ old('donation_type') == 'specific' ? 'selected' : '' }}>
                                             {{ app()->getLocale() === 'es' ? 'Donación de activos específicos' : 'Donation of Specific Assets' }}
                                         </option>
                                     </select>
@@ -156,7 +188,7 @@
                                             {{ app()->getLocale() === 'es' ? 'Legado directo (importe fijo en $)' : 'Outright Bequest (Fixed $ Amount)' }}
                                         </label>
                                         <input type="text" id="donation_info_fixed" name="donation_info"
-                                            placeholder="$0.00"
+                                            placeholder="$0.00" value="{{ old('donation_info') }}"
                                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                                     </div>
 
@@ -167,7 +199,7 @@
                                             {{ app()->getLocale() === 'es' ? 'Legado directo (% del patrimonio)' : 'Outright Bequest (% of Estate)' }}
                                         </label>
                                         <input type="text" id="donation_info_percentage" name="donation_info"
-                                            placeholder="0%"
+                                            placeholder="0%" value="{{ old('donation_info') }}"
                                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
                                     </div>
 
@@ -179,13 +211,14 @@
                                         </label>
                                         <textarea id="donation_info_specific" name="donation_info" rows="4"
                                             placeholder="{{ app()->getLocale() === 'es' ? 'Describa los activos específicos...' : 'Describe the specific assets...' }}"
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">{{ old('donation_info') }}</textarea>
                                     </div>
                                 </div>
 
                                 {{-- Consent Checkbox --}}
                                 <div class="flex items-start">
                                     <input type="checkbox" id="consent" name="consent" required
+                                        {{ old('consent') ? 'checked' : '' }}
                                         class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded mt-1">
                                     <label for="consent" class="ml-2 block text-sm text-gray-700">
                                         {{ app()->getLocale() === 'es' ? 'Doy mi consentimiento para que este sitio web conserve mis datos personales únicamente con fines de comunicación y entiendo que no se compartirán con terceros.' : 'I consent to have this website hold my personal data solely for communication purposes and understand that it will not be shared with any third parties.' }}
@@ -195,9 +228,22 @@
 
                                 {{-- Submit Button --}}
                                 <div class="text-center">
-                                    <button type="submit"
-                                        class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg">
-                                        {{ app()->getLocale() === 'es' ? 'Enviar' : 'Submit' }}
+                                    <button type="submit" :disabled="submitting"
+                                        class="bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg relative">
+                                        <span x-show="!submitting">
+                                            {{ app()->getLocale() === 'es' ? 'Enviar' : 'Submit' }}
+                                        </span>
+                                        <span x-show="submitting" class="flex items-center justify-center">
+                                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10"
+                                                    stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor"
+                                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                                </path>
+                                            </svg>
+                                            {{ app()->getLocale() === 'es' ? 'Enviando...' : 'Submitting...' }}
+                                        </span>
                                     </button>
                                 </div>
 
@@ -214,6 +260,13 @@
                             </form>
                         </div>
                     </section>
+
+                    {{-- Include reCAPTCHA v3 Component --}}
+                    @include('components.recaptcha-v3', [
+                        'autoInit' => [
+                            'form[action*="donations.submit"]' => 'legacy_giving_submit',
+                        ],
+                    ])
 
                     {{-- Contact for Legacy Giving Section --}}
                     <section class="bg-white rounded-lg shadow-lg p-8 mt-12">

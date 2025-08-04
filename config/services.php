@@ -41,4 +41,8 @@ return [
         'enabled' => env('RECAPTCHA_ENABLED', true),
     ],
 
+    'sendgrid' => [
+        'api_key' => env('SENDGRID_API_KEY'),
+    ],
+
 ];

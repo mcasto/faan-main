@@ -7,6 +7,7 @@ use App\Models\Navigation;
 use App\Models\Event;
 use App\Models\SubmittedData;
 use App\Services\ContentService;
+use App\Services\SendGridService;
 use App\Rules\RecaptchaV3Rule;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
@@ -14,10 +15,12 @@ use Illuminate\Support\Facades\Log;
 class PageController extends Controller
 {
     protected $contentService;
+    protected $sendGridService;
 
-    public function __construct(ContentService $contentService)
+    public function __construct(ContentService $contentService, SendGridService $sendGridService)
     {
         $this->contentService = $contentService;
+        $this->sendGridService = $sendGridService;
     }
 
     public function show(Request $request, $path = '/')
@@ -125,94 +128,227 @@ class PageController extends Controller
             'g-recaptcha-response' => [new RecaptchaV3Rule($request, 'contact_submit', 0.5)],
         ]);
 
-        // Here you would typically:
-        // 1. Save to database
-        // 2. Send email notification
-        // 3. Log the submission
+        // Generate unique ID for tracking
+        $uniqueId = uniqid();
 
-        // For now, just log it
-        Log::info('Contact form submission', [
+        // Prepare contact data
+        $contactData = [
+            '_id' => $uniqueId,
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
             'message' => $request->message,
-            'ip' => $request->ip(),
-            'user_agent' => $request->userAgent(),
-        ]);
-
-        $locale = App::getLocale();
-        $message = $locale === 'es'
-            ? 'Gracias por tu mensaje. Te contactaremos pronto.'
-            : 'Thank you for your message. We will contact you soon.';
-
-        return redirect()->back()->with('success', $message);
-    }
-
-    public function submitDonation(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'donation_amount' => 'required|numeric|min:0.01',
-            'donation_type' => 'required|in:credit,transfer,pickup',
-            'consent' => 'accepted',
-            'g-recaptcha-response' => [new RecaptchaV3Rule($request, 'donation_submit', 0.5)],
-        ]);
-
-        // Generate unique ID for tracking
-        $uniqueId = uniqid();
-
-        // Prepare donation data
-        $donationData = [
-            '_id' => $uniqueId,
-            'name' => $request->name,
-            'email' => $request->email,
-            'donation_amount' => $request->donation_amount,
-            'donation_type' => $request->donation_type,
             'date_received' => date('Y-m-d'),
             'ip_address' => $request->ip(),
             'user_agent' => $request->userAgent(),
         ];
 
-        // Save to database
         try {
-            SubmittedData::create([
-                'type' => 'donations',
+            // Save to database first
+            $submittedData = SubmittedData::create([
+                'type' => 'contacts',
                 '_id' => $uniqueId,
-                'rec' => json_encode($donationData), // Store as JSON like the old system
+                'rec' => json_encode($contactData),
             ]);
 
-            Log::info('Donation form submission', [
+            Log::info('Contact form submission', [
                 '_id' => $uniqueId,
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'ip' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+            ]);
+
+            // Send email via SendGrid
+            $emailResponse = $this->sendGridService->sendContactEmail(
+                $request->name,
+                $request->email,
+                $request->subject,
+                $request->message
+            );
+
+            // Update record with email response
+            if ($emailResponse) {
+                $submittedData->update([
+                    'send_response' => json_encode(['send_response' => $emailResponse])
+                ]);
+
+                Log::info('Contact email sent successfully', [
+                    '_id' => $uniqueId,
+                    'status_code' => $emailResponse['statusCode'] ?? 'unknown'
+                ]);
+            } else {
+                Log::error('Contact email failed to send', ['_id' => $uniqueId]);
+            }
+
+            $locale = App::getLocale();
+            $message = $locale === 'es'
+                ? 'Gracias por tu mensaje. Te contactaremos pronto.'
+                : 'Thank you for your message. We will contact you soon.';
+
+            return redirect()->back()
+                ->with('success', $message);
+            // Form will be cleared on successful submission
+
+        } catch (\Exception $e) {
+            Log::error('Failed to save contact', [
+                'error' => $e->getMessage(),
+                'contact_data' => $contactData
+            ]);
+
+            $locale = App::getLocale();
+            $errorMessage = $locale === 'es'
+                ? 'Hubo un error al procesar tu mensaje. Por favor intenta nuevamente.'
+                : 'There was an error processing your message. Please try again.';
+
+            return redirect()->back()
+                ->withErrors(['contact' => $errorMessage])
+                ->withInput();
+        }
+    }
+
+    public function submitDonation(Request $request)
+    {
+        // Check if this is a legacy giving form or regular donation form
+        $isLegacyGiving = $request->has('type') && $request->type === 'legacy_giving';
+
+        if ($isLegacyGiving) {
+            // Legacy giving validation
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'phone' => 'required|string|max:255',
+                'doc_num' => 'required|string|max:255',
+                'email' => 'required|email|max:255',
+                'address' => 'required|string',
+                'donation_type' => 'required|in:fixed,percentage,specific',
+                'donation_info' => 'required|string',
+                'consent' => 'accepted',
+                'g-recaptcha-response' => [new RecaptchaV3Rule($request, 'legacy_giving_submit', 0.5)],
+            ]);
+        } else {
+            // Regular donation validation
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|max:255',
+                'donation_amount' => 'required|numeric|min:0.01',
+                'donation_type' => 'required|in:credit,transfer,pickup',
+                'consent' => 'accepted',
+                'g-recaptcha-response' => [new RecaptchaV3Rule($request, 'donation_submit', 0.5)],
+            ]);
+        }
+
+        // Generate unique ID for tracking
+        $uniqueId = uniqid();
+
+        if ($isLegacyGiving) {
+            // Prepare legacy giving data
+            $donationData = [
+                '_id' => $uniqueId,
+                'type' => 'legacy_giving',
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'doc_num' => $request->doc_num,
+                'email' => $request->email,
+                'address' => $request->address,
+                'special_instructions' => $request->special_instructions,
+                'recognized' => $request->has('recognized') ? 1 : 0,
+                'donation_type' => $request->donation_type,
+                'donation_info' => $request->donation_info,
+                'date_received' => date('Y-m-d'),
+                'ip_address' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+            ];
+
+            $submissionType = 'legacy_giving';
+            $logType = 'Legacy giving form submission';
+        } else {
+            // Prepare regular donation data
+            $donationData = [
+                '_id' => $uniqueId,
+                'type' => 'donation',
                 'name' => $request->name,
                 'email' => $request->email,
                 'donation_amount' => $request->donation_amount,
                 'donation_type' => $request->donation_type,
+                'date_received' => date('Y-m-d'),
+                'ip_address' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+            ];
+
+            $submissionType = 'donations';
+            $logType = 'Donation form submission';
+        }
+
+        // Save to database
+        try {
+            $submittedData = SubmittedData::create([
+                'type' => $submissionType,
+                '_id' => $uniqueId,
+                'rec' => json_encode($donationData), // Store as JSON like the old system
             ]);
 
+            Log::info($logType, [
+                '_id' => $uniqueId,
+                'name' => $request->name,
+                'email' => $request->email,
+                'type' => $isLegacyGiving ? 'legacy_giving' : 'donation',
+            ]);
+
+            // Send email via SendGrid
+            $emailResponse = $this->sendGridService->sendDonationEmail(
+                $donationData,
+                $isLegacyGiving ? 'legacy_giving' : 'donation'
+            );
+
+            // Update record with email response
+            if ($emailResponse) {
+                $submittedData->update([
+                    'send_response' => json_encode(['send_response' => $emailResponse])
+                ]);
+
+                Log::info('Donation email sent successfully', [
+                    '_id' => $uniqueId,
+                    'type' => $isLegacyGiving ? 'legacy_giving' : 'donation',
+                    'status_code' => $emailResponse['statusCode'] ?? 'unknown'
+                ]);
+            } else {
+                Log::error('Donation email failed to send', [
+                    '_id' => $uniqueId,
+                    'type' => $isLegacyGiving ? 'legacy_giving' : 'donation'
+                ]);
+            }
+
             /* mc-todo: Email Notification System
-             * The old system sends an email to info@FAANecuador.org with donation details
-             * Implement the following:
-             * 1. Configure SendGrid or similar email service
-             * 2. Create email template for donation notifications
-             * 3. Send confirmation email to donor
-             * 4. Send notification email to FAAN administrators
+             * Email functionality now implemented using SendGrid:
+             * ✅ Configured SendGrid service
+             * ✅ Created email templates for donations and legacy giving
+             * ✅ Send confirmation email to donor (reply-to mechanism)
+             * ✅ Send notification email to FAAN administrators
+             * ✅ Log SendGrid responses in database
              *
-             * Example from old system:
-             * - Subject: "Donation Information"
-             * - Content: Name, Email, Donation Type, Amount, Tracking ID
-             * - To: info@FAANecuador.org
-             * - CC: Donor for confirmation
+             * Email details:
+             * - Subject: "Donation Information" or "Legacy Giving Information"
+             * - Content: Name, Email, Donation Type, Amount/Info, Tracking ID
+             * - To: info@FAANecuador.org (production) or castoware@gmail.com (development)
+             * - Reply-To: Donor's email for easy response
              */
 
             $locale = App::getLocale();
-            $message = $locale === 'es'
-                ? 'Gracias por tu donación. Te contactaremos pronto con los detalles de pago.'
-                : 'Thank you for your donation. We will contact you soon with payment details.';
+            if ($isLegacyGiving) {
+                $message = $locale === 'es'
+                    ? 'Gracias por su interés en las donaciones testamentarias. Nos comunicaremos con usted pronto.'
+                    : 'Thank you for your interest in legacy giving. We will contact you soon.';
+            } else {
+                $message = $locale === 'es'
+                    ? 'Gracias por tu donación. Te contactaremos pronto con los detalles de pago.'
+                    : 'Thank you for your donation. We will contact you soon with payment details.';
+            }
 
             return redirect()->back()
                 ->with('success', $message)
-                ->with('showDonationModal', $request->donation_type);
+                ->with('showDonationModal', $isLegacyGiving ? null : $request->donation_type);
+            // Form will be cleared on successful submission
         } catch (\Exception $e) {
             Log::error('Failed to save donation', [
                 'error' => $e->getMessage(),
@@ -221,8 +357,8 @@ class PageController extends Controller
 
             $locale = App::getLocale();
             $errorMessage = $locale === 'es'
-                ? 'Hubo un error al procesar tu donación. Por favor intenta nuevamente.'
-                : 'There was an error processing your donation. Please try again.';
+                ? 'Hubo un error al procesar su solicitud. Por favor intenta nuevamente.'
+                : 'There was an error processing your request. Please try again.';
 
             return redirect()->back()
                 ->withErrors(['donation' => $errorMessage])
