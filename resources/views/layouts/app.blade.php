@@ -41,7 +41,11 @@
             <!-- Language Switcher in Sidebar -->
             <div class="px-4 py-3 bg-blue-50 border-b flex-shrink-0">
                 <div class="flex items-center justify-center space-x-2 text-sm">
-                    <span class="text-gray-600">Language:</span>
+                    @if (app()->getLocale() === 'en')
+                        <span class="text-gray-600">Language:</span>
+                    @else
+                        <span class="text-gray-600">Idioma:</span>
+                    @endif
                     @if (app()->getLocale() === 'en')
                         <span class="text-blue-600 font-semibold">English</span>
                         <span class="text-gray-400">|</span>

@@ -115,10 +115,24 @@
                                             {{ app()->getLocale() === 'es' ? 'Enviar Mensaje' : 'Send Message' }}
                                         </button>
                                     </div>
+
+                                    {{-- reCAPTCHA Notice --}}
+                                    <div class="text-center text-xs text-gray-500 mt-4">
+                                        {{ app()->getLocale() === 'es'
+                                            ? 'Este sitio está protegido por reCAPTCHA y se aplican la Política de Privacidad y los Términos de Servicio de Google.'
+                                            : 'This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.' }}
+                                    </div>
                                 </form>
                             </div>
                         @endif
                     </div>
+
+                    {{-- Include reCAPTCHA v3 Component --}}
+                    @include('components.recaptcha-v3', [
+                        'autoInit' => [
+                            'form[action*="contact.submit"]' => 'contact_submit',
+                        ],
+                    ])
 
                     {{-- Contact Information in Full Width Grid --}}
                     <div class="grid lg:grid-cols-3 gap-8">

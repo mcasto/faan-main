@@ -7,6 +7,7 @@ use App\Models\Navigation;
 use App\Models\Event;
 use App\Models\SubmittedData;
 use App\Services\ContentService;
+use App\Rules\RecaptchaV3Rule;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 
@@ -121,6 +122,7 @@ class PageController extends Controller
             'email' => 'required|email|max:255',
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
+            'g-recaptcha-response' => [new RecaptchaV3Rule($request, 'contact_submit', 0.5)],
         ]);
 
         // Here you would typically:
@@ -154,6 +156,7 @@ class PageController extends Controller
             'donation_amount' => 'required|numeric|min:0.01',
             'donation_type' => 'required|in:credit,transfer,pickup',
             'consent' => 'accepted',
+            'g-recaptcha-response' => [new RecaptchaV3Rule($request, 'donation_submit', 0.5)],
         ]);
 
         // Generate unique ID for tracking

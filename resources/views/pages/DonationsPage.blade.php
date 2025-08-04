@@ -190,7 +190,7 @@
                                         </button>
                                     </div>
 
-                                    {{-- reCAPTCHa Notice --}}
+                                    {{-- reCAPTCHA Notice --}}
                                     <div class="text-center text-xs text-gray-500 mt-4">
                                         {{ app()->getLocale() === 'es'
                                             ? 'Este sitio está protegido por reCAPTCHA y se aplican la Política de Privacidad y los Términos de Servicio de Google.'
@@ -203,6 +203,13 @@
 
                     {{-- Include Donation Modal --}}
                     @include('components.donation-modal')
+
+                    {{-- Include reCAPTCHA v3 Component --}}
+                    @include('components.recaptcha-v3', [
+                        'autoInit' => [
+                            'form[action*="donations.submit"]' => 'donation_submit',
+                        ],
+                    ])
         </main>
     </div>
 @endsection

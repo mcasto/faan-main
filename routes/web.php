@@ -27,6 +27,12 @@ Route::middleware(\App\Http\Middleware\SetLocale::class)->group(function () {
     Route::get('/', [PageController::class, 'home'])->name('home');
     Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
     Route::post('/donations', [PageController::class, 'submitDonation'])->name('donations.submit');
+
+    // Test route for reCAPTCHA v3 implementation
+    Route::get('/recaptcha-test', function () {
+        return view('recaptcha-test');
+    })->name('recaptcha.test');
+
     Route::get('/{path}', [PageController::class, 'show'])
         ->where('path', '.*')
         ->name('page');
