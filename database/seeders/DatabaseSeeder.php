@@ -19,5 +19,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Seed the FAAN database tables
+        $this->call([
+            AnalyticsSeeder::class,
+            NavigationSeeder::class,
+            SubmittedDataSeeder::class,
+        ]);
     }
 }

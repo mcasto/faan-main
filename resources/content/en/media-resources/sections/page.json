@@ -1,0 +1,246 @@
+{
+  "social": {
+    "label": "Social Media",
+    "type": "list",
+    "items": [
+      {
+        "label": "Facebook Page",
+        "url": "https://www.facebook.com/familiaamoranimal"
+      },
+      {
+        "label": "Facebook Group",
+        "url": "https://www.facebook.com/groups/736258083116570/"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/faancuenca/",
+        "hidden": true
+      }
+    ]
+  },
+  "magazines": {
+    "label": "FAAN Magazines",
+    "type": "list",
+    "items": [
+      {
+        "label": "April 2024",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/2024-04.pdf"
+      },
+      {
+        "label": "January 2024: Annual Report and Roadmap",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/2024-01-16-FAAN_annual_report_and_roadmap.pdf"
+      },
+      {
+        "label": "December 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/2023-12-newsletter.pdf"
+      },
+      {
+        "label": "June 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/specialedition23.pdf"
+      },
+      {
+        "label": "May 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/FAANMay2023.pdf"
+      },
+      {
+        "label": "March 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/FAANMar2023MagazineV1.pdf"
+      },
+      {
+        "label": "February 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/feb2023.pdf"
+      },
+      {
+        "label": "January 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/jan2023.pdf"
+      },
+      {
+        "label": "FAAN Progress Update (January 2023)",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/progressupdatej1823.pdf"
+      },
+      {
+        "label": "December 2022",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/dec2022.pdf"
+      },
+      {
+        "label": "November 2022",
+        "url": "/view-pdf?pdfLink=/downloadable/magazines/midnov2022.pdf"
+      }
+    ]
+  },
+  "specialDocuments": {
+    "label": "Information Documents & Special Resources",
+    "type": "list",
+    "items": [
+      {
+        "label": "Doggie Wish List",
+        "url": "/view-pdf?pdfLink=/downloadable/doggie-wish-list.pdf"
+      },
+      {
+        "label": "Coloring & Activity Book (bilingual)",
+        "url": "/view-pdf?pdfLink=/downloadable/bekindbiling.pdf"
+      }
+    ]
+  },
+  "extractedArticles": {
+    "label": "Extracted Articles",
+    "type": "list",
+    "items": [
+      {
+        "label": "One Day - A Story by Sandra Beaumont-Aug 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/oneday2023.pdf"
+      },
+      {
+        "label": "Dodi's Dogs - A ReHoming Love Story-June 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/dodisdogs.pdf"
+      },
+      {
+        "label": "Adoptions-June 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/adoptionsjune2023.pdf"
+      },
+      {
+        "label": "FAAN Facts-Did you Know?-June 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/faanfactsjune2023.pdf"
+      },
+      {
+        "label": "You Adopted-Now What?-June 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/ruleof3june2023.pdf"
+      },
+      {
+        "label": "Heir of the Dog-May 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf"
+      },
+      {
+        "label": "5 Things Dogs Teach Us-May 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/thingsdogsteachus/thingsdogsteachus.pdf"
+      },
+      {
+        "label": "Celebrating the Emotional Lives of Dogs-May 2023",
+        "url": "/view-pdf?pdfLink=/downloadable/extracted-articles/emotionallives/emotionallives.pdf"
+      },
+      {
+        "label": "FAAN Talks with Yapa Tree: Nov 2023",
+        "url": "https://yapatree.com/cuenca-dog-problem-what-you-can-do/"
+      }
+    ]
+  },
+  "worldAnimalDay": {
+    "label": "FAAN Celebrates World Animal Day",
+    "type": "list",
+    "items": [
+      {
+        "label": "Yapa Tree Features FAAN",
+        "url": "https://yapatree.com/faan-celebrate-world-animal-day/"
+      },
+      {
+        "label": "Visit our Temporary Shelter",
+        "url": "https://www.youtube.com/watch?v=kAZDjqn3U5Y&t=168s&ab_channel=TravelWithUsbyWarren%26Julie"
+      }
+    ]
+  },
+  "featured": {
+    "label": "Articles Featuring FAAN",
+    "type": "list",
+    "items": [
+      {
+        "label": "Cuenca High Life Pt.1",
+        "url": "https://cuencahighlife.com/discovering-a-pawsome-volunteer-purpose-expat-couple-joins-effort-to-rescue-cuenca-street-dogs/"
+      },
+      {
+        "label": "Cuenca High Life Pt.2",
+        "url": "https://cuencahighlife.com/faans-dream-of-providing-a-better-life-for-homeless-dogs-in-cuenca/"
+      },
+      {
+        "label": "Cuenca High Life Pt.3",
+        "url": "https://cuencahighlife.com/cuenca-expats-raise-their-paws-to-build-a-new-animal-shelter-heres-how-you-can-help/"
+      }
+    ]
+  },
+  "multimedia": {
+    "label": "Videos/Slideshows",
+    "type": "list",
+    "items": [
+      {
+        "label": "Help Us Help The Dogs",
+        "url": "/multimedia/videos/faan-video-reel-2024-03-21.mp4"
+      },
+      {
+        "label": "Yapa Tree Features FAAN",
+        "url": "https://yapatree.com/faan-celebrate-world-animal-day/"
+      },
+      {
+        "label": "Visit our Temporary Shelter",
+        "url": "https://www.youtube.com/watch?v=kAZDjqn3U5Y&t=168s&ab_channel=TravelWithUsbyWarren%26Julie"
+      },
+      {
+        "label": "The Story of Willy!",
+        "url": "/multimedia/videos/willy.mp4"
+      },
+      {
+        "label": "Our Accomplishments",
+        "url": "/multimedia/videos/march25.mp4"
+      },
+      {
+        "label": "FAAN-atics Volunteer slide show",
+        "url": "/faan-atics-volunteer-slide-show"
+      },
+      {
+        "label": "World Homeless Animal Day: Join Michael and his guests, Rosemary Rein and Sandra Beaumont as we discuss the importance of supporting stray animals!",
+        "url": "https://www.youtube.com/live/KSFuyyd4xCQ?feature"
+      },
+      {
+        "label": "Remembering the 2023 GalaFAAN-TASTICA!",
+        "url": "/multimedia/videos/gala-thanks-vid.mp4"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Photo Gallery",
+    "type": "image-carousel",
+    "items": [
+      "/media-images/mediagal0.jpg",
+      "/media-images/mediagal1.jpg",
+      "/media-images/mediagal2.jpg",
+      "/media-images/mediagal3.jpg",
+      "/media-images/mediagal4.jpg",
+      "/media-images/mediagal5.jpg",
+      "/media-images/mediagal6.jpg",
+      "/media-images/mediagal7.jpg",
+      "/media-images/mediagal8.jpg",
+      "/media-images/mediagal9.jpg",
+      "/media-images/mediagal10.jpg",
+      "/media-images/mediagal11.jpg",
+      "/media-images/mediagal12.jpg",
+      "/media-images/mediagal13.jpg",
+      "/media-images/mediagal14.jpg",
+      "/media-images/mediagal15.jpg",
+      "/media-images/mediagal16.jpg",
+      "/media-images/mediagal17.jpg",
+      "/media-images/mediagal18.jpg",
+      "/media-images/mediagal19.jpg",
+      "/media-images/mediagal20.jpg",
+      "/media-images/mediagal21.jpg",
+      "/media-images/mediagal22.jpg",
+      "/media-images/mediagal23.jpg",
+      "/media-images/mediagal24.jpg",
+      "/media-images/mediagal25.jpg",
+      "/media-images/mediagal26.jpg",
+      "/media-images/mediagal27.jpg",
+      "/media-images/mediagal28.jpg",
+      "/media-images/mediagal29.jpg",
+      "/media-images/mediagal30.jpg",
+      "/media-images/mediagal31.jpg",
+      "/media-images/mediagal32.jpg",
+      "/media-images/mediagal33.jpg",
+      "/media-images/mediagal34.jpeg",
+      "/media-images/mediagal35.jpg",
+      "/media-images/mediagal36.jpg",
+      "/media-images/mediagal37.jpg",
+      "/media-images/mediagal38.jpg",
+      "/media-images/mediagal39.jpg",
+      "/media-images/mediagal40.jpg",
+      "/media-images/mediagal41.jpg",
+      "/media-images/mediagal42.jpg"
+    ]
+  }
+}

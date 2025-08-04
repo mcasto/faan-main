@@ -1,0 +1,5 @@
+I need to generate a new key at sendgrid & use different emails for:
+    ☐ donations@faanecuador.org,
+    ☐ contacts@..., and
+    ☐ legacy-giving@...
+    ☐ (maybe more) after I set up a domain-level verification at sendgrid (or use mailgun)

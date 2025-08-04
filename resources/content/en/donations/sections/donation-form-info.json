@@ -1,0 +1,20 @@
+{
+  "buttons": [
+    {
+      "label": "Credit Card / PayPal",
+      "action": "credit"
+    },
+    {
+      "label": "Mail Donation Check in U.S.",
+      "action": "mail"
+    },
+    {
+      "label": "Bank Transfer in Ecuador",
+      "action": "transfer"
+    },
+    {
+      "label": "Pickup by FAAN Volunteer",
+      "action": "pickup"
+    }
+  ]
+}
