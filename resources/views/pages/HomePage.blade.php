@@ -328,10 +328,6 @@
             const latestNewsDate = banner.getAttribute('data-latest-news-date');
             if (!latestNewsDate) return false;
 
-            // DEVELOPMENT MODE: Always show banner when there are news items
-            return true;
-
-            /* PRODUCTION CODE (commented out):
             const lastVisit = getCookie('faan_last_visit');
 
             // If no last visit recorded, show banner and record visit
@@ -346,7 +342,6 @@
 
             // Show banner if there's news that started after their last visit
             return newsDate > lastVisitDate;
-            */
         }
 
         function dismissNewsBanner() {
