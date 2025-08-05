@@ -12,6 +12,7 @@ return [
         'volunteering' => 'Trabajar como Voluntario',
         'media_resources' => 'Medios/Recursos',
         'gala_faantastica' => 'GALA-FAANTASTICA',
+        'meet_faantastics' => 'Conoce a los FAAN-TÁSTICOS',
         'contact_us' => 'Contáctenos',
         'donate' => 'Donar',
         'faan_events' => 'Eventos FAAN',

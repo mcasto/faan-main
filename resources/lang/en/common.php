@@ -12,6 +12,7 @@ return [
         'volunteering' => 'Volunteering',
         'media_resources' => 'Media/Resources',
         'gala_faantastica' => 'GALA-FAANTASTICA',
+        'meet_faantastics' => 'Meet the FAAN-TASTICS',
         'contact_us' => 'Contact Us',
         'donate' => 'Donate',
         'faan_events' => 'FAAN Events',

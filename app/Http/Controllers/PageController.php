@@ -503,10 +503,14 @@ class PageController extends Controller
      */
     private function formatEventForNews($event, $locale)
     {
-        $html = '<div class="event-news-item">';
+        // Determine which events page this event belongs to
+        $eventsPageUrl = $this->getEventsPageUrl($event);
+
+        // Make the entire news item clickable
+        $html = '<a href="' . $eventsPageUrl . '#event-' . $event->slug . '" class="block event-news-item hover:bg-gray-50 transition-colors duration-200 p-4 rounded-lg">';
 
         // Title
-        $html .= '<h3 class="text-xl font-bold text-gray-800 mb-3">' . htmlspecialchars($event->title) . '</h3>';
+        $html .= '<h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-blue-600 transition-colors">' . htmlspecialchars($event->title) . '</h3>';
 
         // Subtitle if exists
         if ($event->subtitle) {
@@ -527,8 +531,28 @@ class PageController extends Controller
             $html .= '<p class="text-gray-700 text-sm leading-relaxed">' . htmlspecialchars($preview) . '</p>';
         }
 
-        $html .= '</div>';
+        // Read more indicator
+        $readMoreText = $locale === 'es' ? 'Leer más →' : 'Read more →';
+        $html .= '<p class="text-blue-600 text-sm font-medium mt-3">' . $readMoreText . '</p>';
+
+        $html .= '</a>';
 
         return $html;
+    }
+
+    /**
+     * Determine which events page URL an event should link to
+     */
+    private function getEventsPageUrl($event)
+    {
+        $today = now();
+
+        // If event is expired, link to past events page
+        if ($event->expires < $today) {
+            return '/events/past-events';
+        }
+
+        // Otherwise, link to current/upcoming events page
+        return '/events/upcoming-events';
     }
 }

@@ -12,6 +12,9 @@ class NavigationSeeder extends Seeder
      */
     public function run(): void
     {
+        // Clear existing navigation
+        DB::table('navigation')->truncate();
+
         DB::table('navigation')->insert([
             [
                 'id' => 1,
@@ -46,8 +49,8 @@ class NavigationSeeder extends Seeder
             [
                 'id' => 3,
                 'sort_order' => 32,
-                'name_en' => 'Upcoming',
-                'name_es' => 'Próximos',
+                'name_en' => 'Current/Upcoming',
+                'name_es' => 'Actuales/Próximos',
                 'path' => '/events/upcoming-events',
                 'component_name' => 'EventsPage',
                 'source' => 'faan-events',
@@ -134,11 +137,26 @@ class NavigationSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 9,
+                'sort_order' => 75,
+                'name_en' => 'Meet the FAAN-TASTICS',
+                'name_es' => 'Conoce a los FAAN-TÁSTICOS',
+                'path' => '/meet-faantastics',
+                'component_name' => null,
+                'source' => 'meet-faantastics',
+                'visible' => true,
+                'parent_id' => 0,
+                'external' => false,
+                'external_blank' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'id' => 10,
                 'sort_order' => 100,
                 'name_en' => 'GALA-FAANTASTICA',
                 'name_es' => 'GALA-FAANTASTICA',
-                'path' => 'https://gala-{{language}}.castoware.com',
+                'path' => 'https://gala.faanecuador.org',
                 'component_name' => 'GalaFaantastica',
                 'source' => 'gala-faantastica',
                 'visible' => true,

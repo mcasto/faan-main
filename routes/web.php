@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FaanDataController;
+use App\Http\Controllers\MeetFaantasticsController;
 
 // Language switcher routes
 Route::get('/set-language/{locale}', function ($locale) {
@@ -27,6 +28,9 @@ Route::middleware(\App\Http\Middleware\SetLocale::class)->group(function () {
     Route::get('/', [PageController::class, 'home'])->name('home');
     Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
     Route::post('/donations', [PageController::class, 'submitDonation'])->name('donations.submit');
+
+    Route::get('/meet-faantastics', [MeetFaantasticsController::class, 'show'])
+        ->name('meet-faantastics');
 
     // Test route for reCAPTCHA v3 implementation
     Route::get('/recaptcha-test', function () {

@@ -138,6 +138,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ route('meet-faantastics') }}"
+                                class="block p-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors {{ request()->path() === 'meet-faantastics' ? 'nav-active' : '' }}">
+                                {{ __('common.navigation.meet_faantastics') }}
+                            </a>
+                        </li>
+                        <li>
                             <a href="/contact-us"
                                 class="block p-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors {{ request()->path() === 'contact-us' ? 'nav-active' : '' }}">
                                 {{ app()->getLocale() === 'es' ? 'Contáctenos' : 'Contact Us' }}

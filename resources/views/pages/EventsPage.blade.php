@@ -24,7 +24,8 @@
             @if (isset($events) && $events->count() > 0)
                 <div class="grid gap-8 md:gap-12">
                     @foreach ($events as $event)
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <div id="event-{{ $event->slug }}"
+                            class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 scroll-mt-8">
                             <!-- Event Header -->
                             <div class="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-4 border-b">
                                 <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ $event->title }}</h2>
