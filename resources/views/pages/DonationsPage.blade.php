@@ -79,6 +79,7 @@
 
                                 <form method="POST" action="{{ route('donations.submit') }}" class="space-y-6">
                                     @csrf
+                                    @method('put')
 
                                     {{-- Donation Method Selection --}}
                                     <div class="bg-gray-50 p-6 rounded-lg">
