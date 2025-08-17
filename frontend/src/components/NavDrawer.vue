@@ -12,8 +12,14 @@
         >
           <q-item-section>
             <q-item-label>
-              {{ item.meta.label }}
+              {{ item.meta.label[store.language] }}
             </q-item-label>
+          </q-item-section>
+          <q-item-section
+            avatar
+            v-if="item.name == 'faan-events' && flagEvents"
+          >
+            <q-icon name="mdi-circle-small" color="primary" size="md"></q-icon>
           </q-item-section>
           <q-item-section avatar v-if="item.children.length > 0">
             <q-icon
@@ -42,8 +48,17 @@
           >
             <q-item-section>
               <q-item-label>
-                {{ child.meta.label }}
+                {{ child.meta.label[store.language] }}
               </q-item-label>
+            </q-item-section>
+            <q-item-section
+              side
+              v-if="child.name == 'upcoming-events' && flagEvents"
+            >
+              <q-badge
+                color="primary"
+                :label="`${store.events.upcoming.length} `"
+              />
             </q-item-section>
           </q-item>
         </q-list>
@@ -110,6 +125,10 @@ const handleClick = (item) => {
     store.router.push({ name: item.name });
   }
 };
+
+const flagEvents = computed(() => {
+  return store.events.upcoming.length > 0;
+});
 
 // Initialize on mount
 onMounted(() => {

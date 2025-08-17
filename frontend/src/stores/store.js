@@ -4,19 +4,13 @@ import { ref, computed } from "vue";
 export const useStore = defineStore(
   "store",
   () => {
-    // examples
-    // const state = {
-    //   cuePointer: ref(null),
-    // };
-    // const getters = {
-    //   activeShow: computed(activeShow),
-    // };
-    // const actions = {
-    //   addShow,
-    // };
-
     const state = {
       drawer: ref(false),
+      events: ref({
+        past: [],
+        upcoming: [],
+      }),
+      home: ref(null),
       language: ref("en"),
     };
     const getters = {};
@@ -26,7 +20,7 @@ export const useStore = defineStore(
   },
   {
     persist: {
-      key: "default-key",
+      key: "faan-main",
     },
   }
 );

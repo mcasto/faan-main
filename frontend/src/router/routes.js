@@ -1,18 +1,46 @@
+import callApi from "src/assets/call-api";
+import { useStore } from "src/stores/store";
+
 const routes = [
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
+    beforeEnter: async () => {
+      const store = useStore();
+
+      store.events.upcoming = await callApi({
+        path: "/events/upcoming",
+        method: "get",
+      });
+
+      store.events.past = await callApi({
+        path: "/events/past",
+        method: "get",
+      });
+    },
     children: [
       {
         path: "",
         component: () => import("pages/IndexPage.vue"),
-        meta: { label: "Home" },
+        beforeEnter: async () => {
+          const store = useStore();
+          store.home = await callApi({ path: "/home", method: "get" });
+        },
+        meta: { label: { en: "Home", es: "Inicio" } },
         name: "home",
       },
       {
         path: "shelter-project",
         component: () => import("pages/ShelterProjectPage.vue"),
-        meta: { label: "Shelter Project" },
+        beforeEnter: async () => {
+          const store = useStore();
+          store.shelter = await callApi({
+            path: "/shelter-project",
+            method: "get",
+          });
+          console.log({ shelter: store.shelter });
+        },
+        meta: { label: { en: "Shelter Project", es: "Proyecto de Refugio" } },
         name: "shelter-project",
       },
       {
@@ -22,23 +50,26 @@ const routes = [
           {
             path: "/upcoming-events",
             component: () => import("pages/UpcomingEvents.vue"),
-            meta: { label: "Upcoming Events", isChild: true },
+            meta: {
+              label: { en: "Current / Upcoming", es: "Actual / Próximo" },
+              isChild: true,
+            },
             name: "upcoming-events",
           },
           {
             path: "/past-events",
             component: () => import("pages/PastEvents.vue"),
-            meta: { label: "Past Events", isChild: true },
+            meta: { label: { en: "Past", es: "Pasado" }, isChild: true },
             name: "past-events",
           },
         ],
-        meta: { label: "FAAN Events" },
+        meta: { label: { en: "FAAN Events", es: "Eventos FAAN" } },
         name: "faan-events",
       },
       {
         path: "adoptions",
         component: () => import("pages/AdoptionsPage.vue"),
-        meta: { label: "Adoptions" },
+        meta: { label: { en: "Adoptions", es: "Adopciones" } },
         name: "adoptions",
       },
       {
@@ -48,41 +79,52 @@ const routes = [
           {
             path: "/donations",
             component: () => import("pages/DonationsPage.vue"),
-            meta: { label: "Donations", isChild: true },
+            meta: {
+              label: { en: "Donations", es: "Donaciones" },
+              isChild: true,
+            },
             name: "donations",
           },
           {
             path: "/legacy-giving",
             component: () => import("pages/LegacyGiving.vue"),
-            meta: { label: "Legacy Giving", isChild: true },
+            meta: {
+              label: { en: "Legacy Giving", es: "Donación Legado" },
+              isChild: true,
+            },
             name: "legacy-giving",
           },
         ],
-        meta: { label: "Donate" },
+        meta: { label: { en: "Donate", es: "Donar" } },
         name: "donate",
       },
       {
         path: "volunteering",
         component: () => import("pages/VolunteeringPage.vue"),
-        meta: { label: "Volunteering" },
+        meta: { label: { en: "Volunteering", es: "Voluntariado" } },
         name: "volunteering",
       },
       {
         path: "meet-the-faantastics",
         component: () => import("pages/MeetTheFaantastics.vue"),
-        meta: { label: "Meet the FAAN-TASTICS" },
+        meta: {
+          label: {
+            en: "Meet the FAAN-TASTICS",
+            es: "Conoce a los FAAN-TASTICS",
+          },
+        },
         name: "meet-the-faantastics",
       },
       {
         path: "media-resources",
         component: () => import("pages/MediaResources.vue"),
-        meta: { label: "Media/Resources" },
+        meta: { label: { en: "Media/Resources", es: "Medios/Recursos" } },
         name: "media-resources",
       },
       {
         path: "gala-faantastica",
         meta: {
-          label: "GALA-FAANTASTICA",
+          label: { en: "GALA-FAANTASTICA", es: "GALA-FAANTASTICA" },
           external: "https://gala.faanecuador.org",
         },
         name: "gala-faantastica",
@@ -90,7 +132,7 @@ const routes = [
       {
         path: "contact-us",
         component: () => import("pages/ContactUs.vue"),
-        meta: { label: "Contact Us" },
+        meta: { label: { en: "Contact Us", es: "Contáctenos" } },
         name: "contact-us",
       },
     ],

@@ -17,20 +17,22 @@
     <a
       href="#"
       style="text-decoration: none;"
-      @click="store.language = 'en'"
+      @click="setLanguage('en')"
       class="text-blue-10"
       :class="{ 'text-bold': store.language == 'en' }"
-      >English</a
     >
+      English
+    </a>
     <q-separator vertical spaced color="black"></q-separator
     ><a
       href="#"
       style="text-decoration: none;"
-      @click="store.language = 'es'"
+      @click="setLanguage('es')"
       class="text-blue-10"
       :class="{ 'text-bold': store.language == 'es' }"
-      >Spanish</a
     >
+      Spanish
+    </a>
   </div>
   <q-separator color="black"></q-separator>
 </template>
@@ -39,4 +41,9 @@
 import { useStore } from "src/stores/store";
 
 const store = useStore();
+
+const setLanguage = (lang) => {
+  store.language = lang;
+  window.location.reload(); // Reload to apply language change
+};
 </script>

@@ -9,40 +9,15 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
 {
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        $supportedLocales = ['en', 'es'];
-        $locale = 'en'; // Default to English
-
-        // Read cookie first
-        if ($request->hasCookie('locale') && in_array($request->cookie('locale'), $supportedLocales)) {
-            $locale = $request->cookie('locale');
-        }
-        // Or from Accept-Language header
-        elseif ($request->hasHeader('Accept-Language')) {
-            $acceptedLanguages = $request->getLanguages();
-            foreach ($acceptedLanguages as $language) {
-                $languageCode = substr($language, 0, 2);
-                if (in_array($languageCode, $supportedLocales)) {
-                    $locale = $languageCode;
-                    break;
-                }
+        if ($language = $request->route('language')) {
+            // Validate it's a supported language
+            if (in_array($language, ['en', 'es', 'fr'])) { // Add your supported languages
+                app()->setLocale($language);
             }
         }
 
-        // Set app locale before proceeding
-        App::setLocale($locale);
-
-        // Let the rest of the middleware (including CSRF) run first
-        $response = $next($request);
-
-        // Now write the cookie (after CSRF check has passed)
-        if (!$request->hasCookie('locale') || $request->cookie('locale') !== $locale) {
-            $response->headers->setCookie(
-                cookie()->forever('locale', $locale)
-            );
-        }
-
-        return $response;
+        return $next($request);
     }
 }

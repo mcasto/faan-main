@@ -73,3 +73,40 @@
   margin: 0 0.5rem 0.5rem 0;
   float: left;
 }
+
+.shelter-project {
+  .dog-map {
+    float: left;
+    height: 300px;
+    margin-right: 1rem;
+  }
+
+  .preview {
+    float: right;
+
+    video {
+      width: 640;
+      height: 352;
+      margin: 1rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      video {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  ul {
+    list-style: url(/images/checkbox-empty.png);
+    .top-level {
+      list-style: none;
+    }
+    .completed {
+      list-style: url(/images/checkbox-completed.png);
+      text-decoration: line-through;
+    }
+  }
+}
