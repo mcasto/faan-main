@@ -23,5 +23,5 @@ Homestead.yaml
 Thumbs.db
 faan-web-dev/
 *.mp4
-frontend/dist
-frontend/public
+frontend/dist/
+frontend/public/
