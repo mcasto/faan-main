@@ -10,10 +10,9 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param string $language
      * @return JsonResponse
      */
-    public function show(string $language): JsonResponse
+    public function show(): JsonResponse
     {
         return response()->json(
             [

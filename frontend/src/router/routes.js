@@ -38,7 +38,6 @@ const routes = [
             path: "/shelter-project",
             method: "get",
           });
-          console.log({ shelter: store.shelter });
         },
         meta: { label: { en: "Shelter Project", es: "Proyecto de Refugio" } },
         name: "shelter-project",
@@ -69,6 +68,14 @@ const routes = [
       {
         path: "adoptions",
         component: () => import("pages/AdoptionsPage.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.adoptions = await callApi({
+            path: "/adoptions",
+            method: "get",
+          });
+          console.log({ adoptions: store.adoptions });
+        },
         meta: { label: { en: "Adoptions", es: "Adopciones" } },
         name: "adoptions",
       },

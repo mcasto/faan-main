@@ -5,6 +5,7 @@ export const useStore = defineStore(
   "store",
   () => {
     const state = {
+      adoptions: ref(null),
       drawer: ref(false),
       events: ref({
         past: [],

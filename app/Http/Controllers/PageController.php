@@ -210,7 +210,7 @@ class PageController extends Controller
 
     public function submitDonation(Request $request)
     {
-        logger()->debug($request->all());
+
 
         // Check if this is a legacy giving form or regular donation form
         $isLegacyGiving = $request->has('type') && $request->type === 'legacy_giving';
