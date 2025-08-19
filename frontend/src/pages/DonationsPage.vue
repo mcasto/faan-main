@@ -28,7 +28,7 @@
 
         <div class="row q-mt-md">
           <div
-            class="col-12 col-md-6"
+            class="col-6"
             v-for="(image, idx) of store.donations.pawImages"
             :key="`paw-image-${idx}`"
           >

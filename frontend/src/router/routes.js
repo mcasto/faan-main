@@ -91,6 +91,8 @@ const routes = [
                 path: "/donations",
                 method: "get",
               });
+
+              console.log({ donations: store.donations });
             },
             meta: {
               label: { en: "Donations", es: "Donaciones" },

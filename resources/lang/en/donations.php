@@ -36,4 +36,7 @@ return [
         'continue' => 'Continue'
     ],
     'recaptcha-disclaimer' => file_get_contents(__DIR__ . '/donations/recaptcha-disclaimer.html'),
+    'credit-dialog' => file_get_contents(__DIR__ . '/donations/donation-credit.html'),
+    'pickup-dialog' => file_get_contents(__DIR__ . '/donations/donation-pickup.html'),
+    'transfer-dialog' => file_get_contents(__DIR__ . '/donations/donation-transfer.html')
 ];

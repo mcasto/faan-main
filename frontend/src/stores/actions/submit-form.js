@@ -8,7 +8,5 @@ export default async ({ path, token, formData }) => {
     payload: { ...formData, recaptcha_token: token },
   });
 
-  console.log({ response });
-
-  Loading.hide();
+  return response;
 };

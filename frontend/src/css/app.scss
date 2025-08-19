@@ -3,3 +3,12 @@
     opacity: 0 !important;
     pointer-events: none !important;
 }
+
+.paypal-qr-code {
+    text-align: center;
+
+    img {
+        width: 120px;
+        margin-top: 1rem;
+    }
+}

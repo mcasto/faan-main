@@ -39,7 +39,12 @@ class DonationController extends Controller
                 'donationMethods' => __('donations.donation-methods'),
                 'formFields' => __('donations.form-fields'),
                 'formButtons' => __('donations.form-buttons'),
-                'recaptchaDisclaimer' => __('donations.recaptcha-disclaimer')
+                'recaptchaDisclaimer' => __('donations.recaptcha-disclaimer'),
+                'donationConfig' => [
+                    'cc' =>  __('donations.credit-dialog'),
+                    'pickup' => __('donations.pickup-dialog'),
+                    'transfer' =>  __('donations.transfer-dialog'),
+                ],
             ]
         );
     }

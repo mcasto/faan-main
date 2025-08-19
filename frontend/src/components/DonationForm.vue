@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-form @submit.prevent="submit">
+    <q-form @submit.prevent="formContinue">
       <q-card>
         <q-toolbar>
           <q-toolbar-title>
@@ -73,16 +73,23 @@
             @click="cancel"
           ></q-btn>
           <q-btn
+            type="submit"
             :label="store.donations.formButtons.continue"
             color="teal-8"
             :disable="
               !form.name || !form.email || form.amount <= 0 || !form.consent
             "
-            @click="submit"
           ></q-btn>
         </q-card-actions>
       </q-card>
     </q-form>
+
+    <donation-dialog
+      v-model="showDialog.visible"
+      :html="showDialog.html"
+      @cancel="showDialog.visible = false"
+      @confirm="submit"
+    />
   </div>
 </template>
 
@@ -90,8 +97,14 @@
 import { Loading, Notify } from "quasar";
 import { useStore } from "src/stores/store";
 import { ref } from "vue";
+import DonationDialog from "./DonationDialog.vue";
 
 const store = useStore();
+
+const showDialog = ref({
+  visible: false,
+  html: null,
+});
 
 const form = ref({
   donation_method: "cc",
@@ -111,7 +124,18 @@ const cancel = () => {
   };
 };
 
+const formContinue = async () => {
+  const html = store.donations.donationConfig[form.value.donation_method];
+
+  showDialog.value = {
+    visible: true,
+    html,
+  };
+};
+
 const submit = async () => {
+  showDialog.value.visible = false;
+
   if (!window.grecaptcha) {
     console.error("reCAPTCHA not loaded");
     return;
@@ -127,15 +151,28 @@ const submit = async () => {
       }
     );
 
-    store.submitForm({ path: "/donations", token, formData: form.value });
+    const response = await store.submitForm({
+      path: "/donations",
+      token,
+      formData: form.value,
+    });
+
+    if (response.status == "ok") {
+      Notify.create({
+        type: "positive",
+        message: "Donation submitted successfully!",
+      });
+    }
+
+    console.log({ response });
   } catch (error) {
     console.error("reCAPTCHA failed:", error);
     Notify.create({
       type: "negative",
       message: "Verification failed. Please try again.",
     });
-
-    Loading.hide();
   }
+
+  Loading.hide();
 };
 </script>
