@@ -53,7 +53,7 @@
               dense
               outlined
               required
-              v-model="form.amount"
+              v-model.number="form.amount"
             ></q-input>
             <q-checkbox
               :label="store.donations.formFields.consent"
@@ -95,15 +95,15 @@ const store = useStore();
 
 const form = ref({
   donation_method: "cc",
-  name: "test",
-  email: "test@example.com",
-  amount: 1,
-  consent: true,
+  name: null,
+  email: null,
+  amount: 0,
+  consent: false,
 });
 
 const cancel = () => {
   form.value = {
-    donation_method: null,
+    donation_method: "cc",
     name: null,
     email: null,
     amount: 0,
