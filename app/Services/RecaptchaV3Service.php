@@ -77,11 +77,11 @@ class RecaptchaV3Service
 
                 // Check if score meets minimum threshold
                 if ($score >= $minScore) {
-                    Log::info('reCAPTCHA v3 verification successful', [
-                        'action' => $action,
-                        'score' => $score,
-                        'ip' => $request->ip()
-                    ]);
+                    // Log::info('reCAPTCHA v3 verification successful', [
+                    //     'action' => $action,
+                    //     'score' => $score,
+                    //     'ip' => $request->ip()
+                    // ]);
 
                     return [
                         'success' => true,

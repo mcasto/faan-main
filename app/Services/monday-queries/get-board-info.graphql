@@ -1,0 +1,9 @@
+query {
+  boards(ids: FIELD_ID) {
+    columns {
+      id
+      title
+      type
+    }
+  }
+}

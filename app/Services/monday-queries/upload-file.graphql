@@ -1,0 +1,9 @@
+mutation add_file($file: File!) {
+  add_file_to_column(
+    item_id: ITEM_ID,
+    column_id: "COLUMN_ID",
+    file: $file
+  ) {
+    id
+  }
+}

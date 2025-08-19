@@ -74,7 +74,6 @@ const routes = [
             path: "/adoptions",
             method: "get",
           });
-          console.log({ adoptions: store.adoptions });
         },
         meta: { label: { en: "Adoptions", es: "Adopciones" } },
         name: "adoptions",
@@ -86,6 +85,13 @@ const routes = [
           {
             path: "/donations",
             component: () => import("pages/DonationsPage.vue"),
+            beforeEnter: async () => {
+              const store = useStore();
+              store.donations = await callApi({
+                path: "/donations",
+                method: "get",
+              });
+            },
             meta: {
               label: { en: "Donations", es: "Donaciones" },
               isChild: true,

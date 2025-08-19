@@ -1,1 +1,18 @@
+☐ handle form submit for donations
 ☐ spanish translations
+
+☐ set up donation form on monday.com
+
+recaptcha process for forms:
+    ✔ get token from window.grecaptcha @done(25-08-18 09:48)
+    ✔ submit token with form data @done(25-08-18 10:22)
+    ✔ backend get response from recaptcha @done(25-08-18 10:22)
+    ☐ adds response to form data
+    ☐ inserts data into the table
+    ☐ sends data to monday.com (which handles the emailing)
+
+☐ Can use create_notification mutation with monday.com api to notify a user ... that way i could set up "isDev, notify *me*" or "!isDev, notify specific user" but automations on the tables are easier
+
+☐ integrate gtag into index.html
+
+☐ set up webook for paypal integration

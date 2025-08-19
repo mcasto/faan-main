@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
-import { ref, computed } from "vue";
+import { ref } from "vue";
+import submitForm from "./actions/submit-form";
 
 export const useStore = defineStore(
   "store",
@@ -15,7 +16,9 @@ export const useStore = defineStore(
       language: ref("en"),
     };
     const getters = {};
-    const actions = {};
+    const actions = {
+      submitForm,
+    };
 
     return { ...state, ...getters, ...actions };
   },

@@ -5,5 +5,9 @@
 </template>
 
 <script setup>
-// Your script here
+import { useStore } from "src/stores/store";
+
+const store = useStore();
+
+console.log(store.events.upcoming);
 </script>

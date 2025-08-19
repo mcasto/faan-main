@@ -1,1 +1,5 @@
 // app global css in SCSS form
+.grecaptcha-badge {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}

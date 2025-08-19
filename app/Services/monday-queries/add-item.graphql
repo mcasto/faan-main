@@ -1,0 +1,10 @@
+mutation {
+  create_item(
+    board_id: BOARD_ID,
+    item_name: ITEM_NAME,
+    column_values: ITEM_COLUMN_VALUES
+  ) {
+    id
+    name
+  }
+}

@@ -76,7 +76,7 @@ export default defineConfig((/* ctx */) => {
         },
       },
     },
-    // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
+    // https://v2.quasar.dev/quasa r-cli-vite/quasar-config-file#framework
     framework: {
       config: {},
 
