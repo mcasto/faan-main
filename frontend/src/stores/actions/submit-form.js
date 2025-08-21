@@ -1,4 +1,3 @@
-import { Loading } from "quasar";
 import callApi from "src/assets/call-api";
 
 export default async ({ path, token, formData }) => {

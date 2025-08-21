@@ -8,12 +8,15 @@ export const useStore = defineStore(
     const state = {
       adoptions: ref(null),
       drawer: ref(false),
+      donations: ref(null),
       events: ref({
         past: [],
         upcoming: [],
       }),
       home: ref(null),
       language: ref("en"),
+      legacyGiving: ref(null),
+      shelter: ref(null),
     };
     const getters = {};
     const actions = {

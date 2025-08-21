@@ -91,8 +91,6 @@ const routes = [
                 path: "/donations",
                 method: "get",
               });
-
-              console.log({ donations: store.donations });
             },
             meta: {
               label: { en: "Donations", es: "Donaciones" },
@@ -103,6 +101,13 @@ const routes = [
           {
             path: "/legacy-giving",
             component: () => import("pages/LegacyGiving.vue"),
+            beforeEnter: async () => {
+              const store = useStore();
+              store.legacyGiving = await callApi({
+                path: "/legacy-giving",
+                method: "get",
+              });
+            },
             meta: {
               label: { en: "Legacy Giving", es: "Donación Legado" },
               isChild: true,
