@@ -128,14 +128,159 @@
         </q-card>
       </div>
     </div>
+
+    <q-card class="q-mt-md">
+      <q-toolbar>
+        <q-toolbar-title>
+          {{ store.legacyGiving.formConfig.title }}
+        </q-toolbar-title>
+      </q-toolbar>
+      <q-separator spaced></q-separator>
+      <q-card-section>
+        <q-form @submit.prevent="submit">
+          <div class="row">
+            <q-input
+              class="col-12 col-md-6 q-pa-xs"
+              :label="store.legacyGiving.formConfig.legal_name_of_donor.label"
+              :type="store.legacyGiving.formConfig.legal_name_of_donor.type"
+              v-model="form.legal_name_of_donor"
+              dense
+              outlined
+              required
+            ></q-input>
+            <q-input
+              class="col-12 col-md-6 q-pa-xs"
+              :label="store.legacyGiving.formConfig.phone.label"
+              :type="store.legacyGiving.formConfig.phone.type"
+              mask="(###) ###-####"
+              v-model="form.phone"
+              dense
+              outlined
+              required
+            ></q-input>
+            <q-input
+              class="col-12 col-md-6 q-pa-xs"
+              :label="store.legacyGiving.formConfig.cedula_passport.label"
+              :type="store.legacyGiving.formConfig.cedula_passport.type"
+              v-model="form.cedula_passport"
+              dense
+              outlined
+              required
+            ></q-input>
+            <q-input
+              class="col-12 col-md-6 q-pa-xs"
+              :label="store.legacyGiving.formConfig.email.label"
+              :type="store.legacyGiving.formConfig.email.type"
+              v-model="form.email"
+              dense
+              outlined
+              required
+            ></q-input>
+            <q-input
+              class="col-12 q-pa-xs"
+              :label="store.legacyGiving.formConfig.address.label"
+              :type="store.legacyGiving.formConfig.address.type"
+              v-model="form.address"
+              dense
+              outlined
+            ></q-input>
+            <q-input
+              class="col-12 q-pa-xs"
+              :label="store.legacyGiving.formConfig.special_instructions.label"
+              :type="store.legacyGiving.formConfig.special_instructions.type"
+              v-model="form.special_instructions"
+              dense
+              outlined
+            ></q-input>
+            <q-select
+              :label="store.legacyGiving.formConfig.donation_type.label"
+              :options="store.legacyGiving.formConfig.donation_type.options"
+              v-model="form.donation_type"
+              class="col-12 col-md-6 q-pa-xs"
+              dense
+              outlined
+              :rules="[(v) => !!v || 'Required']"
+            ></q-select>
+            <legacy-donation-type-followup
+              v-model="form.donation_type_followup"
+              :donation_type="form.donation_type"
+            ></legacy-donation-type-followup>
+            <q-checkbox
+              v-model="form.recognized"
+              :true-value="1"
+              :false-value="0"
+              class="col-12 col-md-6 q-pa-xs"
+              :label="store.legacyGiving.formConfig.recognized.label"
+              required
+            ></q-checkbox>
+            <q-checkbox
+              v-model="form.consent"
+              :true-value="1"
+              :false-value="0"
+              class="col-12 col-md-6 q-pa-xs"
+              :label="store.legacyGiving.formConfig.consent.label"
+              required
+            ></q-checkbox>
+          </div>
+          <q-separator spaced></q-separator>
+          <q-card-actions class="justify-between">
+            <div v-html="store.legacyGiving.recaptcha"></div>
+            <q-btn
+              type="submit"
+              :label="store.legacyGiving.formConfig.buttonLabel"
+              color="primary"
+              :disable="!form.consent"
+            ></q-btn>
+          </q-card-actions>
+        </q-form>
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 
 <script setup>
-import { Screen } from "quasar";
+import { Loading, Notify, Screen } from "quasar";
 import { useStore } from "src/stores/store";
+import { ref } from "vue";
+import LegacyDonationTypeFollowup from "src/components/LegacyDonationTypeFollowup.vue";
+import callApi from "src/assets/call-api";
 
 const store = useStore();
 
-console.log({ legacyGiving: store.legacyGiving });
+const form = ref({
+  legal_name_of_donor: null,
+  phone: null,
+  cedula_passport: null,
+  email: null,
+  address: null,
+  special_instructions: "",
+  recognized: 0,
+  donation_type: null,
+  donation_type_followup: null,
+  consent: 0,
+});
+
+const submit = async () => {
+  Loading.show(500);
+
+  const response = await callApi({
+    path: "/legacy-giving",
+    method: "post",
+    payload: form.value,
+  });
+
+  if (response.status == "ok") {
+    Notify.create({
+      type: "positive",
+      message: "Donation submitted successfully!",
+    });
+  } else {
+    Notify.create({
+      type: "negative",
+      message: "Donation submission failed. Please try again.",
+    });
+  }
+
+  Loading.hide();
+};
 </script>

@@ -157,7 +157,7 @@ class MondayService
 
         $column_values = [];
         foreach ($column_builder as $column) {
-            if ($column['id'] == 'email') {
+            if (substr($column['id'], 0, 5) == 'email') {
                 $column_values[$column['id']] = [
                     'email' => $item[$column['field']],
                     'text' => $item[$column['field']]

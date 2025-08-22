@@ -40,41 +40,66 @@ return [
         ]
     ],
     'form-config' => [
-        [
-            'field' => 'legal_name_of_donor',
+        'title' => 'Legacy Donation and Planned Giving Intention',
+        'buttonLabel' => 'Submit',
+        'legal_name_of_donor' => [
             'label' => 'Legal Name of Donor',
+            'type' => 'text'
         ],
-        [
-            'field' => 'phone',
+        'phone' => [
             'label' => 'Phone Number',
+            'type' => 'tel',
+            'mask' => '(###) ### - ####'
         ],
-        [
-            'field' => 'cedula_passport',
-            'label' => 'Cédula or Passport Number'
+        'cedula_passport' => [
+            'label' => 'Cédula or Passport Number',
+            'label' => 'Cédula or Passport Number',
+            'type' => 'number'
         ],
-        [
-            'field' => 'email',
-            'label' => 'Email Address'
+        'email' => [
+            'label' => 'Email Address',
+            'label' => 'Email Address',
+            'type' => 'email'
         ],
-        [
-            'field' => 'address',
-            'label' => 'Address'
+        'address' => [
+            'label' => 'Address',
+            'type' => 'textarea'
         ],
-        [
-            'field' => 'special_instructions',
-            'label' => 'Special Instructions'
+        'special_instructions' => [
+            'label' => 'Special Instructions',
+            'label' => 'Special Instructions',
+            'type' => 'textarea'
         ],
-        [
-            'field' => 'recognized',
-            'label' => "I would like to be recognized as a member of FAAN's Legal Society"
+        'recognized' => [
+            'label' => "I would like to be recognized as a member of FAAN's Legal Society",
+            'type' => 'checkbox'
         ],
-        [
-            'field' => 'donation_type',
-            'label' => 'Donation Type'
+        'donation_type' => [
+            'label' => 'Donation Type',
+            'type' => 'select',
+            'options' => [
+                ['label' => 'Outright Bequest (Fixed $ Amount)', 'value' => 'fixed'],
+                ['label' => 'Outright Bequest (% of Estate)', 'value' => 'percentage'],
+                ['label' => 'Donation of Specific Assets', 'value' => 'donation']
+            ],
+            'followups' => [
+                'fixed' => [
+                    'label' => '$ Amount',
+                    'type' => 'number'
+                ],
+                'percentage' => [
+                    'label' => '% of Estate',
+                    'type' => 'number'
+                ],
+                'donation' => [
+                    'label' => 'Specific Assets',
+                    'type' => 'textarea'
+                ],
+            ]
         ],
-        [
-            'field' => 'consent',
-            'label' => 'I consent to have this website hold my personal data solely for communication purposes and understand that it will not be shared with any third parties.'
+        'consent' => [
+            'label' => 'I consent to have this website hold my personal data solely for communication purposes and understand that it will not be shared with any third parties.',
+            'type' => 'checkbox'
         ]
     ],
     'recaptcha' => "This site is protected by reCAPTCHA and the Google <a href='https://policies.google.com/privacy' target='_blank'>Privacy Policy</a> and <a href='https://policies.google.com/terms' target='_blank'>Terms of Service</a> apply."

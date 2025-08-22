@@ -31,4 +31,7 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('legacy-giving', [LegacyGivingController::class, 'index'])
         ->name('legacy-giving.index');
+
+    Route::post('legacy-giving', [LegacyGivingController::class, 'store'])
+        ->name('legacy-giving.store');
 })->middleware(SetLocale::class);

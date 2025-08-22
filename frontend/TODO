@@ -4,10 +4,13 @@
 ✔ set up donation form on monday.com @done(25-08-19 08:00)
 ✔ set up donation payment method dialogs @done(25-08-19 10:42)
 
-☐ set up legacy giving page
-☐ set up legacy giving form
-☐ set up legacy board at monday.com
-☐ tie legacy giving form to monday.com board
+✔ set up legacy giving page @done(25-08-21 09:54)
+✔ set up legacy giving form @done(25-08-21 17:50)
+✔ set up legacy board at monday.com @done(25-08-21 21:24)
+✔ tie legacy giving form to monday.com board @done(25-08-21 21:24)
+
+☐ volunteering api route & controller
+☐ volunteering page
 
 recaptcha process for forms:
     ✔ get token from window.grecaptcha @done(25-08-18 09:48)
