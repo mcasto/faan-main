@@ -4,11 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\LegacyGiving;
 use App\Services\MondayService;
+use App\Services\RecaptchaV3Service;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class LegacyGivingController extends Controller
 {
+    protected $recaptchaService;
+
+    public function __construct(RecaptchaV3Service $recaptchaService)
+    {
+        $this->recaptchaService = $recaptchaService;
+    }
+
     /**
      * Show the legacy giving page.
      *
@@ -45,6 +53,25 @@ class LegacyGivingController extends Controller
 
         $valid['donation_type'] = $request->donation_type['value'];
         $valid['donation_details'] = $request->donation_type_followup;
+
+        $recaptchaResult = $this->recaptchaService->verify(
+            $request,
+            'legacy_submit', // Custom action name
+            0.5 // Minimum score threshold
+        );
+
+        if (!$recaptchaResult['success']) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'reCAPTCHA verification failed',
+                'recaptcha_errors' => $recaptchaResult['error'] ?? null,
+                'score' => $recaptchaResult['score'] ?? 0
+            ], 403);
+        }
+
+        $valid['recaptcha_score'] = $recaptchaResult['score'];
+
+        logger()->info(['valid' => $valid]);
 
         $rec = LegacyGiving::create($valid);
 

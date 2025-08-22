@@ -261,23 +261,40 @@ const form = ref({
 });
 
 const submit = async () => {
-  Loading.show(500);
+  if (!window.grecaptcha) {
+    console.error("reCAPTCHA not loaded");
+    return;
+  }
 
-  const response = await callApi({
-    path: "/legacy-giving",
-    method: "post",
-    payload: form.value,
-  });
+  Loading.show({ delay: 500 });
 
-  if (response.status == "ok") {
-    Notify.create({
-      type: "positive",
-      message: "Donation submitted successfully!",
+  try {
+    const token = await grecaptcha.execute(
+      "6LdxjJ0pAAAAAHexaPVRXnCvMVw5c7muIPcKJ7w9",
+      {
+        action: "legacy_submit",
+      }
+    );
+
+    const response = await store.submitForm({
+      path: "/legacy-giving",
+      token,
+      formData: form.value,
     });
-  } else {
+
+    if (response.status == "ok") {
+      Notify.create({
+        type: "positive",
+        message: "Legacy Giving Intention submitted successfully!",
+      });
+    }
+
+    console.log({ response });
+  } catch (error) {
+    console.error("reCAPTCHA failed:", error);
     Notify.create({
       type: "negative",
-      message: "Donation submission failed. Please try again.",
+      message: "Verification failed. Please try again.",
     });
   }
 

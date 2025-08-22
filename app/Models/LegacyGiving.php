@@ -14,6 +14,8 @@ class LegacyGiving extends Model
         'address',
         'special_instructions',
         'recognized',
-        'donation_type'
+        'donation_type',
+        'donation_details',
+        'recaptcha_score'
     ];
 }

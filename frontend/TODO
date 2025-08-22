@@ -11,7 +11,7 @@ recaptcha process for forms:
     ✔ adds response to form data @done(25-08-19 08:00)
     ✔ inserts data into the table @done(25-08-19 08:00)
     ✔ sends data to monday.com (which handles the emailing) @done(25-08-19 08:00)
-    ☐ make sure I did this for legacy giving form
+    ✔ make sure I did this for legacy giving form @done(25-08-22 11:59)
 
 ☐ integrate gtag into index.html
 
