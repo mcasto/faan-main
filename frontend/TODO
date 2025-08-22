@@ -1,16 +1,8 @@
-☐ handle form submit for donations
 ☐ spanish translations
 
-✔ set up donation form on monday.com @done(25-08-19 08:00)
-✔ set up donation payment method dialogs @done(25-08-19 10:42)
-
-✔ set up legacy giving page @done(25-08-21 09:54)
-✔ set up legacy giving form @done(25-08-21 17:50)
-✔ set up legacy board at monday.com @done(25-08-21 21:24)
-✔ tie legacy giving form to monday.com board @done(25-08-21 21:24)
-
-☐ volunteering api route & controller
-☐ volunteering page
+meet the faantastics:
+    ☐ set up api & controller
+    ☐ set up page
 
 recaptcha process for forms:
     ✔ get token from window.grecaptcha @done(25-08-18 09:48)
@@ -19,6 +11,7 @@ recaptcha process for forms:
     ✔ adds response to form data @done(25-08-19 08:00)
     ✔ inserts data into the table @done(25-08-19 08:00)
     ✔ sends data to monday.com (which handles the emailing) @done(25-08-19 08:00)
+    ☐ make sure I did this for legacy giving form
 
 ☐ integrate gtag into index.html
 

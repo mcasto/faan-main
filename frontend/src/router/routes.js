@@ -121,6 +121,15 @@ const routes = [
       {
         path: "volunteering",
         component: () => import("pages/VolunteeringPage.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.volunteering = await callApi({
+            path: "/volunteering",
+            method: "get",
+          });
+
+          console.log({ volunteering: store.volunteering });
+        },
         meta: { label: { en: "Volunteering", es: "Voluntariado" } },
         name: "volunteering",
       },
