@@ -13,7 +13,7 @@ return [
     ],
     'form' => [
         'header' => "If you'd like to send us an email, please fill out this form.",
-        'name' => 'Name',
+        'contact_name' => 'Name',
         'email' => 'Email',
         'phone' => 'Phone',
         'subject' => 'Subject',

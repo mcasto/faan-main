@@ -58,8 +58,8 @@
             <div class="col-12 col-md-4 q-px-xs">
               <q-input
                 type="text"
-                v-model="form.name"
-                :label="store.contact.form.name"
+                v-model="form.contact_name"
+                :label="store.contact.form.contact_name"
                 outlined
                 dense
                 :rules="[(val) => !!val || 'Name is required']"
@@ -79,7 +79,7 @@
 
             <div class="col-12 col-md-4 q-px-xs">
               <q-input
-                type="number"
+                type="text"
                 v-model="form.phone"
                 :label="store.contact.form.phone"
                 outlined
@@ -142,7 +142,8 @@
 </template>
 
 <script setup>
-import { Screen } from "quasar";
+import { Loading, Notify, Screen } from "quasar";
+import callApi from "src/assets/call-api";
 import { useStore } from "src/stores/store";
 import { ref } from "vue";
 
@@ -153,12 +154,49 @@ const form = ref({
   email: null,
   join_mailing_list: false,
   message: "",
-  name: null,
+  contact_name: null,
   phone: null,
   subject: null,
 });
 
 const submit = async () => {
-  console.log(form.value);
+  if (!window.grecaptcha) {
+    console.error("reCAPTCHA not loaded");
+    return;
+  }
+
+  Loading.show({ delay: 500 });
+
+  try {
+    const token = await grecaptcha.execute(
+      "6LdxjJ0pAAAAAHexaPVRXnCvMVw5c7muIPcKJ7w9",
+      {
+        action: "contact_submit",
+      }
+    );
+
+    const response = await store.submitForm({
+      path: "/contact",
+      token,
+      formData: form.value,
+    });
+
+    if (response.status == "ok") {
+      Notify.create({
+        type: "positive",
+        message: "Contact submitted successfully!",
+      });
+    }
+
+    console.log({ response });
+  } catch (error) {
+    console.error("reCAPTCHA failed:", error);
+    Notify.create({
+      type: "negative",
+      message: "Verification failed. Please try again.",
+    });
+  }
+
+  Loading.hide();
 };
 </script>

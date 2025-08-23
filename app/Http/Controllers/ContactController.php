@@ -34,9 +34,9 @@ class ContactController extends Controller
     {
         // 1. Validate basic form fields
         $valid = $request->validate([
-            'name' => 'required|string|max:255',
+            'contact_name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|numeric|min:1',
+            'phone' => 'required|string|min:1',
             'subject' => 'required|string',
             'message' => 'required|string',
             'join_mailing_list' => 'boolean',
@@ -45,7 +45,7 @@ class ContactController extends Controller
         // 2. Verify reCAPTCHA
         $recaptchaResult = $this->recaptchaService->verify(
             $request,
-            'donation_submit', // Custom action name
+            'contact_submit', // Custom action name
             0.5 // Minimum score threshold
         );
 
@@ -67,18 +67,9 @@ class ContactController extends Controller
             $rec = Contact::find($inserted->id);
 
             $monday = new MondayService();
-            $item = [
-                'donor_name' => $rec->name,
-                'donor_email' => $rec->email,
-                'donation_date' => now()->toDateString(),
-                'donation_amount' => $rec->amount,
-                'donation_method' => $rec->donation_method,
-                'donation_type' => $rec->type,
-                'recaptcha_score' => $rec->recaptcha_score,
-                'id' => $rec->id
-            ];
+            $item = $rec->toArray();
 
-            $response = $monday->addItem('Web Donations', $item);
+            $response = $monday->addItem('Web Contacts', $item);
 
             if (isset($response->status) && $response->status == 'error') {
                 // Error adding item to monday, return error information
@@ -89,7 +80,7 @@ class ContactController extends Controller
                 'status' => 'ok',
             ]);
         } catch (\Exception $e) {
-            logger()->error('Donation processing failed', ['error' => $e->getMessage()]);
+            logger()->error('Contact submission failed', ['error' => $e->getMessage()]);
             return response()->json([
                 'status' => 'error',
                 'message' => $e->getMessage(),

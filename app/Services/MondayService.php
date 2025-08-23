@@ -132,6 +132,11 @@ class MondayService
      * @param string $boardName
      * @param array $item
      * @return mixed
+     *
+     * email fields get handled automatically
+     * date fields should be TEXT in monday board
+     * phone fields should be TEXT in monday board
+     * boolean fields should be NUMBERS in monday board
      */
     public function addItem($boardName, $item): mixed
     {
