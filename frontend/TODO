@@ -1,9 +1,5 @@
 ☐ spanish translations
 
-meet the faantastics:
-    ☐ set up api & controller
-    ☐ set up page
-
 recaptcha process for forms:
     ✔ get token from window.grecaptcha @done(25-08-18 09:48)
     ✔ submit token with form data @done(25-08-18 10:22)

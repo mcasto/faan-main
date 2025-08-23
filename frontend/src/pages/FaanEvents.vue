@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="faan-events">
     <router-view :header="header" :list="list"></router-view>
   </div>
 </template>
