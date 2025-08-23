@@ -28,7 +28,7 @@
                                 {{ app()->getLocale() === 'es' ? 'Miembros de la Junta' : 'Board Members' }}
                             </h2>
                             <div class="text-gray-700">
-                                {!! $boardSection !!}
+                                {!! $board !!}
                             </div>
                         </div>
                     </section>
@@ -40,7 +40,7 @@
                                 {{ app()->getLocale() === 'es' ? 'Equipo del Refugio y Voluntarios' : 'Shelter Team & Volunteers' }}
                             </h2>
                             <div class="text-gray-700">
-                                {!! $teamSection !!}
+                                {!! $shelter !!}
                             </div>
                         </div>
                     </section>
@@ -52,7 +52,7 @@
                                 {{ app()->getLocale() === 'es' ? 'Comité de Gala 2025' : '2025 Gala Committee' }}
                             </h2>
                             <div class="text-gray-700">
-                                {!! $committeeSection !!}
+                                {!! $committee !!}
                             </div>
                         </div>
                     </section>

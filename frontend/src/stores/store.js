@@ -16,6 +16,8 @@ export const useStore = defineStore(
       home: ref(null),
       language: ref("en"),
       legacyGiving: ref(null),
+      mediaResources: ref(null),
+      meetFaantastics: ref(null),
       shelter: ref(null),
     };
     const getters = {};

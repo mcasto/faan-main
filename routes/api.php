@@ -5,6 +5,8 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LegacyGivingController;
+use App\Http\Controllers\MediaResourcesController;
+use App\Http\Controllers\MeetFaantasticsController;
 use App\Http\Controllers\ShelterProjectController;
 use App\Http\Controllers\VolunteeringController;
 use App\Http\Middleware\SetLocale;
@@ -38,4 +40,10 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('volunteering', [VolunteeringController::class, 'index'])
         ->name('volunteering.index');
+
+    Route::get('meet-the-faan-tastics', [MeetFaantasticsController::class, 'index'])
+        ->name('meet-the-faan-tastics.index');
+
+    Route::get('media-resources', [MediaResourcesController::class, 'index'])
+        ->name('media-resources.index');
 })->middleware(SetLocale::class);

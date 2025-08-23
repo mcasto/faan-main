@@ -1,3 +1,4 @@
+import { before } from "lodash-es";
 import callApi from "src/assets/call-api";
 import { useStore } from "src/stores/store";
 
@@ -136,6 +137,13 @@ const routes = [
       {
         path: "meet-the-faantastics",
         component: () => import("pages/MeetTheFaantastics.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.meetFaantastics = await callApi({
+            path: "/meet-the-faan-tastics",
+            method: "get",
+          });
+        },
         meta: {
           label: {
             en: "Meet the FAAN-TASTICS",
@@ -147,6 +155,13 @@ const routes = [
       {
         path: "media-resources",
         component: () => import("pages/MediaResources.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.mediaResources = await callApi({
+            path: "/media-resources",
+            method: "get",
+          });
+        },
         meta: { label: { en: "Media/Resources", es: "Medios/Recursos" } },
         name: "media-resources",
       },

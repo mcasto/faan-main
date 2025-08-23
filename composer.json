@@ -67,6 +67,11 @@
       "cd frontend && yarn build",
       "cp -R frontend/dist/spa/* public/"
     ],
+    "clear": [
+      "@php artisan cache:clear",
+      "@php artisan config:clear",
+      "@php artisan route:clear"
+    ],
     "deploy-hostinger": [
       "[ -f ./symlink.sh ] || { echo 'symlink.sh not found'; exit 1; }",
       "[ -f .env.production ] && mv .env.production .env || echo '.env.production not found, skipping move.'",
