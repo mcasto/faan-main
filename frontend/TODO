@@ -1,5 +1,11 @@
 ☐ spanish translations
 
+Contact Us:
+    ☐ set up form
+    ☐ with recaptcha
+    ☐ set up monday board
+    ☐ tie form to monday board
+
 recaptcha process for forms:
     ✔ get token from window.grecaptcha @done(25-08-18 09:48)
     ✔ submit token with form data @done(25-08-18 10:22)
