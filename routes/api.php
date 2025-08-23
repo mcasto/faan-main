@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdoptionController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
@@ -49,4 +50,7 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('media-resources', [MediaResourcesController::class, 'index'])
         ->name('media-resources.index');
+
+    Route::get('contact', [ContactController::class, 'index'])
+        ->name('contact.index');
 })->middleware(SetLocale::class);

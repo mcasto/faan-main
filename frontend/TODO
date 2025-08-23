@@ -1,7 +1,7 @@
 ☐ spanish translations
 
 Contact Us:
-    ☐ set up form
+    ✔ set up form @done(25-08-23 13:00)
     ☐ with recaptcha
     ☐ set up monday board
     ☐ tie form to monday board
@@ -16,5 +16,7 @@ recaptcha process for forms:
     ✔ make sure I did this for legacy giving form @done(25-08-22 11:59)
 
 ☐ integrate gtag into index.html
+
+☐ set up meta integration for SEO
 
 ☐ set up webook for paypal integration
