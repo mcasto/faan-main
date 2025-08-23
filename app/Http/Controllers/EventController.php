@@ -6,6 +6,7 @@ use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -18,6 +19,10 @@ class EventController extends Controller
      */
     public function index(string $language, string $type): JsonResponse
     {
+        if ($type != 'upcoming' && $type != 'past') {
+            return response()->json(['error' => 'Invalid event type'], 400);
+        }
+
         $today = Carbon::today()->toDateString();
 
         if ($type == 'upcoming') {
@@ -31,11 +36,13 @@ class EventController extends Controller
 
         if ($type == 'past') {
             // Fetch past events
-            $events = Event::where('expires', '<', $today)
+            $events = Event::where('is_active', 1)
+                ->where('expires', '<', $today)
                 ->orderBy('expires', 'desc')
                 ->get();
         }
 
+        $events['header'] = __('events.headers.' . $type);
         return response()->json($events);
     }
 
@@ -58,9 +65,11 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $language, string $slug)
     {
-        //
+        $event = Event::where('slug', $slug)->firstOrFail();
+        $event->html = __('events.' . $slug);
+        return response()->json($event);
     }
 
     /**

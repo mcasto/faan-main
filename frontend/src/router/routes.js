@@ -179,6 +179,20 @@ const routes = [
         meta: { label: { en: "Contact Us", es: "Contáctenos" } },
         name: "contact-us",
       },
+      {
+        path: "event/:slug",
+        component: () => import("pages/ViewEvent.vue"),
+        beforeEnter: async (to) => {
+          const store = useStore();
+
+          store.event = await callApi({
+            path: `/event/${to.params.slug}`,
+            method: "get",
+          });
+        },
+        meta: { label: { en: "View Event", es: "Ver Evento" }, visible: false },
+        name: "view-event",
+      },
     ],
   },
 

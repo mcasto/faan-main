@@ -77,7 +77,10 @@ const route = useRoute();
 const store = useStore();
 
 const navList = computed(() => {
-  const list = store.router.getRoutes().filter(({ name }) => name);
+  const list = store.router
+    .getRoutes()
+    .filter(({ name }) => name)
+    .filter(({ meta }) => meta?.visible !== false);
   return list;
 });
 

@@ -9,6 +9,7 @@ export const useStore = defineStore(
       adoptions: ref(null),
       drawer: ref(false),
       donations: ref(null),
+      event: ref(null),
       events: ref({
         past: [],
         upcoming: [],

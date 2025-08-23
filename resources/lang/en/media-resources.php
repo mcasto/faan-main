@@ -1,6 +1,6 @@
 <?php
 return [
-    'linkHeader' => 'Online Resources',
+    'linkHeader' => 'Online Multimedia',
     'top' => [
         'header' => 'Media & Resources',
         'paragraphs' => [
