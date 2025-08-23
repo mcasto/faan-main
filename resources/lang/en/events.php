@@ -1,5 +1,13 @@
 <?php
 return [
+    'meta' => [
+        'title' => 'FAAN Events - FAAN Foundation for Animal Welfare',
+        'description' => 'FAAN Events,fundaci\u00f3n faan familia amor animale',
+        'keywords' => 'Animal Rescue and Adoption',
+        'ogTitle' => 'FAAN Events - Fundaci\u00f3n FAAN, Familia Amor y Animale-Animal Rescue and Adoption',
+        'ogDescription' => 'FAAN Events,fundaci\u00f3n faan familia amor animale',
+        'ogLocale' => 'en_US'
+    ],
     'headers' => [
         'past' => 'Past Events',
         'upcoming' => 'Current / Upcoming Events'

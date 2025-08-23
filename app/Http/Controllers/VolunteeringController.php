@@ -14,6 +14,7 @@ class VolunteeringController extends Controller
     public function index()
     {
         return response()->json([
+            'meta' => __('volunteering.meta'),
             'volunteer' => __('volunteering.volunteer'),
             'pawffice' => __('volunteering.pawffice'),
             'pawsForCoffee' => __('volunteering.paws-for-coffee'),

@@ -20,6 +20,7 @@ export const useStore = defineStore(
       legacyGiving: ref(null),
       mediaResources: ref(null),
       meetFaantastics: ref(null),
+      meta: ref(null),
       shelter: ref(null),
     };
     const getters = {};

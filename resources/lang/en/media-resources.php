@@ -1,5 +1,13 @@
 <?php
 return [
+    'meta' => [
+        'title' => 'Media/Resources -Animal Rescue and Adoption',
+        'description' => 'Media/Resources - fundación faan familia amor animale,Animal Rescue and Adoption',
+        'keywords' => 'Animal Rescue and Adoption,Ecuador',
+        'ogTitle' => 'Media - Fundación FAAN, Familia Amor y Animale-Animal Rescue and Adoption',
+        'ogDescription' => 'Media/Resources - fundación faan familia amor animale,Animal Rescue and Adoption',
+        'ogLocale' => 'en_US'
+    ],
     'linkHeader' => 'Online Multimedia',
     'top' => [
         'header' => 'Media & Resources',

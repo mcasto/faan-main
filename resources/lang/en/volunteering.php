@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'Volunteering to save animals - FAAN Foundation',
+        'description' => 'Volunteer for Animal Rescue and Adoption',
+        'keywords' => 'volunteer,Animal Rescue and Adoption,FAAN',
+        'ogTitle' => 'Volunteering to save animals - FAAN Foundation',
+        'ogDescription' => 'Volunteer for Animal Rescue and Adoption',
+        'ogLocale' => 'en_US'
+    ],
     'volunteer' => [
         'header' => 'Volunteer to Save Animals',
         'paragraphs' => [

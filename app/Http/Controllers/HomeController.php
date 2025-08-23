@@ -16,6 +16,7 @@ class HomeController extends Controller
     {
         return response()->json(
             [
+                'meta' => __('home.meta'),
                 'footer' => __('home.footer')
             ]
         );

@@ -22,6 +22,7 @@ class AdoptionController extends Controller
 
         return response()->json(
             [
+                'meta' => __('adoptions.meta'),
                 'bannerLeftHeader' => __('adoptions.banner-left-header'),
                 'bannerLeftText' => __('adoptions.banner-left-text'),
                 'bannerRightHeader' => __('adoptions.banner-right-header'),

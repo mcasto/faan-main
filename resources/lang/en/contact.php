@@ -1,5 +1,13 @@
 <?php
 return [
+    'meta' => [
+        'title' => 'Contact - Fundación FAAN, Familia Amor y Animale-Animal Rescue and Adoption',
+        'description' => 'Contact fundación faan familia amor animale,Animal Rescue and Adoption',
+        'keywords' => 'contacts,FAAN,Animal Rescue and Adoption',
+        'ogTitle' => 'Contact - Fundación FAAN, Familia Amor y Animales-Animal Rescue and Adoption',
+        'ogDescription' => 'Contact fundación faan familia amor animale,Animal Rescue and Adoption',
+        'ogLocale' => 'en_US'
+    ],
     'header' => 'Contact the FAAN Team',
     'image' => '/page-images/contact-us.jpeg',
     'phone' => [

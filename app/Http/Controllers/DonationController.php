@@ -24,6 +24,7 @@ class DonationController extends Controller
     {
         return response()->json(
             [
+                'meta' => __('donations.meta'),
                 'header' => __('donations.header'),
                 'subtitle' => __('donations.subtitle'),
                 'contributionHeader' => __('donations.contribution-header'),

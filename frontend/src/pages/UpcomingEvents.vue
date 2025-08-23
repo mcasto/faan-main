@@ -46,6 +46,7 @@ const list = computed(() => {
 
   const output = { ...list };
   delete output.header;
+  delete output.meta;
 
   return Object.values(output);
 });

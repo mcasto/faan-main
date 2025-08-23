@@ -9,6 +9,7 @@ class MediaResourcesController extends Controller
     public function index()
     {
         return response()->json([
+            'meta' => __('media-resources.meta'),
             'top' => __('media-resources.top'),
             'images' => __('media-resources.images'),
             'benefits' => __('media-resources.benefits'),

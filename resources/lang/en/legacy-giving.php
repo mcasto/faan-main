@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'Legacy Giving - Donations - FAAN Foundation',
+        'description' => 'Legacy Giving for Dogs in Equador',
+        'keywords' => 'Legacy Giving,heir program,volunteer,Animal Rescue and Adoption,FAAN',
+        'ogTitle' => 'Volunteering to save animals - FAAN Foundation',
+        'ogDescription' => 'Legacy Giving for Dogs in Equador',
+        'ogLocale' => 'en_US'
+    ],
     'header-area' => [
         'header' => 'Legacy Giving',
         'subtitle' => 'Consider leaving to animal welfare by including FAAN (<strong>Fundacion Familia Amor Animal</strong>) in your final estate plans.',

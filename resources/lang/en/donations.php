@@ -1,5 +1,13 @@
 <?php
 return [
+    'meta' => [
+        'title' => 'Animal Rescue and Adoption, donations to save animals',
+        'description' => 'Donations -  Donate to Save Animals in Ecuador',
+        'keywords' => 'donate to help save animals in Ecuador,FAAN Ecuador',
+        'ogTitle' => 'Animal Rescue and Adoption, donations to save animals',
+        'ogDescription' => 'donate to help save animals in Ecuador,FAAN Ecuador',
+        'ogLocale' => 'en_US'
+    ],
     'header' => 'Help the Animals of Cuenca, Ecuador',
     'subtitle' => 'Please donate to FAAN (Funcdación Familia Amor Animal) and help our dogs get a "New Leash On Life"',
     'contribution-header' => 'We welcome any and all contributions ...',

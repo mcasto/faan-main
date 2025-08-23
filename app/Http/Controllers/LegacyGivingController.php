@@ -25,6 +25,7 @@ class LegacyGivingController extends Controller
     public function index(): JsonResponse
     {
         return response()->json([
+            'meta' => __('legacy-giving.meta'),
             'headerArea' => __('legacy-giving.header-area'),
             'leftColumn' => __('legacy-giving.left-column'),
             'rightColumn' => __('legacy-giving.right-column'),

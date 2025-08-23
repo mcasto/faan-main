@@ -14,6 +14,7 @@ class ShelterProjectController extends Controller
     public function show(): JsonResponse
     {
         return response()->json([
+            'meta' => __('shelter-project.meta'),
             'header' => __('shelter-project.header'),
             'subtitle' => __('shelter-project.subtitle'),
             'overview' => __('shelter-project.overview'),

@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'Meet the FAAN-TASTICS',
+        'description' => 'Meet the FAAN-TASTICS - dedicated individuals making a difference in animal rescue and adoption.',
+        'keywords' => 'FAAN-TASTICS, animal rescue, adoption, volunteers',
+        'ogTitle' => 'Meet the FAAN-TASTICS - FAAN Foundation',
+        'ogDescription' => 'Meet the FAAN-TASTICS - dedicated individuals making a difference in animal rescue and adoption.',
+        'ogLocale' => 'en_US'
+    ],
     'header' => 'Meet the FAAN-TASTICS',
     'board' => [
         'header' => 'Board Members',

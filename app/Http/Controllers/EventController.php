@@ -43,6 +43,7 @@ class EventController extends Controller
         }
 
         $events['header'] = __('events.headers.' . $type);
+        $events['meta'] = __('events.meta');
         return response()->json($events);
     }
 

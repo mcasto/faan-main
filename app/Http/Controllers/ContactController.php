@@ -19,6 +19,7 @@ class ContactController extends Controller
     public function index()
     {
         return response()->json([
+            'meta' => __('contact.meta'),
             'header' => __('contact.header'),
             'image' => __('contact.image'),
             'phone' => __('contact.phone'),

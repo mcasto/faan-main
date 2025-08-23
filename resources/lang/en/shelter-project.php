@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'FAAN Shelter Project-Ecuador',
+        'description' => 'FAAN Shelter Project-Ecuador',
+        'keywords' => 'animal shelter project,Proyecto de refugio de animale,Ecuador,Animal Rescue and Adoption',
+        'ogTitle' => 'FAAN Shelter Project-Ecuador',
+        'ogDescription' => 'FAAN Shelter Project-Ecuador',
+        'ogLocale' => 'en_US'
+    ],
     'header' => "FAAN's Current Shelter Project & Goals",
     'subtitle' => 'Keeping Animals Safe in Cuenca, Ecuador',
     'overview' => "We did it! We raised funds to purchase permanent land for the dogs of FAAN who were facing eviction. We are now entering building construction so that our dogs will have a safe and modern sanctuary that, hand in hand with education, prevention, and adoption, will make a real difference in Cuenca's care and kindness for abandoned, rescued, and vulnerable dogs.",

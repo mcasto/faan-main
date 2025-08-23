@@ -1,7 +1,9 @@
+✔ set up meta integration for SEO @done(25-08-23 16:02)
+
 ☐ spanish translations
 
 ☐ integrate gtag into index.html
 
-☐ set up meta integration for SEO
-
 ☐ set up webook for paypal integration
+
+☐ need to clean up code for events (reptitious ... probably remove FaanEvents.vue compmletely & rewrite PastEvents.vue & UpcomingEvents.vue)

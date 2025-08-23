@@ -26,6 +26,7 @@ const routes = [
         beforeEnter: async () => {
           const store = useStore();
           store.home = await callApi({ path: "/home", method: "get" });
+          store.meta = store.home.meta;
         },
         meta: { label: { en: "Home", es: "Inicio" } },
         name: "home",
@@ -39,6 +40,7 @@ const routes = [
             path: "/shelter-project",
             method: "get",
           });
+          store.meta = store.shelter.meta;
         },
         meta: { label: { en: "Shelter Project", es: "Proyecto de Refugio" } },
         name: "shelter-project",
@@ -50,6 +52,10 @@ const routes = [
           {
             path: "/upcoming-events",
             component: () => import("pages/UpcomingEvents.vue"),
+            beforeEnter: () => {
+              const store = useStore();
+              store.meta = store.events.upcoming.meta;
+            },
             meta: {
               label: { en: "Current / Upcoming", es: "Actual / Próximo" },
               isChild: true,
@@ -59,6 +65,10 @@ const routes = [
           {
             path: "/past-events",
             component: () => import("pages/PastEvents.vue"),
+            beforeEnter: () => {
+              const store = useStore();
+              store.meta = store.events.past.meta;
+            },
             meta: { label: { en: "Past", es: "Pasado" }, isChild: true },
             name: "past-events",
           },
@@ -176,13 +186,6 @@ const routes = [
       {
         path: "contact-us",
         component: () => import("pages/ContactUs.vue"),
-        beforeEnter: async () => {
-          const store = useStore();
-          store.contact = await callApi({
-            path: "/contact",
-            method: "get",
-          });
-        },
         meta: { label: { en: "Contact Us", es: "Contáctenos" } },
         name: "contact-us",
       },
