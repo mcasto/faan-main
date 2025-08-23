@@ -28,6 +28,7 @@ class EventController extends Controller
         if ($type == 'upcoming') {
             // Fetch current & upcoming events
             $events = Event::where('is_active', 1)
+                ->where('language', $language)
                 ->where('starts', '<=', $today)
                 ->where('expires', '>=', $today)
                 ->orderBy('starts', 'asc')
@@ -37,6 +38,7 @@ class EventController extends Controller
         if ($type == 'past') {
             // Fetch past events
             $events = Event::where('is_active', 1)
+                ->where('language', $language)
                 ->where('expires', '<', $today)
                 ->orderBy('expires', 'desc')
                 ->get();

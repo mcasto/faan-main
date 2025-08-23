@@ -1,55 +1,52 @@
 <?php
 
-return [
-    // Navigation
-    'navigation' => [
-        'home' => 'Inicio',
-        'shelter_project' => 'Proyecto de Refugio',
-        'upcoming' => 'Próximos',
-        'adoptions' => 'Adopciones',
-        'donations' => 'Donaciones',
-        'legacy_giving' => 'Donación de Legado',
-        'volunteering' => 'Trabajar como Voluntario',
-        'media_resources' => 'Medios/Recursos',
-        'gala_faantastica' => 'GALA-FAANTASTICA',
-        'meet_faantastics' => 'Conoce a los FAAN-TÁSTICOS',
-        'contact_us' => 'Contáctenos',
-        'donate' => 'Donar',
-        'faan_events' => 'Eventos FAAN',
-        'past' => 'Pasados',
-        'faan_holiday_store' => 'Tienda Navideña FAAN',
-        'faan_atics_slideshow' => 'Presentación de diapositivas de voluntarios de FAAN-atics',
-        'view_pdf' => 'Ver PDF',
-    ],
-
-    // Common UI elements
-    'ui' => [
-        'language' => 'Idioma',
-        'english' => 'Inglés',
-        'spanish' => 'Español',
-        'menu' => 'Menú',
-        'close' => 'Cerrar',
-        'submit' => 'Enviar',
-        'cancel' => 'Cancelar',
-        'loading' => 'Cargando...',
-        'search' => 'Buscar',
-    ],
-
-    // Forms
-    'forms' => [
-        'required' => 'Este campo es obligatorio',
-        'email' => 'Por favor ingrese una dirección de correo válida',
-        'name' => 'Nombre',
-        'email_address' => 'Dirección de Correo',
-        'message' => 'Mensaje',
-        'phone' => 'Teléfono',
-        'subject' => 'Asunto',
-    ],
-
-    // Meta information
-    'meta' => [
-        'default_title' => 'Fundación FAAN - Rescate y Adopción de Animales en Ecuador',
-        'default_description' => 'Salvar, adoptar y ayudar animales en Ecuador, una organización para el rescate, donación y adopción de animales',
-        'keywords' => 'Rescate de Animales,Adopción,Fundación FAAN Ecuador,Rescate de Animales,donar,salvar animales,salvar perros',
-    ],
-];
+return array (
+  'navigation' => 
+  array (
+    'home' => 'Hogar',
+    'shelter_project' => 'Proyecto de refugio',
+    'upcoming' => 'Próximo',
+    'adoptions' => 'Adopción',
+    'donations' => 'Donaciones',
+    'legacy_giving' => 'Legacy Deding',
+    'volunteering' => 'Voluntariado',
+    'media_resources' => 'Medios/recursos',
+    'gala_faantastica' => 'Gala-faantástica',
+    'meet_faantastics' => 'Conoce a los temas de los faan',
+    'contact_us' => 'Contáctenos',
+    'donate' => 'Donar',
+    'faan_events' => 'Eventos de faan',
+    'past' => 'Pasado',
+    'faan_holiday_store' => 'Tienda de vacaciones faan',
+    'faan_atics_slideshow' => 'Espectáculo de diapositivas voluntarias de FAAN-cats',
+    'view_pdf' => 'Ver PDF',
+  ),
+  'ui' => 
+  array (
+    'language' => 'Idioma',
+    'english' => 'Inglés',
+    'spanish' => 'Español',
+    'menu' => 'Menú',
+    'close' => 'Cerca',
+    'submit' => 'Entregar',
+    'cancel' => 'Cancelar',
+    'loading' => 'Cargando...',
+    'search' => 'Buscar',
+  ),
+  'forms' => 
+  array (
+    'required' => 'Este campo es obligatorio',
+    'email' => 'Por favor, introduce una dirección de correo electrónico válida',
+    'name' => 'Nombre',
+    'email_address' => 'Dirección de correo electrónico',
+    'message' => 'Mensaje',
+    'phone' => 'Teléfono',
+    'subject' => 'Sujeto',
+  ),
+  'meta' => 
+  array (
+    'default_title' => 'Fundación FAAN - Rescate y adopción de animales en Ecuador',
+    'default_description' => 'Ahorre, adopte y ayude a los animales en Ecuador, una organización para el rescate de animales, la donación y la adopción',
+    'keywords' => 'Rescate de animales, adopción, Fundación Faan Ecuador, Rescate de Animales, Donate, Save Animals, Save Dogs',
+  ),
+);
