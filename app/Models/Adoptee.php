@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\File;
 class Adoptee extends Model
 {
     protected $fillable = [
+        'monday_id',
         'name',
         'image',
         'description',
+        'language'
     ];
 
     protected $appends = ['description_text'];

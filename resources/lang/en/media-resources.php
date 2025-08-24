@@ -12,7 +12,7 @@ return [
     'top' => [
         'header' => 'Media & Resources',
         'paragraphs' => [
-            "FAAN is a grassroots community organization committed to animal welfare in Cuenca, Ecuador. We are supported by the local community and animal lovers around the world. We are currently working to build Ecuador's most modern and sustainable animal shelter.",
+            "FAAN is a grassroots community organization committed to animal welfare in Cuenca, Ecuador. We are supported by the local community and animal lovers around the world. We are currently working to build Ecuador's most modern and sustainable animal sanctuary.",
             "We've included resources for you to share with family and friends. Together we can achieve our goal of purchasing the land and moving our dogs in the first quarter of 2024."
         ]
     ],
@@ -33,7 +33,7 @@ return [
         'items' => [
             '<em>Education</em>&mdash;Reducing abuse and raising awareness',
             '<em>Spay & Neuter</em>&mdash;Working with a network of community veterinarians',
-            '<em>Adoption, shelter, Refuge</em>&mdash;Getting at risk, senior, and medically challenged dogs off the streets and into forever homes',
+            '<em>Adoption, sanctuary, Refuge</em>&mdash;Getting at risk, senior, and medically challenged dogs off the streets and into forever homes',
             '<em>Care</em>&mdash;Improving nutrition and providing medical care, training, and a large dose of love'
         ]
     ],
@@ -184,7 +184,7 @@ return [
                     'url' => 'https://yapatree.com/faan-celebrate-world-animal-day/',
                 ],
                 [
-                    'label' => 'Visit our Temporary Shelter',
+                    'label' => 'Visit our Temporary Sanctuary',
                     'url' => 'https://www.youtube.com/watch?v=kAZDjqn3U5Y&t=168s&ab_channel=TravelWithUsbyWarren%26Julie',
                 ]
             ]
@@ -220,7 +220,7 @@ return [
                     'url' => 'https://yapatree.com/faan-celebrate-world-animal-day/',
                 ],
                 [
-                    'label' => 'Visit our Temporary Shelter',
+                    'label' => 'Visit our Temporary Sanctuary',
                     'url' => 'https://www.youtube.com/watch?v=kAZDjqn3U5Y&t=168s&ab_channel=TravelWithUsbyWarren%26Julie',
                 ],
                 [

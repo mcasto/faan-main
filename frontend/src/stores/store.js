@@ -21,7 +21,7 @@ export const useStore = defineStore(
       mediaResources: ref(null),
       meetFaantastics: ref(null),
       meta: ref(null),
-      shelter: ref(null),
+      sanctuary: ref(null),
     };
     const getters = {};
     const actions = {

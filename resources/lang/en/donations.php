@@ -16,7 +16,7 @@ return [
     'join-bullets' => file_get_contents(__DIR__ . '/donations/join-bullets.html'),
     'red-carpet' => [
         'image' => '/images/paws-on-red-carpet.jpeg',
-        'caption' => 'In 2025, our donors will be recognized at Gala FAAN-TASTICA, Old Hollywood as "Paws on the Red Carpet." Your recognition will then be honored at the new shelter!',
+        'caption' => 'In 2025, our donors will be recognized at Gala FAAN-TASTICA, Old Hollywood as "Paws on the Red Carpet." Your recognition will then be honored at the new sanctuary!',
     ],
     'paw-images' => [
         '/images/paws-bronze.png',
@@ -24,7 +24,7 @@ return [
         '/images/paws-gold.png',
         '/images/paws-platinum.png'
     ],
-    'form-header' => "All donations to FAAN, unless specifically designated, are applied to the FAAN General fund which supports both the building of the new shelter and the support and medical care of the approximately 150 animals in our care.",
+    'form-header' => "All donations to FAAN, unless specifically designated, are applied to the FAAN General fund which supports both the building of the new sanctuary and the support and medical care of the approximately 150 animals in our care.",
     'form-title' => 'Donation Form',
     'form-disclaimer' => "This form is only for FAAN's records. We need this information to properly track the donations we receive.",
     'donation-method-header' => 'Choose your donation method',

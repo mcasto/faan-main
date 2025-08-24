@@ -42,7 +42,7 @@ return [
         'pledge' => [
             'header' => "FAAN's Pledge to Donors",
             'items' => [
-                " Bequests to FAAN are used for organizational sustainability of the shelter unless designated for a specific FAAN program or service by the Donor. These funds are closely invested and allocated by agreement of both the combined FAAN Board &amp; US Advisory Board.",
+                " Bequests to FAAN are used for organizational sustainability of the sanctuary unless designated for a specific FAAN program or service by the Donor. These funds are closely invested and allocated by agreement of both the combined FAAN Board &amp; US Advisory Board.",
                 "Upon receipt of a Legacy Intention, Donors will be recognized as members of FAAN's Legacy Society unless an anonymous donation is requested."
             ]
         ]

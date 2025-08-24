@@ -12,7 +12,7 @@ class MeetFaantasticsController extends Controller
             'meta' => __('meet-faantastics.meta'),
             'header' => __('meet-faantastics.header'),
             'board' => __('meet-faantastics.board'),
-            'shelter' => __('meet-faantastics.shelter'),
+            'sanctuary' => __('meet-faantastics.sanctuary'),
             'gala' => __('meet-faantastics.gala'),
         ];
 

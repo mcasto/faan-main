@@ -28,7 +28,7 @@ class RealEventsSeeder extends Seeder
 
         // Create HTML content for Gala
         $galaContent = '<div class="event-content">
-            <p>Cuenca\'s Charity Event of the Year. FAAN is building Ecuador\'s first North American Standard Animal Shelter and helping Cuenca become known as <em>The City That Cares</em>.</p>
+            <p>Cuenca\'s Charity Event of the Year. FAAN is building Ecuador\'s first North American Standard Animal Sanctuary and helping Cuenca become known as <em>The City That Cares</em>.</p>
 
             <div class="event-details mt-4">
                 <h3 class="font-bold text-lg mb-2">Event Information</h3>
@@ -55,33 +55,33 @@ class RealEventsSeeder extends Seeder
 
         // Add a current volunteer/donation drive (inspired by old "Amigo Secreto" concept)
         $drive = Event::create([
-            'title' => 'Emergency Shelter Fund Drive',
-            'subtitle' => 'Help us complete the new shelter construction',
+            'title' => 'Emergency Sanctuary Fund Drive',
+            'subtitle' => 'Help us complete the new sanctuary construction',
             'starts' => Carbon::parse('2025-08-01'),
             'expires' => Carbon::parse('2025-12-31'),
             'hide_dates' => false,
             'is_active' => true,
-            'slug' => 'emergency-shelter-fund-2025'
+            'slug' => 'emergency-sanctuary-fund-2025'
         ]);
 
         $driveContent = '<div class="event-content">
-            <p>FAAN needs your help to complete the construction of Ecuador\'s first North American Standard Animal Shelter. Recent weather challenges have made this project even more urgent.</p>
+            <p>FAAN needs your help to complete the construction of Ecuador\'s first North American Standard Animal Sanctuary. Recent weather challenges have made this project even more urgent.</p>
 
             <h3 class="font-bold text-lg mt-4 mb-2">How You Can Help:</h3>
             <ul class="list-disc ml-6 mb-4">
-                <li>Make a financial contribution to the shelter construction fund</li>
+                <li>Make a financial contribution to the sanctuary construction fund</li>
                 <li>Sponsor a dog kennel or cat enclosure</li>
                 <li>Donate construction materials or services</li>
                 <li>Volunteer your time for fundraising events</li>
             </ul>
 
             <p class="bg-blue-50 p-4 rounded-lg">
-                <strong>Goal:</strong> Raise $50,000 by December 2025 to complete Phase 1 of the new shelter construction.
+                <strong>Goal:</strong> Raise $50,000 by December 2025 to complete Phase 1 of the new sanctuary construction.
             </p>
 
             <div class="mt-4">
                 <a href="/donations" class="text-blue-600 hover:text-blue-800 underline font-semibold">
-                    Donate Now to Help Build the Shelter
+                    Donate Now to Help Build the Sanctuary
                 </a>
             </div>
         </div>';

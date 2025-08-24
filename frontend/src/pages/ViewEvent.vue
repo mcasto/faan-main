@@ -20,6 +20,4 @@ import { useStore } from "src/stores/store";
 import { format } from "date-fns";
 
 const store = useStore();
-
-console.log({ event: store.event });
 </script>

@@ -13,8 +13,10 @@
 
       <q-card class="q-pa-md">
         <q-card-section>
-          <div class="text-h6">{{ store.meetFaantastics.shelter.header }}</div>
-          <div v-html="store.meetFaantastics.shelter.text"></div>
+          <div class="text-h6">
+            {{ store.meetFaantastics.sanctuary.header }}
+          </div>
+          <div v-html="store.meetFaantastics.sanctuary.text"></div>
         </q-card-section>
       </q-card>
 
@@ -32,6 +34,4 @@
 import { useStore } from "src/stores/store";
 
 const store = useStore();
-
-console.log(store.meetFaantastics);
 </script>

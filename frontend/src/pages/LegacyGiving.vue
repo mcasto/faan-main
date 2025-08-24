@@ -289,7 +289,6 @@ const submit = async () => {
       });
     }
 
-    console.log({ response });
   } catch (error) {
     console.error("reCAPTCHA failed:", error);
     Notify.create({

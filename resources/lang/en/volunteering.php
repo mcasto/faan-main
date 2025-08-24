@@ -18,7 +18,7 @@ return [
         volunteers both in Ecuador and around the world to design a rewarding
         experience for our animal loving volunteers want to bring their skills
         and talents to our mission and project to build Ecuador's most modern
-        and sustainable shelter and support animal welfare education."
+        and sustainable sanctuary and support animal welfare education."
         ]
     ],
     'pawffice' => [
@@ -36,9 +36,9 @@ return [
             "Animal Census",
             "Social Media",
             "Foster Care for Animals awaiting adoption",
-            "Work at the Shelter and at Clinics",
+            "Work at the Sanctuary and at Clinics",
             "Medical Care for our Animals",
-            "Construction Work at the Shelter",
+            "Construction Work at the Sanctuary",
             "Donation Collection",
             "Transportation for Volunteers",
             "Adoption/Matchmaking"

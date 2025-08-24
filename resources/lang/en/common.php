@@ -4,7 +4,7 @@ return [
     // Navigation
     'navigation' => [
         'home' => 'Home',
-        'shelter_project' => 'Shelter Project',
+        'sanctuary_project' => 'Sanctuary Project',
         'upcoming' => 'Upcoming',
         'adoptions' => 'Adoptions',
         'donations' => 'Donations',

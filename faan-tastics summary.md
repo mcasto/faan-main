@@ -4,7 +4,7 @@
 I need to implement a new "Meet the FAAN-TASTICS" page in this Laravel project. This page will showcase:
 - Board member photos, short bios & quotes
 - Board videos (under 30 seconds)
-- Shelter team staff & volunteers
+- Sanctuary team staff & volunteers
 - 2025 gala committee (short videos) & photos/quotes
 
 This implementation was already completed in the gala subdomain project and needs to be replicated here in the main FAAN website.
@@ -81,7 +81,7 @@ Route::get('/meet-faantastics', [MeetFaantasticsController::class, 'show'])
             <!-- Team Section -->
             <section class="mb-16">
                 <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-                    <h2 class="text-3xl font-bold text-white mb-8 text-center">Shelter Team & Volunteers</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">Sanctuary Team & Volunteers</h2>
                     <div class="text-white">
                         {!! $teamSection !!}
                     </div>
@@ -112,7 +112,7 @@ return [
     'title' => 'Meet the FAAN-TASTICS',
     'header' => 'Meet the FAAN-TASTICS',
     'boardSection' => '<p class="text-lg">Coming soon: Board member photos, short bios, and inspiring quotes from our dedicated board members who make FAAN\'s mission possible.</p>',
-    'teamSection' => '<p class="text-lg">Coming soon: Meet our amazing shelter team and volunteers who work tirelessly to care for animals in need every day.</p>',
+    'teamSection' => '<p class="text-lg">Coming soon: Meet our amazing sanctuary team and volunteers who work tirelessly to care for animals in need every day.</p>',
     'committeeSection' => '<p class="text-lg">Coming soon: Get to know the 2025 Gala Committee members through short videos, photos, and quotes about why this cause matters to them.</p>',
 ];
 ```
@@ -125,7 +125,7 @@ return [
     'title' => 'Conoce a los FAAN-TÁSTICOS',
     'header' => 'Conoce a los FAAN-TÁSTICOS',
     'boardSection' => '<p class="text-lg">Próximamente: Fotos de los miembros de la junta, biografías cortas y citas inspiradoras de nuestros miembros dedicados de la junta que hacen posible la misión de FAAN.</p>',
-    'teamSection' => '<p class="text-lg">Próximamente: Conoce a nuestro increíble equipo de refugio y voluntarios que trabajan incansablemente para cuidar a los animales necesitados todos los días.</p>',
+    'teamSection' => '<p class="text-lg">Próximamente: Conoce a nuestro increíble equipo de santuario y voluntarios que trabajan incansablemente para cuidar a los animales necesitados todos los días.</p>',
     'committeeSection' => '<p class="text-lg">Próximamente: Conoce a los miembros del Comité de Gala 2025 a través de videos cortos, fotos y citas sobre por qué esta causa les importa.</p>',
 ];
 ```

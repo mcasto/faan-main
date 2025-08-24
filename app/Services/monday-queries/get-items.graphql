@@ -1,0 +1,18 @@
+query {
+  boards(ids: [BOARD_ID]) {
+    items_page(limit:500) {
+      items {
+        id
+        name
+        column_values {
+          id
+          value
+          type
+          column {
+            title
+          }
+        }
+      }
+    }
+  }
+}

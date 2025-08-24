@@ -2,20 +2,20 @@
   <div class="row">
     <div class="col-12 col-md-6 info q-pa-md text-subtitle1">
       <div class="text-h4">
-        {{ store.shelter.header }}
+        {{ store.sanctuary.header }}
       </div>
       <div class="text-h6 q-mb-lg">
-        {{ store.shelter.subtitle }}
+        {{ store.sanctuary.subtitle }}
       </div>
 
-      <div v-html="store.shelter.overview"></div>
+      <div v-html="store.sanctuary.overview"></div>
 
       <div class="text-h6 q-mt-md">
-        {{ store.shelter.project_header }}
+        {{ store.sanctuary.project_header }}
       </div>
 
       <div
-        v-for="phase in store.shelter.phases"
+        v-for="phase in store.sanctuary.phases"
         :key="phase.title"
         class="q-mb-lg q-ml-md"
       >
@@ -69,10 +69,10 @@
         </q-list>
       </div>
 
-      <div v-html="store.shelter.community"></div>
+      <div v-html="store.sanctuary.community"></div>
     </div>
     <div class="location col-12 col-md-6 q-pa-md">
-      <div v-html="store.shelter.preview"></div>
+      <div v-html="store.sanctuary.preview"></div>
     </div>
   </div>
 </template>

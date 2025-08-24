@@ -1,0 +1,6 @@
+query {
+  assets(ids: [ASSET_ID]) {
+    public_url
+    name
+  }
+}

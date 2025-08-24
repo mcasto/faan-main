@@ -18,8 +18,8 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('home', [HomeController::class, 'show'])
         ->name('home');
 
-    Route::get('shelter-project', [ShelterProjectController::class, 'show'])
-        ->name('shelter-project.show');
+    Route::get('sanctuary-project', [ShelterProjectController::class, 'show'])
+        ->name('sanctuary-project.show');
 
     Route::get('event/{slug}', [EventController::class, 'show'])
         ->name('events.show');

@@ -63,7 +63,7 @@ class OriginalEventsSeeder extends Seeder
         // Lucky Paws Groundbreak Pub 2024 (past)
         $groundbreak = Event::create([
             'title' => 'Lucky Paws Groundbreak Pub',
-            'subtitle' => 'Celebrate the groundbreaking of our new shelter',
+            'subtitle' => 'Celebrate the groundbreaking of our new sanctuary',
             'starts' => Carbon::parse('2024-06-15'),
             'expires' => Carbon::parse('2024-06-15'),
             'hide_dates' => false,

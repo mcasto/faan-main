@@ -1,32 +1,32 @@
 <?php
 
-return array (
-  'meta' => 
-  array (
-    'title' => 'Eventos de FAAN - Fundación FAAN para el bienestar animal',
-    'description' => 'Faan Events, Fundaci \\ u00f3n Faan Familia Amor Animale',
-    'keywords' => 'Rescate y adopción de animales',
-    'ogTitle' => 'Eventos de FAAN - Fundaci \\ u00f3n Faan, Familia Amor y Animale -Animal Rescue and Adoption',
-    'ogDescription' => 'Faan Events, Fundaci \\ u00f3n Faan Familia Amor Animale',
-    'ogLocale' => 'EN_US',
-  ),
-  'headers' => 
-  array (
-    'past' => 'Eventos pasados',
-    'upcoming' => 'Eventos actuales / próximos',
-  ),
-  'amigo-secreto-2023' => '<div class="amigo-secreto event">
+return array(
+    'meta' =>
+    array(
+        'title' => 'Eventos de FAAN - Fundación FAAN para el bienestar animal',
+        'description' => 'Faan Events, Fundaci \\ u00f3n Faan Familia Amor Animale',
+        'keywords' => 'Rescate y adopción de animales',
+        'ogTitle' => 'Eventos de FAAN - Fundaci \\ u00f3n Faan, Familia Amor y Animale -Animal Rescue and Adoption',
+        'ogDescription' => 'Faan Events, Fundaci \\ u00f3n Faan Familia Amor Animale',
+        'ogLocale' => 'EN_US',
+    ),
+    'headers' =>
+    array(
+        'past' => 'Eventos pasados',
+        'upcoming' => 'Eventos actuales / próximos',
+    ),
+    'amigo-secreto-2023' => '<div class="amigo-secreto event">
   <p>
-    The Shelter Dogs of FAAN (Fundacion Familia Amor Animal) are asking for your help this Holiday Season with Amigo
+    The Sanctuary Dogs of FAAN (Fundacion Familia Amor Animal) are asking for your help this Holiday Season with Amigo
     Secreto. Donate Food and supplies or sponsor one of our dogs with your financial gift through January 1, 2023!
   </p>
 
   <p>
     The need this holiday season has never been greater! Pawsome! We raised as a community the funds needed to purchase
     the
-    land for the new and permanent animal shelter in Tarqui and now, we need to build the core shelter and move our dogs
+    land for the new and permanent animal sanctuary in Tarqui and now, we need to build the core sanctuary and move our dogs
     as
-    soon as we can due to a recent landslide at the upper shelter. El Nina has placed our pups in serious jeopardy.
+    soon as we can due to a recent landslide at the upper sanctuary. El Nina has placed our pups in serious jeopardy.
   </p>
 
   <p>
@@ -52,7 +52,7 @@ return array (
   <p>
     Make a Financial Gift to FAAN through January 1, 2023. Donations will support FAAN&rsquo;s mission including care and
     support
-    of the dogs and the building of the new shelter. Be sure to write us at info@FAANecuador.org with your donation and
+    of the dogs and the building of the new sanctuary. Be sure to write us at info@FAANecuador.org with your donation and
     notate "I am a FAAN Secret Friend"
   </p>
 
@@ -187,7 +187,7 @@ return array (
   </div>
 </div>
 ',
-  'dogs-art-love-2024' => '<div class="dogs-art-love event">
+    'dogs-art-love-2024' => '<div class="dogs-art-love event">
   <img src="/page-images/dogs-art-love.jpeg">
   <div class="text-xl font-semibold">Art Exhibition February 15th &ndash; March 1st</div>
   <div class="text-lg text-gray-600">
@@ -212,7 +212,7 @@ return array (
   </p>
 </div>
 ',
-  'dogs-in-art-2024' => '<div class="dogs-in-art event">
+    'dogs-in-art-2024' => '<div class="dogs-in-art event">
   <img src="/page-images/dogs-in-art.jpeg">
   <div class="text-xl font-semibold">
     Dogs in Art Through the Ages &amp; Creative Salon
@@ -229,12 +229,12 @@ return array (
   <p>
     Then unleash your creativity with FAAN (Fundaci&oacute;n Familia Amor Animal) volunteers as you create a visual montage and
     community
-    community art piece of FAAN&rsquo;s rescue dogs for display in the new shelter.
+    community art piece of FAAN&rsquo;s rescue dogs for display in the new sanctuary.
   </p>
   <p>
     <span class="text-bold">FREE Workshop:</span><br> (Donations of dog food, flea medicines, blankets and beds always
     welcome for the dogs of the FAAN
-    shelter.)
+    sanctuary.)
   </p>
   <p>
     $20 donation will be greatly appreciated
@@ -246,14 +246,14 @@ return array (
   </p>
 </div>
 ',
-  'faan-expo-2024' => '<div class="faan-expo-2024 event">
+    'faan-expo-2024' => '<div class="faan-expo-2024 event">
   <img src="/page-images/faan-expo-2024/en.jpeg">
 </div>
 ',
-  'gala-2025' => '<div class="amigo-secreto event">
+    'gala-2025' => '<div class="amigo-secreto event">
   <p>
     Cuenca\'s Charity Event of the Year. FAAN is building Ecuador\'s first N.
-    American Standard Animal Shelter and helping Cuenca become known as
+    American Standard Animal Sanctuary and helping Cuenca become known as
     <em>The City That Cares</em>
   </p>
 
@@ -285,7 +285,7 @@ return array (
   </div>
 </div>
 ',
-  'lucky-paws-2024' => '<div class="lucky-paws event">
+    'lucky-paws-2024' => '<div class="lucky-paws event">
 
   <div class="text-content">
     <div class="flex flex-wrap justify-center lucky-paws-background">
@@ -309,7 +309,7 @@ return array (
         <div class="text-white my-4 text-lg text-gray-600">
           A generous Leprechaun will double every donation you make to our
           building fund for the first and most modern
-          animal shelter in Ecuador through May up to $10,000
+          animal sanctuary in Ecuador through May up to $10,000
         </div>
 
         <div class="text-xl font-semibold text-white my-4">
@@ -324,14 +324,14 @@ return array (
     </div>
 
     <div class="mt-4 text-xl font-semibold">St. Patrick\'s Day Matching Grant: Building a
-      Shelter for Lucky Paws</div>
+      Sanctuary for Lucky Paws</div>
 
     <p>
       In the spirit of St. Patrick\'s Day, we\'re thrilled to announce FAAN&lsquo;s Pot
       of Gold Matching Grant for the
       construction
       of
-      Ecuador&rsquo;s first and most modern animal shelter.
+      Ecuador&rsquo;s first and most modern animal sanctuary.
     </p>
 
     <p>
@@ -349,7 +349,7 @@ return array (
 
 </div>
 ',
-  'lucky-paws-groundbreak-pub-2024' => '<div class="lucky-paws event">
+    'lucky-paws-groundbreak-pub-2024' => '<div class="lucky-paws event">
   <img src="/page-images/lucky-paws-2024/invitation-en.jpeg">
 
   <div class="text-content">
@@ -359,13 +359,13 @@ return array (
   </div>
 </div>
 ',
-  'new-volunteers-orientation-2024-04' => '<div class="new-volunteer-orientation-2024-04 event">
+    'new-volunteers-orientation-2024-04' => '<div class="new-volunteer-orientation-2024-04 event">
 
   <img src="/page-images/new-volunteer-orientation-2024/orientation.png">
 
 </div>
 ',
-  'perros-de-esperanza-2024-04' => '<div class="perros-de-esperanze event">
+    'perros-de-esperanza-2024-04' => '<div class="perros-de-esperanze event">
   <img src="/page-images/perros-de-esperanza-2024-04/perros-de-esperanza-en.jpeg">
 
   <div class="text-content">
@@ -394,7 +394,7 @@ return array (
   </div>
 </div>
 ',
-  'ungala-2023' => '<div class="ungala event">
+    'ungala-2023' => '<div class="ungala event">
   <img src="/page-images/gala2023.jpg" style="float:left" class="m-2">
   <div class="mt-4">
     <p>
@@ -407,7 +407,7 @@ return array (
     <p>
       But There&rsquo;s More! In October, you can do some early holiday shopping in our FAAN Pop-Up Store with Pawsome Deals
       from
-      the Gala and your entire purchase will be a donation for the shelter that is also matched and doubled.
+      the Gala and your entire purchase will be a donation for the sanctuary that is also matched and doubled.
     </p>
     <p>
       Pawsome Results Coming Soon!
@@ -419,7 +419,7 @@ return array (
   </div>
 </div>
 ',
-  'wine-to-the-rescue-2023' => '<div class="wine-to-the-rescue event">
+    'wine-to-the-rescue-2023' => '<div class="wine-to-the-rescue event">
   <div class="mt-4">
     <img src="/page-images/winenight2023.jpg" style="float:left" class="m-2">
     <p>
@@ -431,7 +431,7 @@ return array (
     </p>
     <p>
       Our friends at Cosecha have generously partnered with us to present a private-label Chardonnay and Cabernet
-      Sauvignon for FAAN to benefit the building of FAAN&rsquo;s new animal shelter this holiday season.
+      Sauvignon for FAAN to benefit the building of FAAN&rsquo;s new animal sanctuary this holiday season.
     </p>
     <p>
       #FAANVineyard #FAAN #Cosecha
@@ -447,7 +447,7 @@ return array (
     <p class="text-sm text-gray-700 mt-2">
       $15 includes a complimentary tasting of FAAN&rsquo;s private-label Wine and the concert with proceeds supporting the
       building
-      of the new shelter.
+      of the new sanctuary.
     </p>
   </div>
 </div>

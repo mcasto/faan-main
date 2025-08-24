@@ -52,7 +52,7 @@ class EventSeeder extends Seeder
             [
                 'id' => 4,
                 'title' => 'Lucky Paws Groundbreak Pub',
-                'subtitle' => 'Celebrate the groundbreaking of our new shelter',
+                'subtitle' => 'Celebrate the groundbreaking of our new sanctuary',
                 'slug' => 'lucky-paws-groundbreak-pub-2024',
                 'starts' => Carbon::create(2024, 6, 15),
                 'expires' => Carbon::create(2024, 6, 15),

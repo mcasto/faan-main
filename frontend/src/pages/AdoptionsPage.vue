@@ -72,6 +72,8 @@ import { ref } from "vue";
 
 const store = useStore();
 
+console.log({ adoptees: store.adoptions.adoptees });
+
 const slide = ref(0);
 </script>
 

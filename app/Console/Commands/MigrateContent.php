@@ -50,7 +50,7 @@ class MigrateContent extends Command
                 'faan-events',
                 'legacy-giving',
                 'media-resources',
-                'shelter-project',
+                'sanctuary-project',
                 'volunteering'
             ];
 

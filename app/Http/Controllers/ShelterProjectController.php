@@ -14,14 +14,14 @@ class ShelterProjectController extends Controller
     public function show(): JsonResponse
     {
         return response()->json([
-            'meta' => __('shelter-project.meta'),
-            'header' => __('shelter-project.header'),
-            'subtitle' => __('shelter-project.subtitle'),
-            'overview' => __('shelter-project.overview'),
-            'project_header' => __('shelter-project.project_header'),
-            'phases' => __('shelter-project.phases'),
-            'community' => __('shelter-project.community'),
-            'preview' => __('shelter-project.preview'),
+            'meta' => __('sanctuary-project.meta'),
+            'header' => __('sanctuary-project.header'),
+            'subtitle' => __('sanctuary-project.subtitle'),
+            'overview' => __('sanctuary-project.overview'),
+            'project_header' => __('sanctuary-project.project_header'),
+            'phases' => __('sanctuary-project.phases'),
+            'community' => __('sanctuary-project.community'),
+            'preview' => __('sanctuary-project.preview'),
         ]);
     }
 }

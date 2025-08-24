@@ -4,8 +4,19 @@
 
 ✔ check all events for broken links @done(25-08-23 19:26)
 
-☐ integrate gtag into index.html
+✔ integrate gtag into index.html @done(25-08-23 21:44)
+
+☐ replace adoption dogs with clapboard dogs on Adoptions (grid/column)
+
+☐ replace "shelter" with "sanctuary"
+☐ replace "santuario" with "santuario"
+
+☐ new logo for superdogs
+
+☐ go live
 
 ☐ set up webook for paypal integration
 
 ☐ need to clean up code for events (reptitious ... probably remove FaanEvents.vue compmletely & rewrite PastEvents.vue & UpcomingEvents.vue)
+
+

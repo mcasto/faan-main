@@ -20,6 +20,44 @@ class MondayService
         $this->token = env('MONDAY_API_TOKEN');
     }
 
+    public function getAssetUrl($asset_id)
+    {
+        // build the query
+        $query = $this->getQuery('get-image-url');
+        $query = str_replace('ASSET_ID', $asset_id, $query);
+
+        $data = @file_get_contents($this->apiUrl, false, stream_context_create([
+            'http' => [
+                'method' => 'POST',
+                'header' => implode("\r\n", $this->headers()),
+                'content' => json_encode(['query' => $query]),
+            ]
+        ]));
+
+        return json_decode($data)->data->assets[0] ?? null;
+    }
+
+    public function getItems($boardName)
+    {
+        $boardId = $this->getBoardIdByName($boardName);
+
+        // build the query
+        $query = $this->getQuery('get-items');
+        $query = str_replace('BOARD_ID', $boardId, $query);
+
+        $data = @file_get_contents($this->apiUrl, false, stream_context_create([
+            'http' => [
+                'method' => 'POST',
+                'header' => implode("\r\n", $this->headers()),
+                'content' => json_encode(['query' => $query]),
+            ]
+        ]));
+        $result = json_decode($data, true);
+        $items = $result['data']['boards'][0]['items_page']['items'] ?? [];
+
+        return $items;
+    }
+
     /**
      * Get headers for API request
      * @return array

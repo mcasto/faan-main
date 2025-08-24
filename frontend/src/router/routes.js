@@ -32,18 +32,20 @@ const routes = [
         name: "home",
       },
       {
-        path: "shelter-project",
+        path: "sanctuary-project",
         component: () => import("pages/ShelterProjectPage.vue"),
         beforeEnter: async () => {
           const store = useStore();
-          store.shelter = await callApi({
-            path: "/shelter-project",
+          store.sanctuary = await callApi({
+            path: "/sanctuary-project",
             method: "get",
           });
-          store.meta = store.shelter.meta;
+          store.meta = store.sanctuary.meta;
         },
-        meta: { label: { en: "Shelter Project", es: "Proyecto de Refugio" } },
-        name: "shelter-project",
+        meta: {
+          label: { en: "Sanctuary Project", es: "Proyecto de Santuario" },
+        },
+        name: "sanctuary-project",
       },
       {
         path: "faan-events",
@@ -138,8 +140,6 @@ const routes = [
             path: "/volunteering",
             method: "get",
           });
-
-          console.log({ volunteering: store.volunteering });
         },
         meta: { label: { en: "Volunteering", es: "Voluntariado" } },
         name: "volunteering",

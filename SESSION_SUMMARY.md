@@ -237,7 +237,7 @@ The Monday.com infrastructure was development/administrative tooling that wasn't
 
 ### ✅ **Fully Functional Pages (New Site Matches/Exceeds Old Site)**
 1. **Home** (`/`) - HomePage.blade.php
-2. **Shelter Project** (`/shelter-project`) - ShelterProject.blade.php  
+2. **Sanctuary Project** (`/sanctuary-project`) - ShelterProject.blade.php  
 3. **Events** (Enhanced: split into two pages):
    - `/events/upcoming-events` - EventsPage.blade.php 
    - `/events/past-events` - EventsPage.blade.php
