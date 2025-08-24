@@ -19,7 +19,7 @@ Route::group(['prefix' => '{language}'], function () {
         ->name('home');
 
     Route::get('shelter-project', [ShelterProjectController::class, 'show'])
-        ->name('home');
+        ->name('shelter-project.show');
 
     Route::get('event/{slug}', [EventController::class, 'show'])
         ->name('events.show');
