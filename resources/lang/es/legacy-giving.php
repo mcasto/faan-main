@@ -13,7 +13,8 @@ return array (
   'header-area' => 
   array (
     'header' => 'Legacy Deding',
-    'subtitle' => 'Considere irse al bienestar animal al incluir FAAN (<strong> Fundación Familia Amor Animal </strong>) en sus planes finales de patrimonio.',
+    'subtitle' => '<p>Consider leaving to animal welfare by including FAAN (<strong>Fundacion Familia Amor Animal</strong>) in your final estate plans.</p>
+',
     'image' => '/Images/Legacy-Giving-01.jpeg',
   ),
   'left-column' => 
@@ -24,17 +25,20 @@ return array (
       'text' => 'La gran noticia sobre las donaciones planificadas es que no necesita ser rico para plantar una semilla para la futura sostenibilidad de FAAN.',
       'image' => '/Images/Legacy-Giving-02.jpeg',
     ),
-    'society' => 'Únase a la Sociedad Legacy de Faan </strong> y sea reconocido hoy por una causa en la que cree. (Vea la información de contacto a continuación).',
+    'society' => '<p>Join <strong>FAAN\'s Legacy Society</strong> and be recognized today for a cause you believe in. (See contact information below.)</p>
+',
     'guide' => 
     array (
       'header' => 'Guía de faan para donaciones planificadas',
       'image' => '/Images/planning.png',
       'plan' => 
       array (
-        0 => 'Complete la donación de FAAN <strong> Legacy </strong> y <strong> formularios para dar intención </strong>.',
+        0 => '<p>Complete FAAN\'s <strong>Legacy Donation</strong> and <strong>Planned Giving Intention</strong> forms.</p>
+',
         1 => 'Determine el tipo de regalo que desea hacer a FAAN (legado absoluto de una cantidad específica en dólares, activos específicos o porcentaje de patrimonio).',
         2 => 'Consulte con su fiscal ecuatoriano y de los Estados Unidos (si corresponde) dependiendo de la ubicación de los activos para el lenguaje legal correcto.',
-        3 => 'Incluya <strong> faan (Fundación Familia Amor Animal) </strong> en su voluntad final y testamento.',
+        3 => '<p>Include <strong>FAAN (Fundaci&oacute;n Familia Amor Animal)</strong> in your final will and testament.</p>
+',
       ),
     ),
   ),
@@ -144,5 +148,6 @@ return array (
       'type' => 'caja',
     ),
   ),
-  'recaptcha' => 'Este sitio está protegido por Recaptcha y Google <a href = \'https: //policies.google.com/privacy\' target = \'_ en blanco\'> Política de privacidad </a> y <a href = \'https: //policies.google.com/terms\' Target = \'_ en blanco\'> Términos de servicio </a> Aplicar.',
+  'recaptcha' => '<p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
+',
 );

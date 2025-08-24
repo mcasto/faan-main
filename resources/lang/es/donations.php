@@ -14,41 +14,37 @@ return array (
   'subtitle' => 'Por favor, done a Faan (Funcidacia Familia Amor Animal) y ayude a nuestros perros a obtener una "nueva correa en la vida"',
   'contribution-header' => 'Agradecemos todas y cada una de las contribuciones ...',
   'contribution-info' => '<div>
-  Cada pequeño cuenta cuenta. Su donación nos ayudará a crear este amoroso, seguro,
-  y santuario pacífico para los perros más vulnerables y mayores de Cuenca para que podamos
-  Cuídalos hasta que les ayudemos a encontrar sus casas de piel.
-</div>
-<div>
-  Su donación también respalda la facilitación de estrategias de prevención de la población y
-  Educación comunitaria sobre bienestar animal y creación de una cultura de adopción. Faan
-  es una organización legal sin fines de lucro en Ecuador.
-</div>
-<div>
-  Si tiene una cuenta bancaria ecuatoriana y desea transferir su donación directamente
-  A nuestra cuenta, puede hacerlo utilizando la siguiente información:
-  <dirección class = "q-ml-md">
-    <strong> Fundación Familia Amor Animal </strong> <r />
-    Cuenta de Ahorros <Br />
-    #2208541490 <Br />
-    Banco Pichincha <Br />
+  Every little bit counts. Your donation will help us create this loving, safe,
+  and peaceful sanctuary for Cuenca\'s most vulnerable and senior dogs so we can
+  care for them until we help them find their Fur-ever homes.
+</div><div>
+  Your donation also supports facilitating population prevention strategies and
+  community education on animal welfare and creating a culture of adoption. FAAN
+  is a legal non-profit organization in Ecuador.
+</div><div>
+  If have an Ecuadorian bank account and wish to transfer your donation directly
+  to our account, you can do so using the following information:
+  <address class="q-ml-md">
+    <strong>Fundaci&oacute;n Familia Amor Animal</strong><br>
+    Cuenta de Ahorros<br>
+    #2208541490<br>
+    Banco Pichincha<br>
     R.U.C.: 0190443035001
-  </dirección>
-</div>',
+  </address>
+</div>
+',
   'join-header' => 'Considerar:',
   'join-bullets' => '<ul>
   <li>
-    <fuerte
-      > Unirse a nuestro círculo de patas para benefactores especiales y tener usted y/o su
-      El nombre de la mascota se conmemora en el nuevo refugio </fuerte
-    >
+    <strong>joining our Paws Circle for special benefactors and have you and/or your
+      pet\'s name memorialized at the new shelter</strong>
   </li>
   <li>
-    <fuerte
-      > o convertirse en un "padre de perro" para nuestros perros de refugio con su mensual
-      regalo </fuerte
-    >
+    <strong>or becoming a "Dog Parent" to our Shelter dogs with your monthly
+      gift</strong>
   </li>
-</ul>',
+</ul>
+',
   'red-carpet' => 
   array (
     'image' => '/Images/Paws-on-Red-carpet.jpeg',
@@ -95,76 +91,76 @@ return array (
     'cancel' => 'Cancelar',
     'continue' => 'Continuar',
   ),
-  'recaptcha-disclaimer' => 'Este sitio está protegido por Recaptcha y Google
-<a href = "https://policies.google.com/privacy" target = "_ en blanco"> Política de privacidad </a>
-y
-<a href = "https://policies.google.com/terms" target = "_ en blanco"> Términos de servicio </a>
-aplicar.',
+  'recaptcha-disclaimer' => '<p>This site is protected by reCAPTCHA and the Google
+<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>
+and
+<a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>
+apply.
+</p>
+',
   'credit-dialog' => '<div>
-  <div class = "text-h6"> donar con tarjeta de crédito o paypal </div>
-  <div class = "text-subtitle1">
-    ¡Gracias por donar!
+  <div class="text-h6">Donate with Credit Card or PayPal</div>
+  <div class="text-subtitle1">
+    Thank you for donating!
 </div>
-    <div class = "Q-MT-MD Columna Q-Gutter-Y-MD">
+    <div class="q-mt-md column q-gutter-y-md">
       <div>
-        Cuando hace clic en el enlace o usa el código QR a continuación, lo llevarán a un
-        Formulario de pago en el sitio web de PayPal. Ingrese su monto de donación y
-        Envíe su donación.
+        When you click the link or use the QR code below, you will be taken to a
+        checkout form on the PayPal website. Enter your donation amount and
+        submit your donation.
       </div>
       <div>
-        Tendrás que volver a entrar en alguna información. Pedimos disculpas por cualquier
-        Inconveniente, pero actualmente está más allá de nuestro control.
+        You will have to reenter some information. We apologize for any
+        inconvenience, but it is currently beyond our control.
       </div>
       <div>
-        Después de completar su donación a través de su sistema, cierre la pestaña o
-        ventana. Procesarán su donación y nos avisarán.
+        After completing your donation through their system, close the tab or
+        window. They will process your donation and let us know.
       </div>
       <div>
-        No se requerirán más medidas en nuestro sitio en ese momento.
+        No further action will be required on our site at that point.
       </div>
 
-      <Div class = "PayPal-Qr-Code COLUME items-Center">
-        <a
-          href = "https://www.paypal.com/ncp/payment/3hbledrd2a5mq"
-          Target = "_ en blanco"
-          > PayPal </A
-        >
-        <img src = "/images/paypal-qr-code-en.jpeg"/>
+      <div class="paypal-qr-code column items-center">
+        <a href="https://www.paypal.com/ncp/payment/3HBLEDRD2A5MQ" target="_blank">PayPal</a>
+        <img src="/images/paypal-qr-code-en.jpeg">
       </div>
     </div>
   </div>
-</div>',
+',
   'pickup-dialog' => '<div>
-  <div class = "text-h6">
-    Recogida por voluntario de FAAN
+  <div class="text-h6">
+    Pickup by FAAN Volunteer
   </div>
-  <Div Text-Subtitle1>
-    ¡Gracias por donar!
+  <div text-subtitle1>
+    Thank you for donating!
   </div>
 
-  <div class = "q-mt-md">
-    Un voluntario de FAAN le enviará un correo electrónico pronto para organizar su donación.
+  <div class="q-mt-md">
+    A FAAN volunteer will email you soon to arrange to pick up your donation.
   </div>
-</div>',
+</div>
+',
   'transfer-dialog' => '<div>
-  <div class = "text-h6">
-    Donación por transferencia de bancos ecuatorianos
+  <div class="text-h6">
+    Donation by Ecuadorian Bank Transfer
   </div>
-  <div class = "text-subtitle1">
-    ¡Gracias por donar!
+  <div class="text-subtitle1">
+    Thank you for donating!
   </div>
 
-  <div class = "Q-MT-MD Text-Center">
+  <div class="q-mt-md text-center">
     <p>
-      Si estás en Ecuador, puedes transferir tu donación a nuestro oficial
-      cuenta.
+      If you\'re in Ecuador, you can transfer your donation to our official
+      account.
     </p>
 
-    <img src = "/images/donations-bank-transfer.jpg"/>
+    <img src="/images/donations-bank-transfer.jpg">
 
-    <div class = "Text-Center">
-      Fundación Familia Amor Animal
+    <div class="text-center">
+      Fundaci&oacute;n Familia Amor Animal
     </div>
   </div>
-</div>',
+</div>
+',
 );

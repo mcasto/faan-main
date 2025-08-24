@@ -40,10 +40,14 @@ return array (
     'header' => 'FAAN beneficia a la comunidad',
     'items' => 
     array (
-      0 => '<em> Educación </em> - Reducir el abuso y crear conciencia',
-      1 => '<em> Spay & Neuter </em> - Trabajo con una red de veterinarios de la comunidad',
-      2 => '<em> Adopción, refugio, refugio </em> —Cetting en riesgo, perros mayores y con desafíos médicamente fuera de las calles y en casas para siempre',
-      3 => '<em> Care </em> —Ariando nutrición y brindar atención médica, capacitación y una gran dosis de amor',
+      0 => '<em>Education</em><p>&mdash;Reducing abuse and raising awareness</p>
+',
+      1 => '<em>Spay &amp; Neuter</em><p>&mdash;Working with a network of community veterinarians</p>
+',
+      2 => '<em>Adoption, shelter, Refuge</em><p>&mdash;Getting at risk, senior, and medically challenged dogs off the streets and into forever homes</p>
+',
+      3 => '<em>Care</em><p>&mdash;Improving nutrition and providing medical care, training, and a large dose of love</p>
+',
     ),
   ),
   'supporter' => 
@@ -64,7 +68,8 @@ return array (
   array (
     'social' => 
     array (
-      'order' => '1',
+      'order' => '<p>1</p>
+',
       'header' => 'Redes sociales',
       'links' => 
       array (
@@ -82,13 +87,15 @@ return array (
         array (
           'label' => 'Instagram',
           'url' => 'https://www.instagram.com/faancuenca/',
-          'hidden' => '1',
+          'hidden' => '<p>1</p>
+',
         ),
       ),
     ),
     'magazines' => 
     array (
-      'order' => '2',
+      'order' => '<p>2</p>
+',
       'header' => 'Revistas de faan',
       'links' => 
       array (
@@ -151,7 +158,8 @@ return array (
     ),
     'specialDocuments' => 
     array (
-      'order' => '3',
+      'order' => '<p>3</p>
+',
       'header' => 'Documentos de información y recursos especiales',
       'links' => 
       array (
@@ -169,7 +177,8 @@ return array (
     ),
     'extractedArticles' => 
     array (
-      'order' => '4',
+      'order' => '<p>4</p>
+',
       'header' => 'Artículos extraídos',
       'links' => 
       array (
@@ -222,7 +231,8 @@ return array (
     ),
     'worldAnimalDay' => 
     array (
-      'order' => '5',
+      'order' => '<p>5</p>
+',
       'header' => 'Faan celebra el Día Mundial de los Animales',
       'links' => 
       array (
@@ -240,7 +250,8 @@ return array (
     ),
     'featured' => 
     array (
-      'order' => '6',
+      'order' => '<p>6</p>
+',
       'header' => 'Artículos con faan',
       'links' => 
       array (
@@ -263,7 +274,8 @@ return array (
     ),
     'multimedia' => 
     array (
-      'order' => '7',
+      'order' => '<p>7</p>
+',
       'header' => 'Videos/presentaciones de diapositivas',
       'links' => 
       array (

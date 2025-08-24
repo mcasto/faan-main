@@ -24,28 +24,33 @@ return array (
         0 => 
         array (
           'title' => 'Compra el terreno',
-          'completed' => '1',
+          'completed' => '<p>1</p>
+',
           'children' => 
           array (
             0 => 
             array (
               'title' => 'Asegure permisos y crear acceso a la carretera',
-              'completed' => '1',
+              'completed' => '<p>1</p>
+',
             ),
             1 => 
             array (
               'title' => 'Completa prueba de suelo para determinar la ubicación del edificio',
-              'completed' => '1',
+              'completed' => '<p>1</p>
+',
             ),
             2 => 
             array (
               'title' => 'Identificar el arquitecto para un plan y especificaciones detallados',
-              'completed' => '1',
+              'completed' => '<p>1</p>
+',
             ),
             3 => 
             array (
               'title' => 'Campaña de lanzamiento de capital para construir el refugio',
-              'completed' => '1',
+              'completed' => '<p>1</p>
+',
             ),
           ),
         ),
@@ -91,17 +96,20 @@ return array (
       ),
     ),
   ),
-  'community' => 'Convertirse en parte de nuestra visión comunitaria para dar a conocer a Cuenca como la "ciudad que
-Le importa "sobre el bienestar animal a través de su <a href ="/donaciones "> donaciones </a>,
-<a href = "/voluntariado"> voluntariado </a>, y provisión de suministros para el
-Construcción del nuevo refugio.',
-  'preview' => '<div class = "Preview">
-  <Video Controls Width = "450" ​​Height = "259">
-    <fuente src = "/page-images/new-shelter-video.mp4" type = "video/mp4"/>
-    Su navegador no admite la etiqueta de video.
+  'community' => '<p>Become part of our community vision to make Cuenca known as the "City That
+Cares" about Animal Welfare through your <a href="/donations">donations</a>,
+<a href="/volunteering">volunteering</a>, and provision of supplies for the
+construction of the new shelter.
+</p>
+',
+  'preview' => '<div class="preview">
+  <video controls width="450" height="259">
+    <source src="/page-images/new-shelter-video.mp4" type="video/mp4"></source>
+    Your browser does not support the video tag.
   </video>
-  <div class = "Text-Caption Text-Center">
-    Maribel explora la nueva tierra de refugio
+  <div class="text-caption text-center">
+    Maribel explores the new shelter land
   </div>
-</div>',
+</div>
+',
 );

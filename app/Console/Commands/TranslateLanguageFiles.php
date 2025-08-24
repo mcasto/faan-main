@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Stichoza\GoogleTranslate\GoogleTranslate;
+use DOMDocument;
 
 class TranslateLanguageFiles extends Command
 {
@@ -111,10 +112,47 @@ class TranslateLanguageFiles extends Command
             return;
         }
 
-        $translatedContent = $translator->translate($content);
+        // Use DOMDocument to parse HTML and only translate text content
+        $dom = new DOMDocument();
+        @$dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        // Translate text nodes while preserving HTML structure
+        $this->translateDomNode($dom, $translator);
+
+        // Save the translated HTML
+        $translatedContent = $dom->saveHTML();
         File::put($targetFile, $translatedContent);
 
         $this->info("Translated HTML: " . str_replace(resource_path('lang/en/'), '', $sourceFile));
+    }
+
+    protected function translateDomNode($node, $translator)
+    {
+        if ($node->nodeType === XML_TEXT_NODE) {
+            // Translate text content but preserve whitespace-only nodes
+            $text = trim($node->nodeValue);
+            if (!empty($text)) {
+                try {
+                    $translatedText = $translator->translate($text);
+                    $node->nodeValue = $translatedText;
+                    // Small delay to avoid rate limiting
+                    usleep(500000); // 0.5 second delay
+                } catch (\Exception $e) {
+                    $this->error("Translation failed for text: " . substr($text, 0, 50) . "...");
+                    // Keep original text on error
+                }
+            }
+        } elseif ($node->nodeType === XML_ELEMENT_NODE) {
+            // Skip translation for specific elements or attributes
+            if ($node->nodeName === 'script' || $node->nodeName === 'style') {
+                return; // Don't translate script or style content
+            }
+
+            // Recursively process child nodes
+            foreach ($node->childNodes as $child) {
+                $this->translateDomNode($child, $translator);
+            }
+        }
     }
 
     protected function translateArray($array, $translator)
@@ -132,7 +170,15 @@ class TranslateLanguageFiles extends Command
                 }
 
                 try {
-                    $result[$key] = $translator->translate($value);
+                    // Check if value contains HTML
+                    if ($this->containsHtml($value)) {
+                        // Use DOMDocument to parse and translate only text content
+                        $result[$key] = $this->translateHtmlContent($value, $translator);
+                    } else {
+                        // Regular text translation
+                        $result[$key] = $translator->translate($value);
+                    }
+
                     // Small delay to avoid rate limiting
                     usleep(500000); // 0.5 second delay
                 } catch (\Exception $e) {
@@ -143,5 +189,23 @@ class TranslateLanguageFiles extends Command
         }
 
         return $result;
+    }
+
+    protected function containsHtml($string)
+    {
+        return $string !== strip_tags($string);
+    }
+
+    protected function translateHtmlContent($html, $translator)
+    {
+        // Use DOMDocument to parse HTML and only translate text content
+        $dom = new DOMDocument();
+        @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        // Translate text nodes while preserving HTML structure
+        $this->translateDomNode($dom, $translator);
+
+        // Save the translated HTML
+        return $dom->saveHTML();
     }
 }

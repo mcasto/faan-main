@@ -50,28 +50,16 @@ class EventController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(string $language, string $slug)
     {
-        $event = Event::where('slug', $slug)->firstOrFail();
+        $event = Event::where('language', $language)
+            ->where('slug', $slug)
+            ->firstOrFail();
+
         $event->html = __('events.' . $slug);
+
         return response()->json($event);
     }
 

@@ -33,7 +33,8 @@ return array (
     'message' => 'Mensaje',
     'join_mailing_list' => '¿Unir la lista de correo para recibir boletines, promociones, etc. por correo electrónico?',
     'consent' => 'Aceptan que este sitio web mantenga mis datos personales únicamente para fines de comunicación y comprendo que no se compartirá con terceros.',
-    'recaptcha' => 'Este sitio está protegido por Recaptcha y Google <a href = \'https: //policies.google.com/privacy\' target = \'_ en blanco\'> Política de privacidad </a> y <a href = \'https: //policies.google.com/terms\' Target = \'_ en blanco\'> Términos de servicio </a> Aplicar.',
+    'recaptcha' => '<p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
+',
     'submit' => 'Entregar',
   ),
 );

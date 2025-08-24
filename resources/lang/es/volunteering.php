@@ -28,7 +28,8 @@ return array (
   array (
     'header' => '¡Es otro día en la reflexión de la pata!',
     'subtitle' => 'Estas son solo algunas de las habilidades que estamos buscando actualmente en nuestro trabajo en FAAN.',
-    'action' => '<a href = \'mailto: info@faanecuador.org\'> Contáctenos </a> ¡Para discutir cómo <em> usted </em> puede ser voluntario!',
+    'action' => '<a href="mailto:info@FAANEcuador.org">Contact Us</a><p> to discuss how <em>YOU</em> can volunteer!</p>
+',
     'skills' => 
     array (
       0 => 'Desarrollo/recaudación de fondos',
@@ -57,7 +58,8 @@ return array (
     'paragraphs' => 
     array (
       0 => 'No le pediremos que muerda más de lo que puede masticar, pero nos encantaría reunirnos con usted para un café virtual o en persona para revisar nuestros muchos proyectos que necesitan voluntarios amantes de los animales.',
-      1 => '<a href = \'mailto: info@faanecuador.org\'> Contáctenos </a> ¡Para organizar la reunión!',
+      1 => '<a href="mailto:info@FAANEcuador.org">Contact Us</a><p> to arrange the meetign!</p>
+',
     ),
   ),
   'welfare' => 
@@ -70,7 +72,8 @@ return array (
       0 => 'Los voluntarios de FAAN han comenzado el trabajo sobre el desarrollo de un programa de educación y el plan de estudios sobre bienestar animal en Ecuador. El programa se dirigirá a la educación de grado temprano, así como a los puntos de influencia clave en el bienestar animal dentro de las comunidades, incluidos veterinarios, tiendas de mascotas y grupos juveniles.',
       1 => 'Al desarrollar el conocimiento de los jóvenes sobre los animales, podemos inspirar a la próxima generación y crear un futuro que sea más amable para los animales.',
       2 => 'El 91% de los adultos encuestados dijo que a los jóvenes se les debe enseñar amabilidad a los animales en la escuela.',
-      3 => 'Para unirse a nuestro comité de educación, <a href = \'mailto: info@faanecuador.org\'> ¡Contáctenos </a>!',
+      3 => '<p>To join our education committee, <a href="mailto:info@FAANEcuador.org">Contact Us</a>!</p>
+',
     ),
   ),
   'faan-atics' => 
