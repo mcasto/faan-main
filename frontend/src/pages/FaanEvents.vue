@@ -1,5 +1,5 @@
 <template>
-  <div class="faan-events">
+  <div>
     <router-view></router-view>
   </div>
 </template>
