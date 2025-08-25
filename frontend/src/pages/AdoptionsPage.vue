@@ -24,57 +24,45 @@
       v-html="store.adoptions.adopteeHeader"
     ></div>
 
-    <div class="col-12">
-      <q-carousel
-        v-model="slide"
-        transition-prev="scale"
-        transition-next="scale"
-        swipeable
-        animated
-        control-color="black"
-        padding
-        arrows
-        class="shadow-1 rounded-borders bg-blue-3"
+    <div class="row col-12 q-gutter-x-xs flex justify-center">
+      <div
+        class="col-12 col-md-2 q-pa-sm"
+        v-for="adoptee in store.adoptions.adoptees"
+        :key="adoptee.id"
       >
-        <q-carousel-slide
-          v-for="(adoptee, idx) in store.adoptions.adoptees"
-          :key="`adoptee-${adoptee.id}`"
-          :name="idx"
-          class="column justify-center"
+        <q-img
+          :src="adoptee.image"
+          @click="expandImage(adoptee.image)"
+          class="cursor-pointer"
         >
-          <div class="row q-gutter-x-lg">
-            <div class="col-12 col-md-3 column justify-center">
-              <q-img
-                :src="adoptee.image"
-                alt="Adoptee Image"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <div class="text-h6">
-                {{ adoptee.name }}
-              </div>
-              <div
-                class="text-subtitle1 scrollable-description"
-                v-html="adoptee.description_text"
-              ></div>
-            </div>
-          </div>
-        </q-carousel-slide>
-      </q-carousel>
+        </q-img>
+        <div class="text-subtitle1 text-center">
+          {{ adoptee.name }}
+        </div>
+      </div>
     </div>
+    <image-dialog v-model="showImage.visible" :image="showImage.src" />
   </div>
 </template>
 
 <script setup>
 import { useStore } from "src/stores/store";
+import ImageDialog from "src/components/ImageDialog.vue";
 import { ref } from "vue";
 
 const store = useStore();
 
-console.log({ adoptees: store.adoptions.adoptees });
+const showImage = ref({
+  visible: false,
+  src: "",
+});
 
-const slide = ref(0);
+const expandImage = (image) => {
+  showImage.value = {
+    visible: true,
+    src: image,
+  };
+};
 </script>
 
 <style scoped>

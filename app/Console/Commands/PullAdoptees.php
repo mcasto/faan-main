@@ -74,18 +74,18 @@ class PullAdoptees extends Command
 
         // foreach adoptees, write $adoptee['rec'] to database
         foreach ($adoptees as $adoptee) {
-            $rec = $adoptee['rec'];
-            $rec['image'] = "/adoptee-images/" . $rec['image'];
-            Adoptee::updateOrCreate(
-                ['monday_id' => $adoptee['rec']['monday_id']],
-                $rec
-            );
-
             // fetch image_url to a temp directory
             $asset = $monday->getAssetUrl($adoptee['rec']['image']);
             $imageUrl = $asset->public_url;
             $extension = pathinfo($asset->name, PATHINFO_EXTENSION);
             $tempImagePath = tempnam(sys_get_temp_dir(), 'adoptee_image_');
+
+            $rec = $adoptee['rec'];
+            $rec['image'] = "/adoptee-images/" . $rec['image'] . "." . $extension;
+            Adoptee::updateOrCreate(
+                ['monday_id' => $adoptee['rec']['monday_id']],
+                $rec
+            );
 
             file_put_contents($tempImagePath, file_get_contents($imageUrl));
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Adoptee;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class AdoptionController extends Controller
 {
@@ -15,7 +14,10 @@ class AdoptionController extends Controller
      */
     public function show(): JsonResponse
     {
-        $adoptees = Adoptee::orderBy('name')->get();
+        $adoptees = Adoptee::inRandomOrder()
+            ->limit(10)
+            ->get();
+
         $adopteeHeader = __('adoptions.adoptee-header');
         $adopteeHeader = str_replace("{{ numDogs }}", $adoptees->count(), $adopteeHeader);
         $adopteeHeader = str_replace("{{ curMonth }}", now()->format('F'), $adopteeHeader);

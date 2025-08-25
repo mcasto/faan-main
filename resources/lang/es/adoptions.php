@@ -13,20 +13,18 @@ return array (
   'banner-left-header' => 'Adoptar y rescate',
   'banner-left-text' => 'En la Fundación Faan, tenemos muchos perros soñando con sus casas de piel. Van desde cachorros adorables hasta nuestros perros mayores. Organizaremos para que un especialista en adopción trabaje con usted y lo ayudaremos a encontrar su combinación perfecta.',
   'banner-right-header' => 'Cuando adopta de FAAN, los beneficios del propietario de su mascota incluyen:',
-  'banner-right-text' => '<ul>
-  <li>VIP attention to your match with a FAAN adoption specialist</li>
-  <li>Arrangement of a meet and greet</li>
-  <li>Vaccines, fleas, and deworming at half price</li>
-  <li>Discounts on grooming and dog training accessories</li>
-  <li>Up to 30% of costs covered by FAAN in emergencies</li>
-</ul>
+  'banner-right-text' => '<ul
+  li>VIP Atención a su partido con un especialista en adopción de FAAN/li
+  li>Arreglo de un encuentro y saludo/li
+  li>Vacunas, pulgas y desparasitán a mitad de precio/li
+  li>Descuentos en accesorios de aseo y entrenamiento de perros/li
+  li>Hasta el 30% de los costos cubiertos por FAAN en emergencias/li
+/ul
 ',
   'banner-bottom' => 'También puede ser voluntario como padre adoptivo para ayudarnos a administrar la emergencia
     colocación',
-  'adoptee-header' => '<div class="text-h5">
-  Here are a few of our FAAN furry friends awaiting adoption
-</div><div class="text-h6 q-mb-md">
-  Our Top {{ numDogs }} Adorable Dogs for {{ curMonth }}
-</div>
+  'adoptee-header' => '<div class="text-h5">Estos son algunos de nuestros amigos peludos de faan esperando la adopción/div
+div class="text-h6 q-mb-md">Nuestro Top {{numDogs}} adorables perros para {{Curmonth}}/div
+div class="text-subtitle1 text-center">Haga clic en una imagen para expandirse a tamaño completo./div
 ',
 );

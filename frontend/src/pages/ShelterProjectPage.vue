@@ -72,15 +72,20 @@
       <div v-html="store.sanctuary.community"></div>
     </div>
     <div class="location col-12 col-md-6 q-pa-md">
-      <div v-html="store.sanctuary.preview"></div>
+      <q-img :src="superdogsSrc" class="q-mb-md" alt="SuperDogs Logo" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { useStore } from "src/stores/store";
+import { computed } from "vue";
 
 const store = useStore();
+
+const superdogsSrc = computed(() => {
+  return `/images/superdogs-logo-${store.language}.png`;
+});
 </script>
 
 <style scoped>

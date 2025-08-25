@@ -126,35 +126,6 @@ class TranslateLanguageFiles extends Command
         $this->info("Translated HTML: " . str_replace(resource_path('lang/en/'), '', $sourceFile));
     }
 
-    protected function translateDomNode($node, $translator)
-    {
-        if ($node->nodeType === XML_TEXT_NODE) {
-            // Translate text content but preserve whitespace-only nodes
-            $text = trim($node->nodeValue);
-            if (!empty($text)) {
-                try {
-                    $translatedText = $translator->translate($text);
-                    $node->nodeValue = $translatedText;
-                    // Small delay to avoid rate limiting
-                    usleep(500000); // 0.5 second delay
-                } catch (\Exception $e) {
-                    $this->error("Translation failed for text: " . substr($text, 0, 50) . "...");
-                    // Keep original text on error
-                }
-            }
-        } elseif ($node->nodeType === XML_ELEMENT_NODE) {
-            // Skip translation for specific elements or attributes
-            if ($node->nodeName === 'script' || $node->nodeName === 'style') {
-                return; // Don't translate script or style content
-            }
-
-            // Recursively process child nodes
-            foreach ($node->childNodes as $child) {
-                $this->translateDomNode($child, $translator);
-            }
-        }
-    }
-
     protected function translateArray($array, $translator)
     {
         $result = [];
@@ -170,20 +141,19 @@ class TranslateLanguageFiles extends Command
                 }
 
                 try {
-                    // Check if value contains HTML
-                    if ($this->containsHtml($value)) {
-                        // Use DOMDocument to parse and translate only text content
+                    $hasHtml = $this->containsHtml($value);
+
+                    if ($hasHtml) {
                         $result[$key] = $this->translateHtmlContent($value, $translator);
                     } else {
-                        // Regular text translation
                         $result[$key] = $translator->translate($value);
                     }
 
                     // Small delay to avoid rate limiting
-                    usleep(500000); // 0.5 second delay
+                    usleep(500000);
                 } catch (\Exception $e) {
                     $this->error("Translation failed for key '{$key}': " . $e->getMessage());
-                    $result[$key] = $value; // Keep original on error
+                    $result[$key] = $value;
                 }
             }
         }
@@ -198,14 +168,82 @@ class TranslateLanguageFiles extends Command
 
     protected function translateHtmlContent($html, $translator)
     {
-        // Use DOMDocument to parse HTML and only translate text content
-        $dom = new DOMDocument();
-        @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        // Pattern to match text outside of HTML tags, including at beginning and end
+        $pattern = '/(?:^|>)([^<]+)(?:<|$)/';
 
-        // Translate text nodes while preserving HTML structure
-        $this->translateDomNode($dom, $translator);
+        return preg_replace_callback($pattern, function ($matches) use ($translator) {
+            $text = trim($matches[1]);
 
-        // Save the translated HTML
-        return $dom->saveHTML();
+            if (!empty($text) && preg_match('/[a-zA-Z]/', $text)) {
+                try {
+                    $translated = $translator->translate($text);
+                    usleep(500000);
+
+                    // Preserve the original context (whether it was at beginning, middle, or end)
+                    if (strpos($matches[0], '>') === 0) {
+                        return '>' . $translated; // Text was after a >
+                    } elseif (substr($matches[0], -1) === '<') {
+                        return $translated . '<'; // Text was before a <
+                    } else {
+                        return $translated; // Text was at beginning or end
+                    }
+                } catch (\Exception $e) {
+                    $this->error("Translation failed for: " . substr($text, 0, 50) . "...");
+                    return $matches[1]; // Return original text
+                }
+            }
+
+            return $matches[1]; // Return original if not translatable
+        }, $html);
+    }
+
+    protected function translateDomNode($node, $translator)
+    {
+        if ($node->nodeType === XML_TEXT_NODE) {
+            $text = $node->nodeValue;
+            $trimmedText = trim($text);
+
+            // Only translate if it contains letters (not just whitespace or special chars)
+            if (!empty($trimmedText) && preg_match('/[a-zA-Z]/', $trimmedText)) {
+                try {
+                    $translatedText = $translator->translate($trimmedText);
+
+                    // Preserve original whitespace around the text
+                    $preservedText = $this->preserveWhitespace($text, $translatedText);
+                    $node->nodeValue = $preservedText;
+
+                    usleep(500000);
+                } catch (\Exception $e) {
+                    // Keep original text on error
+                }
+            }
+        } elseif ($node->nodeType === XML_ELEMENT_NODE) {
+            // Skip script, style, and other non-translatable elements
+            if (in_array($node->nodeName, ['script', 'style', 'code', 'pre'])) {
+                return;
+            }
+
+            // Recursively process all child nodes
+            foreach ($node->childNodes as $child) {
+                $this->translateDomNode($child, $translator);
+            }
+        }
+    }
+
+    protected function preserveWhitespace($original, $translated)
+    {
+        // Preserve leading and trailing whitespace from original text
+        $leadingWhitespace = '';
+        $trailingWhitespace = '';
+
+        if (preg_match('/^(\s+)/', $original, $matches)) {
+            $leadingWhitespace = $matches[1];
+        }
+
+        if (preg_match('/(\s+)$/', $original, $matches)) {
+            $trailingWhitespace = $matches[1];
+        }
+
+        return $leadingWhitespace . $translated . $trailingWhitespace;
     }
 }
