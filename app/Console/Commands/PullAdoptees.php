@@ -57,30 +57,28 @@ class PullAdoptees extends Command
      */
     public function handle()
     {
-        $imagePath = dirname(__DIR__, 3) . '/public/adoptee-test/';
+        $imagePath = dirname(__DIR__, 3) . '/public/adoptee-images/';
 
         $monday = new MondayService();
 
-        // mc-todo: uncomment to go live
+        $adoptees = $monday->getItems('Adoptees');
 
-        // $adoptees = $monday->getItems('Adoptees');
-
-        // $adoptees = collect($adoptees)->map(function ($adoptee) use ($monday) {
-        //     $rec = $this->parseMondayRecord($adoptee);
-        //     return [
-        //         'rec' => strval($rec),
-        //         'image_url' => $monday->getAssetUrl($rec['image'])
-        //     ];
-        // })
-        //     ->toArray();
-
-        $adoptees = json_decode(file_get_contents(__DIR__ . '/adoptees.json'), true);
+        $adoptees = collect($adoptees)->map(function ($adoptee) use ($monday) {
+            $rec = $this->parseMondayRecord($adoptee);
+            return [
+                'rec' => $rec,
+                'image_url' => $monday->getAssetUrl($rec['image'])
+            ];
+        })
+            ->toArray();
 
         // foreach adoptees, write $adoptee['rec'] to database
         foreach ($adoptees as $adoptee) {
+            $rec = $adoptee['rec'];
+            $rec['image'] = "/adoptee-images/" . $rec['image'];
             Adoptee::updateOrCreate(
                 ['monday_id' => $adoptee['rec']['monday_id']],
-                $adoptee['rec']
+                $rec
             );
 
             // fetch image_url to a temp directory
