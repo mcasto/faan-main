@@ -163,7 +163,6 @@ const submit = async () => {
         message: "Donation submitted successfully!",
       });
     }
-
   } catch (error) {
     console.error("reCAPTCHA failed:", error);
     Notify.create({

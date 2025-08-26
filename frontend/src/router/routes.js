@@ -186,6 +186,15 @@ const routes = [
       {
         path: "contact-us",
         component: () => import("pages/ContactUs.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.contact = await callApi({
+            path: "/contact",
+            method: "get",
+          });
+
+          console.log({ contact: store.contact });
+        },
         meta: { label: { en: "Contact Us", es: "Contáctenos" } },
         name: "contact-us",
       },

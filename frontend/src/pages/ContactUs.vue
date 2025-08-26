@@ -42,6 +42,12 @@
                 </q-item>
               </q-list>
             </div>
+
+            <div class='q-px-md q-pt-sm'>
+            <p v-for="paragraph of store.contact.paragraphs" :key="paragraph">
+              <div v-html='paragraph'></div>
+            </p>
+            </div>
           </div>
         </div>
       </q-card-section>
@@ -187,7 +193,6 @@ const submit = async () => {
         message: "Contact submitted successfully!",
       });
     }
-
   } catch (error) {
     console.error("reCAPTCHA failed:", error);
     Notify.create({
