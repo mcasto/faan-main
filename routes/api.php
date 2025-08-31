@@ -14,7 +14,6 @@ use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '{language}'], function () {
-
     Route::get('home', [HomeController::class, 'show'])
         ->name('home');
 

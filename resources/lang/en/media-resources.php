@@ -75,47 +75,47 @@ return [
             'links' => [
                 [
                     'label' => 'April 2024',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/2024-04.pdf',
+                    'url' => "/downloadable/magazines/2024-04.pdf",
                 ],
                 [
                     'label' => 'January 2024: Annual Report and Roadmap',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/2024-01-16-FAAN_annual_report_and_roadmap.pdf',
+                    'url' => "/downloadable/magazines/2024-01-16-FAAN_annual_report_and_roadmap.pdf",
                 ],
                 [
                     'label' => 'December 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/2023-12-newsletter.pdf',
+                    'url' => "/downloadable/magazines/2023-12-newsletter.pdf",
                 ],
                 [
                     'label' => 'June 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/specialedition23.pdf',
+                    'url' => "/downloadable/magazines/specialedition23.pdf",
                 ],
                 [
                     'label' => 'May 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/FAANMay2023.pdf',
+                    'url' => "/downloadable/magazines/FAANMay2023.pdf",
                 ],
                 [
                     'label' => 'March 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/FAANMar2023MagazineV1.pdf',
+                    'url' => "/downloadable/magazines/FAANMar2023MagazineV1.pdf",
                 ],
                 [
                     'label' => 'February 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/feb2023.pdf',
+                    'url' => "/downloadable/magazines/feb2023.pdf",
                 ],
                 [
                     'label' => 'January 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/jan2023.pdf',
+                    'url' => "/downloadable/magazines/jan2023.pdf",
                 ],
                 [
                     'label' => 'FAAN Progress Update (January 2023)',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/progressupdatej1823.pdf',
+                    'url' => "/downloadable/magazines/progressupdatej1823.pdf",
                 ],
                 [
                     'label' => 'December 2022',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/dec2022.pdf',
+                    'url' => "/downloadable/magazines/dec2022.pdf",
                 ],
                 [
                     'label' => 'November 2022',
-                    'url' => '/view-pdf?pdfLink=/downloadable/magazines/midnov2022.pdf',
+                    'url' => "/downloadable/magazines/midnov2022.pdf",
                 ]
             ]
         ],
@@ -125,11 +125,11 @@ return [
             'links' => [
                 [
                     'label' => 'Doggie Wish List',
-                    'url' => '/view-pdf?pdfLink=/downloadable/doggie-wish-list.pdf',
+                    'url' => "/downloadable/doggie-wish-list.pdf",
                 ],
                 [
                     'label' => 'Coloring & Activity Book (bilingual)',
-                    'url' => '/view-pdf?pdfLink=/downloadable/bekindbiling.pdf',
+                    'url' => "/downloadable/bekindbiling.pdf",
                 ]
             ]
         ],
@@ -139,35 +139,35 @@ return [
             'links' => [
                 [
                     'label' => 'One Day - A Story by Sandra Beaumont-Aug 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/oneday2023.pdf',
+                    'url' => "/downloadable/extracted-articles/oneday2023.pdf",
                 ],
                 [
                     'label' => 'Dodi\'s Dogs - A ReHoming Love Story-June 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/dodisdogs.pdf',
+                    'url' => "/downloadable/extracted-articles/dodisdogs.pdf",
                 ],
                 [
                     'label' => 'Adoptions-June 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/adoptionsjune2023.pdf',
+                    'url' => "/downloadable/extracted-articles/adoptionsjune2023.pdf",
                 ],
                 [
                     'label' => 'FAAN Facts-Did you Know?-June 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/faanfactsjune2023.pdf',
+                    'url' => "/downloadable/extracted-articles/faanfactsjune2023.pdf",
                 ],
                 [
                     'label' => 'You Adopted-Now What?-June 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/ruleof3june2023.pdf',
+                    'url' => "/downloadable/extracted-articles/ruleof3june2023.pdf",
                 ],
                 [
                     'label' => 'Heir of the Dog-May 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf',
+                    'url' => "/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf",
                 ],
                 [
                     'label' => '5 Things Dogs Teach Us-May 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/thingsdogsteachus/thingsdogsteachus.pdf',
+                    'url' => "/downloadable/extracted-articles/thingsdogsteachus/thingsdogsteachus.pdf",
                 ],
                 [
                     'label' => 'Celebrating the Emotional Lives of Dogs-May 2023',
-                    'url' => '/view-pdf?pdfLink=/downloadable/extracted-articles/emotionallives/emotionallives.pdf',
+                    'url' => "/downloadable/extracted-articles/emotionallives/emotionallives.pdf",
                 ],
                 [
                     'label' => 'FAAN Talks with Yapa Tree: Nov 2023',

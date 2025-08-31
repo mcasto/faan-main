@@ -75,27 +75,27 @@ return [
             'links' => [
                 [
                     'label' => 'Abril de 2024',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/2024-04.pdf',
+                    'url' => "/downloadable/magazines/2024-04.pdf",
                 ],
                 [
                     'label' => 'Enero de 2024: Informe anual y hoja de ruta',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/2024-01-16-faan_annual_report_and_roadmap.pdf',
+                    'url' => "/downloadable/magazines/2024-01-16-faan_annual_report_and_roadmap.pdf",
                 ],
                 [
                     'label' => 'Diciembre de 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/2023-12-newsletter.pdf',
+                    'url' => "/downloadable/magazines/2023-12-newsletter.pdf",
                 ],
                 [
                     'label' => 'Junio ​​de 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/specialedition23.pdf',
+                    'url' => "/downloadable/magazines/specialedition23.pdf",
                 ],
                 [
                     'label' => 'Mayo de 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/faanmay2023.pdf',
+                    'url' => "/downloadable/magazines/faanmay2023.pdf",
                 ],
                 [
                     'label' => 'Marzo de 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/faanmar2023magazinev1.pdf',
+                    'url' => "/downloadable/magazines/faanmar2023magazinev1.pdf",
                 ],
                 [
                     'label' => 'Febrero de 2023',
@@ -107,15 +107,15 @@ return [
                 ],
                 [
                     'label' => 'Actualización de progreso de FAAN (enero de 2023)',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/progressupdatej1823.pdf',
+                    'url' => "/downloadable/magazines/progressupdatej1823.pdf",
                 ],
                 [
                     'label' => 'Diciembre de 2022',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/dec2022.pdf',
+                    'url' => "/downloadable/magazines/dec2022.pdf",
                 ],
                 [
                     'label' => 'Noviembre de 2022',
-                    'url' => '/view-pdf?pdflink=/downloadable/magazines/midnov2022.pdf',
+                    'url' => "/downloadable/magazines/midnov2022.pdf",
                 ]
             ]
         ],
@@ -125,11 +125,11 @@ return [
             'links' => [
                 [
                     'label' => 'Lista de deseos de perrito',
-                    'url' => '/view-pdf?pdflink=/downloadable/doggie-wish-list.pdf',
+                    'url' => "/downloadable/doggie-wish-list.pdf",
                 ],
                 [
                     'label' => 'Libro para colorear y actividades (bilingüe)',
-                    'url' => '/view-pdf?pdflink=/downloadable/bekindbiling.pdf',
+                    'url' => "/downloadable/bekindbiling.pdf",
                 ]
             ]
         ],
@@ -139,35 +139,35 @@ return [
             'links' => [
                 [
                     'label' => 'Un día - Una historia de Sandra Beaumont -Aug 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/oneday2023.pdf',
+                    'url' => "/downloadable/extracted-articles/oneday2023.pdf",
                 ],
                 [
                     'label' => 'Dodi \'s Dogs - A ReHoming Love Story-June 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/dodisdogs.pdf',
+                    'url' => "/downloadable/extracted-articles/dodisdogs.pdf",
                 ],
                 [
                     'label' => 'Adopciones-junio 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/adoptionsJune2023.pdf',
+                    'url' => "/downloadable/extracted-articles/adoptionsJune2023.pdf",
                 ],
                 [
                     'label' => 'FAAN HECHS-¿DID SABES? -JUNE 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/faanfactsjune2023.pdf',
+                    'url' => "/downloadable/extracted-articles/faanfactsjune2023.pdf",
                 ],
                 [
                     'label' => 'Usted adoptó, ¿ahora qué? -June 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/ruleof3June2023.pdf',
+                    'url' => "/downloadable/extracted-articles/ruleof3June2023.pdf",
                 ],
                 [
                     'label' => 'Heredero del perro-mayo 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf',
+                    'url' => "/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf",
                 ],
                 [
                     'label' => '5 cosas que los perros nos enseñan a mayo 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/thingsdogsteachus/thingsdogsteachus.pdf',
+                    'url' => "/downloadable/extracted-articles/thingsdogsteachus/thingsdogsteachus.pdf",
                 ],
                 [
                     'label' => 'Celebrando la vida emocional de los perros-mayo 2023',
-                    'url' => '/view-pdf?pdflink=/downloadable/extracted-articles/emotionallives/emotionallives.pdf',
+                    'url' => "/downloadable/extracted-articles/emotionallives/emotionallives.pdf",
                 ],
                 [
                     'label' => 'Faan habla con Yapa Tree: Nov 2023',
