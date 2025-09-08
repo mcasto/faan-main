@@ -32,6 +32,17 @@ const routes = [
         name: "home",
       },
       {
+        path: "five-year-plan",
+        component: () => import("pages/FiveYearPlan.vue"),
+        meta: {
+          label: {
+            en: "FAAN's Five-Year Strategic Plan",
+            es: "Plan estratégico quinquenal de la FAAN",
+          },
+        },
+        name: "five-year-plan",
+      },
+      {
         path: "sanctuary-project",
         component: () => import("pages/ShelterProjectPage.vue"),
         beforeEnter: async () => {
@@ -144,24 +155,24 @@ const routes = [
         meta: { label: { en: "Volunteering", es: "Voluntariado" } },
         name: "volunteering",
       },
-      {
-        path: "meet-the-faantastics",
-        component: () => import("pages/MeetTheFaantastics.vue"),
-        beforeEnter: async () => {
-          const store = useStore();
-          store.meetFaantastics = await callApi({
-            path: "/meet-the-faan-tastics",
-            method: "get",
-          });
-        },
-        meta: {
-          label: {
-            en: "Meet the FAAN-TASTICS",
-            es: "Conoce a los FAAN-TASTICS",
-          },
-        },
-        name: "meet-the-faantastics",
-      },
+      // {
+      //   path: "meet-the-faantastics",
+      //   component: () => import("pages/MeetTheFaantastics.vue"),
+      //   beforeEnter: async () => {
+      //     const store = useStore();
+      //     store.meetFaantastics = await callApi({
+      //       path: "/meet-the-faan-tastics",
+      //       method: "get",
+      //     });
+      //   },
+      //   meta: {
+      //     label: {
+      //       en: "Meet the FAAN-TASTICS",
+      //       es: "Conoce a los FAAN-TASTICS",
+      //     },
+      //   },
+      //   name: "meet-the-faantastics",
+      // },
       {
         path: "media-resources",
         component: () => import("pages/MediaResources.vue"),
