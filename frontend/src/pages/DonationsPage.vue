@@ -18,6 +18,9 @@
           {{ store.donations.joinHeader }}
         </div>
         <div v-html="store.donations.joinBullets"></div>
+        <div>
+          <donation-form></donation-form>
+        </div>
       </div>
       <div class="col-12 col-md-6 q-pa-sm">
         <q-img :src="store.donations.redCarpet.image">
@@ -35,10 +38,6 @@
             <q-img :src="image" class="q-mb-md"> </q-img>
           </div>
         </div>
-      </div>
-
-      <div class="col-12 q-mt-md">
-        <donation-form></donation-form>
       </div>
     </div>
   </div>

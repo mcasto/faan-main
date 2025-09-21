@@ -15,7 +15,7 @@ return [
     'join-header' => 'Considerar:',
     'join-bullets' => file_get_contents(__DIR__ . '/donations/join-bullets.html'),
     'red-carpet' => [
-        'image' => '/Images/Paws-on-Red-carpet.jpeg',
+        'image' => '/images/paws-on-red-carpet.jpeg',
         'caption' => 'En 2025, nuestros donantes serán reconocidos en Gala Faan-Tastica, Old Hollywood como "patas en la alfombra roja". ¡Su reconocimiento será honrado en el nuevo santuario!',
     ],
     'paw-images' => [
