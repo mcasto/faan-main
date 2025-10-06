@@ -49,6 +49,12 @@ return [
             'Share Our Mission'
         ]
     ],
+    'media-release' => [
+        'title' => 'Comunicado de Prensa: 6 de Octubre, 2025',
+        'caption' => 'Haz clic en la imagen para leer el comunicado completo',
+        'image' => '/images/12-noon-social-media.jpg',
+        'body' => file_get_contents(__DIR__ . '/media-resources/release-2025-10-06.html')
+    ],
     'link-sections' => [
         'social' => [
             'order' => 1,
@@ -86,7 +92,7 @@ return [
                     'url' => "/downloadable/magazines/2023-12-newsletter.pdf",
                 ],
                 [
-                    'label' => 'Junio ​​de 2023',
+                    'label' => 'Junio de 2023',
                     'url' => "/downloadable/magazines/specialedition23.pdf",
                 ],
                 [

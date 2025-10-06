@@ -32,6 +32,17 @@ const routes = [
         name: "home",
       },
       {
+        path: "media-release-2025-10-06",
+        component: () => import("pages/MediaRelease-2025-10-06.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.mediaResources = await callApi({
+            path: "/media-resources",
+            method: "get",
+          });
+        },
+      },
+      {
         path: "five-year-plan",
         component: () => import("pages/FiveYearPlan.vue"),
         meta: {

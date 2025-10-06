@@ -15,7 +15,8 @@ class MediaResourcesController extends Controller
             'benefits' => __('media-resources.benefits'),
             'supporter' => __('media-resources.supporter'),
             'linkSections' => __('media-resources.link-sections'),
-            'linkHeader' => __('media-resources.linkHeader')
+            'linkHeader' => __('media-resources.linkHeader'),
+            'mediaRelease' => __('media-resources.media-release')
         ]);
     }
 }

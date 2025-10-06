@@ -1,4 +1,7 @@
 <?php
+
+use GrahamCampbell\Markdown\Facades\Markdown;
+
 return [
     'meta' => [
         'title' => 'Media/Resources -Animal Rescue and Adoption',
@@ -48,6 +51,12 @@ return [
             'Donate',
             'Share Our Mission'
         ]
+    ],
+    'media-release' => [
+        'title' => 'Media Release: Oct 6, 2025',
+        'caption' => 'Click image to read full release',
+        'image' => '/images/12-noon-social-media.jpg',
+        'body' => file_get_contents(__DIR__ . '/media-resources/release-2025-10-06.html')
     ],
     'link-sections' => [
         'social' => [

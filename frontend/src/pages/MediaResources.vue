@@ -92,6 +92,22 @@
     <q-separator spaced></q-separator>
 
     <div class="text-h6 text-center">
+      {{ store.mediaResources.mediaRelease.title }}
+      <a href="/media-release-2025-10-06">
+        <q-img
+          :src="store.mediaResources.mediaRelease.image"
+          height="40vh"
+          fit="contain"
+        ></q-img>
+        <div class="text-caption">
+          {{ store.mediaResources.mediaRelease.caption }}
+        </div>
+      </a>
+    </div>
+
+    <q-separator spaced></q-separator>
+
+    <div class="text-h6 text-center">
       {{ store.mediaResources.linkHeader }}
     </div>
 
@@ -148,6 +164,8 @@ import { useStore } from "src/stores/store";
 import { computed, onMounted, ref } from "vue";
 
 const store = useStore();
+
+console.log(store.mediaResources);
 
 const linkSections = computed(() => {
   const keys = Object.keys(store.mediaResources.linkSections);
