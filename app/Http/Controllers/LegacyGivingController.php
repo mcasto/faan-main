@@ -72,7 +72,6 @@ class LegacyGivingController extends Controller
 
         $valid['recaptcha_score'] = $recaptchaResult['score'];
 
-        logger()->info(['valid' => $valid]);
 
         $rec = LegacyGiving::create($valid);
 

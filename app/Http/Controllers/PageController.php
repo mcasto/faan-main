@@ -19,6 +19,8 @@ class PageController extends Controller
 
     public function __construct(ContentService $contentService, SendGridService $sendGridService)
     {
+        logger()->info('page controller instantiated');
+
         $this->contentService = $contentService;
         $this->sendGridService = $sendGridService;
     }

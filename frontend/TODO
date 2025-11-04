@@ -1,7 +1,12 @@
-☐ go live
+✔ run translation command @done(25-11-03 23:24)
+
+On Server:
+    ☐ run `php artisan migrate` to add comments to donations table
+
+
+---
 
 ☐ set up webook for paypal integration
 
 ☐ need to clean up code for events (reptitious ... probably remove FaanEvents.vue compmletely & rewrite PastEvents.vue & UpcomingEvents.vue)
-
 

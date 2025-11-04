@@ -1,22 +1,22 @@
 <?php
 return [
     'meta' => [
-        'title' => 'Rescate y adopción de animales, donaciones para salvar animales',
-        'description' => 'Donaciones: done para salvar animales en Ecuador',
-        'keywords' => 'donar para ayudar a salvar animales en Ecuador, Faan Ecuador',
-        'ogTitle' => 'Rescate y adopción de animales, donaciones para salvar animales',
-        'ogDescription' => 'donar para ayudar a salvar animales en Ecuador, Faan Ecuador',
-        'ogLocale' => 'EN_US'
+        'title' => 'Rescate y Adopción de Animales, donaciones para salvar animales',
+        'description' => 'Donaciones - Dona para Salvar Animales en Ecuador',
+        'keywords' => 'dona para ayudar a salvar animales en Ecuador,FAAN Ecuador',
+        'ogTitle' => 'Rescate y Adopción de Animales, donaciones para salvar animales',
+        'ogDescription' => 'dona para ayudar a salvar animales en Ecuador,FAAN Ecuador',
+        'ogLocale' => 'es_US'
     ],
     'header' => 'Ayuda a los animales de Cuenca, Ecuador',
-    'subtitle' => 'Por favor, done a Faan (Funcidacia Familia Amor Animal) y ayude a nuestros perros a obtener una "nueva correa en la vida"',
-    'contribution-header' => 'Agradecemos todas y cada una de las contribuciones ...',
+    'subtitle' => 'Por favor, haga una donación a FAAN (Funcdación Familia Amor Animal) y ayude a nuestros perros a obtener una "nueva correa para la vida" y a construir el nuevo y moderno Santuario de Súper Perros, ¡donde los desamparados se convierten en súper perros!',
+    'contribution-header' => 'Damos la bienvenida a todas y cada una de las contribuciones...',
     'contribution-info' => file_get_contents(__DIR__ . '/donations/contribution-info.html'),
     'join-header' => 'Considerar:',
     'join-bullets' => file_get_contents(__DIR__ . '/donations/join-bullets.html'),
     'red-carpet' => [
         'image' => '/images/paws-on-red-carpet.jpeg',
-        'caption' => 'En 2025, nuestros donantes serán reconocidos en Gala Faan-Tastica, Old Hollywood como "patas en la alfombra roja". ¡Su reconocimiento será honrado en el nuevo santuario!',
+        'caption' => 'En 2025, nuestros donantes serán reconocidos en la Gala FAAN-TASTICA, Old Hollywood como "Paws on the Red Carpet". ¡Su reconocimiento será honrado en el nuevo santuario!',
     ],
     'paw-images' => [
         '/images/paws-bronze.png',
@@ -24,20 +24,21 @@ return [
         '/images/paws-gold.png',
         '/images/paws-platinum.png'
     ],
-    'form-header' => "Todas las donaciones a FAAN, a menos que se designen específicamente, se aplican al Fondo General de FAAN que respalda tanto la construcción del nuevo santuario como el apoyo y la atención médica de los aproximadamente 150 animales a nuestro cuidado.",
+    'form-header' => "Todas las donaciones a FAAN, a menos que se designen específicamente, se aplican al fondo general de FAAN que apoya tanto la construcción del nuevo santuario como el apoyo y la atención médica de los aproximadamente 150 animales bajo nuestro cuidado.",
     'form-title' => 'Formulario de donación',
-    'form-disclaimer' => "Esta forma es solo para los registros de FAAN. Necesitamos esta información para rastrear adecuadamente las donaciones que recibimos.",
-    'donation-method-header' => 'Elija su método de donación',
+    'form-disclaimer' => "Este formulario es sólo para los registros de la FAAN. Necesitamos esta información para realizar un seguimiento adecuado de las donaciones que recibimos.",
+    'donation-method-header' => 'Elige tu método de donación',
     'donation-methods' => [
-        ['label' => 'Tarjeta de crédito / PayPal', 'value' => 'cc'],
-        ['label' => 'Transferencia bancaria', 'value' => 'transferir'],
-        ['label' => 'Recogida por voluntario de FAAN', 'value' => 'levantar'],
+        ['label' => 'Tarjeta de crédito/PayPal', 'value' => 'cc'],
+        ['label' => 'Transferencia bancaria', 'value' => 'transfer'],
+        ['label' => 'Recogida por voluntario FAAN', 'value' => 'pickup'],
     ],
     'form-fields' => [
         'name' => 'Nombre',
         'email' => 'Correo Electrónico',
-        'amount' => 'Cantidad de donación',
-        'consent' => 'Tengo su consentimiento para que este sitio web mantenga mis datos personales únicamente para fines de comunicación y comprendo que no se compartirá con terceros.'
+        'amount' => 'Monto de la donación',
+        'comments' => 'Comentarios / Mensajes',
+        'consent' => 'Doy mi consentimiento para que este sitio web conserve mis datos personales únicamente con fines de comunicación y entiendo que no se compartirán con terceros.'
     ],
     'form-buttons' => [
         'cancel' => 'Cancelar',

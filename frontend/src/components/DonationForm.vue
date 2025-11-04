@@ -25,6 +25,8 @@
                 class="q-mx-md"
               />
             </template>
+
+            {{ form.donation_method }}
           </div>
           <q-separator spaced></q-separator>
           <div class="column q-gutter-y-sm">
@@ -54,6 +56,12 @@
               outlined
               required
               v-model.number="form.amount"
+            ></q-input>
+            <q-input
+              type="textarea"
+              :label="store.donations.formFields.comments"
+              outlined
+              v-model="form.comments"
             ></q-input>
             <q-checkbox
               :label="store.donations.formFields.consent"
@@ -110,6 +118,7 @@ const form = ref({
   donation_method: "cc",
   name: null,
   email: null,
+  comments: null,
   amount: 0,
   consent: false,
 });
@@ -162,6 +171,8 @@ const submit = async () => {
         type: "positive",
         message: "Donation submitted successfully!",
       });
+
+      cancel();
     }
   } catch (error) {
     console.error("reCAPTCHA failed:", error);

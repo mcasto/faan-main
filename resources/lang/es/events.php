@@ -1,16 +1,16 @@
 <?php
 return [
     'meta' => [
-        'title' => 'Eventos de FAAN - Fundación FAAN para el bienestar animal',
-        'description' => 'Faan Events, Fundaci \ u00f3n Faan Familia Amor Animale',
-        'keywords' => 'Rescate y adopción de animales',
-        'ogTitle' => 'Eventos de FAAN - Fundaci \ u00f3n Faan, Familia Amor y Animale -Animal Rescue and Adoption',
-        'ogDescription' => 'Faan Events, Fundaci \ u00f3n Faan Familia Amor Animale',
-        'ogLocale' => 'EN_US'
+        'title' => 'Eventos FAAN - Fundación FAAN para el Bienestar Animal',
+        'description' => 'FAAN Events,fundaci\u00f3n faan familia amor animale',
+        'keywords' => 'Rescate y Adopción de Animales',
+        'ogTitle' => 'Eventos FAAN - Fundaci\u00f3n FAAN, Familia Amor y Animale-Rescate y Adopción de Animales',
+        'ogDescription' => 'FAAN Events,fundaci\u00f3n faan familia amor animale',
+        'ogLocale' => 'es_US'
     ],
     'headers' => [
         'past' => 'Eventos pasados',
-        'upcoming' => 'Eventos actuales / próximos'
+        'upcoming' => 'Eventos actuales/próximos'
     ],
     'amigo-secreto-2023' => file_get_contents(__DIR__ . '/events/amigo-secreto-2023.html'),
     'dogs-art-love-2024' => file_get_contents(__DIR__ . '/events/dogs-art-love-2024.html'),

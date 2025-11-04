@@ -18,10 +18,8 @@ class ShelterProjectController extends Controller
             'header' => __('sanctuary-project.header'),
             'subtitle' => __('sanctuary-project.subtitle'),
             'overview' => __('sanctuary-project.overview'),
-            'project_header' => __('sanctuary-project.project_header'),
-            'phases' => __('sanctuary-project.phases'),
             'community' => __('sanctuary-project.community'),
-            'preview' => __('sanctuary-project.preview'),
+            'video' => __('sanctuary-project.video')
         ]);
     }
 }

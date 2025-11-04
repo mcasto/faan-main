@@ -2,28 +2,28 @@
 
 return [
     'meta' => [
-        'title' => 'Donaciones de Legado - Donaciones - Fundación FAAN',
-        'description' => 'Donaciones de Legado para perros en Ecuador',
-        'keywords' => 'Donaciones de Legado, heredero, voluntario, rescate y adopción de animales, FAAN',
-        'ogTitle' => 'Voluntario para salvar animales - Fundación FAAN',
-        'ogDescription' => 'Donaciones de Legado para perros en Ecuador',
-        'ogLocale' => 'EN_US'
+        'title' => 'Donaciones de legado - Donaciones - Fundación FAAN',
+        'description' => 'Donaciones heredadas para perros en Ecuador',
+        'keywords' => 'Legacy Giving, programa de herederos, voluntario, Rescate y Adopción de Animales, FAAN',
+        'ogTitle' => 'Voluntariado para salvar animales - Fundación FAAN',
+        'ogDescription' => 'Donaciones heredadas para perros en Ecuador',
+        'ogLocale' => 'es_US'
     ],
     'header-area' => [
-        'header' => 'Donaciones de Legado',
-        'subtitle' => 'Considere irse al bienestar animal al incluir FAAN (<strong> Fundación Familia Amor Animal </strong>) en sus planes finales de patrimonio.',
+        'header' => 'Donación de legado',
+        'subtitle' => 'Considere dejarlo en manos del bienestar animal incluyendo a FAAN (<strong>Fundación Familia Amor Animal</strong>) en sus planes patrimoniales finales.',
         'image' => '/images/legacy-giving-01.jpeg'
     ],
     'left-column' => [
         'why' => [
-            'header' => 'Por qué las cosas planificadas para dar asuntos',
-            'text' => "La gran noticia sobre las donaciones planificadas es que no necesita ser rico para plantar una semilla para la futura sostenibilidad de FAAN.",
+            'header' => 'Por qué son importantes las donaciones planificadas',
+            'text' => "La buena noticia sobre las donaciones planificadas es que no es necesario ser rico para plantar una semilla para la sostenibilidad futura de FAAN.",
             'image' => '/images/legacy-giving-02.jpeg'
         ],
-        'society' => "Únase a la Sociedad Legacy de Faan </strong> y sea reconocido hoy por una causa en la que cree. (Vea la información de contacto a continuación).",
+        'society' => "Únase a la <strong>FAAN's Legacy Society</strong> y sea reconocido hoy por una causa en la que cree. (Consulte la información de contacto a continuación).",
         'guide' => [
-            'header' => "Guía de faan para donaciones planificadas",
-            'image' => '/Images/planning.png',
+            'header' => "Guía de FAAN para donaciones planificadas",
+            'image' => '/images/planificación.png',
             'plan' => [
                 "Complete FAAN's <strong>Legacy Donation</strong> and <strong>Planned Giving Intention</strong> forms.",
                 "Determine the type of gift you wish to make to FAAN (outright bequest of a specific dollar amount, specific assets, or percentage of estate).",
@@ -34,13 +34,13 @@ return [
     ],
     'right-column' => [
         'heir' => [
-            'header' => 'El programa heredero: Artículo de nuestra revista',
-            'text' => 'Lea un testimonio de primera mano sobre el legado.',
-            'buttonLabel' => 'Leer / descargar pdf',
-            'pdf' => '/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf'
+            'header' => 'El Programa Heredero—Artículo de nuestra revista',
+            'text' => 'Lea un testimonio de primera mano sobre Legacy Giving.',
+            'buttonLabel' => 'Leer / Descargar PDF',
+            'pdf' => '/descargable/artículos-extraídos/heirofthedog/heirofthedog.pdf'
         ],
         'pledge' => [
-            'header' => "Promesa de Faan a los donantes",
+            'header' => "El compromiso de la FAAN con los donantes",
             'items' => [
                 " Bequests to FAAN are used for organizational sustainability of the sanctuary unless designated for a specific FAAN program or service by the Donor. These funds are closely invested and allocated by agreement of both the combined FAAN Board &amp; US Advisory Board.",
                 "Upon receipt of a Legacy Intention, Donors will be recognized as members of FAAN's Legacy Society unless an anonymous donation is requested."
@@ -48,7 +48,7 @@ return [
         ]
     ],
     'form-config' => [
-        'title' => 'Donación heredada e intención de donaciones planificadas',
+        'title' => 'Donación heredada e intención de donación planificada',
         'buttonLabel' => 'Entregar',
         'legal_name_of_donor' => [
             'label' => 'Nombre legal del donante',
@@ -60,8 +60,8 @@ return [
             'mask' => '(###) ### - ####'
         ],
         'cedula_passport' => [
-            'label' => 'Cédula o número de pasaporte',
-            'label' => 'Cédula o número de pasaporte',
+            'label' => 'Cédula o Número de Pasaporte',
+            'label' => 'Cédula o Número de Pasaporte',
             'type' => 'número'
         ],
         'email' => [
@@ -71,28 +71,28 @@ return [
         ],
         'address' => [
             'label' => 'DirecciÓn',
-            'type' => 'textea'
+            'type' => 'área de texto'
         ],
         'special_instructions' => [
             'label' => 'Instrucciones especiales',
             'label' => 'Instrucciones especiales',
-            'type' => 'textea'
+            'type' => 'área de texto'
         ],
         'recognized' => [
-            'label' => "Me gustaría ser reconocido como miembro de la Sociedad Legal de FAAN",
+            'label' => "Me gustaría ser reconocido como miembro de la Sociedad Jurídica de la FAAN",
             'type' => 'caja'
         ],
         'donation_type' => [
             'label' => 'Tipo de donación',
             'type' => 'seleccionar',
             'options' => [
-                ['label' => 'Legado directo (cantidad fija de $)', 'value' => 'fijado'],
+                ['label' => 'Legado absoluto (cantidad fija en dólares)', 'value' => 'fijado'],
                 ['label' => 'Legado absoluto (% del patrimonio)', 'value' => 'porcentaje'],
-                ['label' => 'Donación de activos específicos', 'value' => 'donación']
+                ['label' => 'Donación de Activos Específicos', 'value' => 'donación']
             ],
             'followups' => [
                 'fixed' => [
-                    'label' => '$ Cantidad',
+                    'label' => '$ Monto',
                     'type' => 'número'
                 ],
                 'percentage' => [
@@ -101,14 +101,14 @@ return [
                 ],
                 'donation' => [
                     'label' => 'Activos específicos',
-                    'type' => 'textea'
+                    'type' => 'área de texto'
                 ],
             ]
         ],
         'consent' => [
-            'label' => 'Tengo su consentimiento para que este sitio web mantenga mis datos personales únicamente para fines de comunicación y comprendo que no se compartirá con terceros.',
+            'label' => 'Doy mi consentimiento para que este sitio web conserve mis datos personales únicamente con fines de comunicación y entiendo que no se compartirán con terceros.',
             'type' => 'caja'
         ]
     ],
-    'recaptcha' => "Este sitio está protegido por Recaptcha y Google <a href = 'https: //policies.google.com/privacy' target = '_ en blanco'> Política de privacidad </a> y <a href = 'https: //policies.google.com/terms' Target = '_ en blanco'> Términos de servicio </a> Aplicar."
+    'recaptcha' => "Este sitio está protegido por reCAPTCHA y se aplican las <a href='https://policies.google.com/privacy' target='_blank'>Política de Privacidad</a> y los <a href='https://policies.google.com/terms' target='_blank'>Términos de Servicio</a> de Google."
 ];

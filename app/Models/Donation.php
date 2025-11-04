@@ -12,6 +12,7 @@ class Donation extends Model
         'amount',
         'donation_method',
         'type',
-        'recaptcha_score'
+        'recaptcha_score',
+        'comments'
     ];
 }

@@ -9,7 +9,7 @@ return [
         'ogLocale' => 'en_US'
     ],
     'header' => 'Help the Animals of Cuenca, Ecuador',
-    'subtitle' => 'Please donate to FAAN (Funcdación Familia Amor Animal) and help our dogs get a "New Leash On Life"',
+    'subtitle' => 'Please donate to FAAN (Funcdación Familia Amor Animal) and help our dogs get a "New Leash On Life" and build the new and modern Super Dogs Sanctuary, where Underdogs Become Super dogs!',
     'contribution-header' => 'We welcome any and all contributions ...',
     'contribution-info' => file_get_contents(__DIR__ . '/donations/contribution-info.html'),
     'join-header' => 'Consider:',
@@ -37,6 +37,7 @@ return [
         'name' => 'Name',
         'email' => 'Email',
         'amount' => 'Donation Amount',
+        'comments' => 'Comments / Messages',
         'consent' => 'I consent to have this website hold my personal data solely for communication purposes and understand that it will not be shared with any third parties.'
     ],
     'form-buttons' => [

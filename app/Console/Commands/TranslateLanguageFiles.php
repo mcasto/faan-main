@@ -32,6 +32,8 @@ class TranslateLanguageFiles extends Command
         $this->copyAndTranslateDirectory($enBasePath, $esBasePath, $translator);
 
         $this->info('Translation completed successfully!');
+        $this->warn('Check for erroneously translated filenames and the like.');
+        $this->warn('Verify, verify, verify!');
     }
 
     protected function copyAndTranslateDirectory($sourcePath, $targetPath, $translator)
@@ -39,7 +41,7 @@ class TranslateLanguageFiles extends Command
         $items = scandir($sourcePath);
 
         foreach ($items as $item) {
-            if ($item === '.' || $item === '..') continue;
+            if (substr($item, 0, 1) == '.') continue;
 
             $currentSource = $sourcePath . '/' . $item;
             $currentTarget = $targetPath . '/' . $item;

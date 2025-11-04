@@ -74,6 +74,10 @@ export default defineConfig((/* ctx */) => {
           target: "http://faan-main.test",
           changeOrigin: true,
         },
+        "/storage": {
+          target: "http://faan-main.test",
+          changeOrigin: true,
+        },
       },
     },
     // https://v2.quasar.dev/quasa r-cli-vite/quasar-config-file#framework

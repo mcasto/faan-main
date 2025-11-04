@@ -1,23 +1,23 @@
 <?php
 return [
     'meta' => [
-        'title' => 'Contacto - Fundación Faan, Familia Amor y Animale -animal Rescate y adopción',
-        'description' => 'Póngase en contacto con la Fundación Faan Familia Amor Animale, Rescate y Adopción de Animales',
-        'keywords' => 'Contactos, FAAN, Rescate de Animales y Adopción',
-        'ogTitle' => 'Contacto - Fundación Faan, Familia Amor y Animales -animal Rescate y adopción',
-        'ogDescription' => 'Póngase en contacto con la Fundación Faan Familia Amor Animale, Rescate y Adopción de Animales',
-        'ogLocale' => 'EN_US'
+        'title' => 'Contacto - Fundación FAAN, Familia Amor y Animale-Rescate y Adopción de Animales',
+        'description' => 'Contacto fundación faan familia amor animale, Rescate y Adopción de Animales',
+        'keywords' => 'contactos,FAAN,Rescate y Adopción de Animales',
+        'ogTitle' => 'Contacto - Fundación FAAN, Familia Amor y Animales-Rescate y Adopción de Animales',
+        'ogDescription' => 'Contacto fundación faan familia amor animale, Rescate y Adopción de Animales',
+        'ogLocale' => 'es_US'
     ],
-    'header' => 'Póngase en contacto con el equipo de FAAN',
-    'image' => '/page-images/contact-us.jpeg',
+    'header' => 'Contacta con el equipo FAAN',
+    'image' => '/page-images/contacto-nosotros.jpeg',
     'phone' => [
         'header' => 'Números de teléfono',
         'ecuador' => '096-920-9764',
         'us' => '267-208-0708'
     ],
     'paragraphs' => [
-        "Después de ponerse en contacto con FAAN, ya sea por teléfono o por correo electrónico utilizando el formulario, nuestro equipo de voluntarios se pondrá en contacto con usted.",
-        "Póngase en contacto sobre el voluntariado, convertirse en socio comercial o veterinario afiliado a FAAN, acoger o adoptar perros de rescate, y unirse a nuestra comunidad global de amigos amantes de los animales que están haciendo que Cuenca sea conocida como 'La Ciudad que se Preocupa' por el bienestar animal."
+        "After you contact FAAN, either by phone or email using the form, our volunteer team will connect with you.",
+        'Reach out about volunteering, becoming a business partner or FAAN-affiliated vet, fostering or adopting rescue dogs, and joining our global community of animal-loving friends who are making Cuenca known "As the City that Cares" about animal welfare.'
     ],
     'form' => [
         'header' => "Si desea enviarnos un correo electrónico, complete este formulario.",
@@ -26,9 +26,9 @@ return [
         'phone' => 'Teléfono',
         'subject' => 'Sujeto',
         'message' => 'Mensaje',
-        'join_mailing_list' => '¿Unir la lista de correo para recibir boletines, promociones, etc. por correo electrónico?',
-        'consent' => 'Aceptan que este sitio web mantenga mis datos personales únicamente para fines de comunicación y comprendo que no se compartirá con terceros.',
-        'recaptcha' => "Este sitio está protegido por Recaptcha y Google <a href = 'https: //policies.google.com/privacy' target = '_ en blanco'> Política de privacidad </a> y <a href = 'https: //policies.google.com/terms' Target = '_ en blanco'> Términos de servicio </a> Aplicar.",
+        'join_mailing_list' => '¿Únase a la lista de correo para recibir boletines, promociones, etc. por correo electrónico?',
+        'consent' => 'Doy mi consentimiento para que este sitio web conserve mis datos personales únicamente con fines de comunicación y entiendo que no se compartirán con terceros.',
+        'recaptcha' => "Este sitio está protegido por reCAPTCHA y se aplican las <a href='https://policies.google.com/privacy' target='_blank'>Política de Privacidad</a> y los <a href='https://policies.google.com/terms' target='_blank'>Términos de Servicio</a> de Google.",
         'submit' => 'Entregar'
     ]
 ];

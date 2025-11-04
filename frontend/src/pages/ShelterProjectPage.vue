@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-12 col-md-6 info q-pa-md text-subtitle1">
+    <div class="col-12 col-md-8 info q-pa-md text-subtitle1">
       <div class="text-h4">
         {{ store.sanctuary.header }}
       </div>
@@ -10,78 +10,42 @@
 
       <div v-html="store.sanctuary.overview"></div>
 
-      <div class="text-h6 q-mt-md">
-        {{ store.sanctuary.project_header }}
-      </div>
-
-      <div
-        v-for="phase in store.sanctuary.phases"
-        :key="phase.title"
-        class="q-mb-lg q-ml-md"
-      >
-        <!-- Phase Header -->
-        <div class="text-h6 q-pb-sm text-primary">{{ phase.title }}</div>
-
-        <!-- Phase Items -->
-        <q-list bordered separator>
-          <template v-for="item in phase.items" :key="item.title">
-            <!-- Main Item -->
-            <q-item>
-              <q-item-section avatar>
-                <q-icon
-                  :name="
-                    item.completed ? 'check_circle' : 'radio_button_unchecked'
-                  "
-                  :color="item.completed ? 'positive' : 'grey'"
-                />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ item.title }}</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <!-- Child Items (always shown) -->
-            <template v-if="item.children">
-              <q-item
-                v-for="child in item.children"
-                :key="child.title"
-                class="q-pl-xl"
-              >
-                <q-item-section avatar>
-                  <q-icon
-                    :name="
-                      child.completed
-                        ? 'check_circle'
-                        : 'radio_button_unchecked'
-                    "
-                    :color="child.completed ? 'positive' : 'grey'"
-                    size="sm"
-                  />
-                </q-item-section>
-                <q-item-section>
-                  <q-item-label class="text-caption">{{
-                    child.title
-                  }}</q-item-label>
-                </q-item-section>
-              </q-item>
-            </template>
-          </template>
-        </q-list>
-      </div>
+      <video :width="vid.width" :height="vid.height" controls>
+        <source :src="store.sanctuary.video" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       <div v-html="store.sanctuary.community"></div>
     </div>
-    <div class="location col-12 col-md-6 q-pa-md">
+    <div class="location col-12 col-md-4 q-pa-md">
       <q-img :src="superdogsSrc" class="q-mb-md" alt="SuperDogs Logo" />
     </div>
   </div>
 </template>
 
 <script setup>
+import { Screen } from "quasar";
 import { useStore } from "src/stores/store";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const store = useStore();
+
+const vid = computed(() => {
+  const originalWidth = 854;
+  const originalHeight = 480;
+
+  let width = Screen.gt.sm ? Screen.width * 0.5 : Screen.width * 0.9;
+  if (width > 854) {
+    width = 854;
+  }
+
+  const height = Math.round((originalHeight / originalWidth) * width);
+
+  return {
+    width,
+    height,
+  };
+});
 
 const superdogsSrc = computed(() => {
   return `/images/superdogs-logo-${store.language}.png`;

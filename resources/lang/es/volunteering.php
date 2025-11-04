@@ -2,12 +2,12 @@
 
 return [
     'meta' => [
-        'title' => 'Voluntario para salvar animales - Fundación FAAN',
-        'description' => 'Voluntario para el rescate y la adopción de animales',
+        'title' => 'Voluntariado para salvar animales - Fundación FAAN',
+        'description' => 'Voluntario de Rescate y Adopción de Animales',
         'keywords' => 'Voluntario, Rescate y Adopción de Animales, FAAN',
-        'ogTitle' => 'Voluntario para salvar animales - Fundación FAAN',
-        'ogDescription' => 'Voluntario para el rescate y la adopción de animales',
-        'ogLocale' => 'EN_US'
+        'ogTitle' => 'Voluntariado para salvar animales - Fundación FAAN',
+        'ogDescription' => 'Voluntario de Rescate y Adopción de Animales',
+        'ogLocale' => 'es_US'
     ],
     'volunteer' => [
         'header' => 'Voluntario para salvar animales',
@@ -22,9 +22,9 @@ return [
         ]
     ],
     'pawffice' => [
-        'header' => "¡Es otro día en la reflexión de la pata!",
-        'subtitle' => "Estas son solo algunas de las habilidades que estamos buscando actualmente en nuestro trabajo en FAAN.",
-        'action' => "<a href = 'mailto: info@faanecuador.org'> Contáctenos </a> ¡Para discutir cómo <em> usted </em> puede ser voluntario!",
+        'header' => "¡Es otro día en la oficina de patas!",
+        'subtitle' => "Estas son sólo algunas de las habilidades que buscamos actualmente en nuestro trabajo en FAAN.",
+        'action' => "<a href='mailto:info@FAANEcuador.org'>Contáctenos</a> para analizar cómo <em>USTED</em> puede ser voluntario.",
         'skills' => [
             "Development/Fundraising",
             "Work on our Education Curriculum",
@@ -46,17 +46,17 @@ return [
 
     ],
     'paws-for-coffee' => [
-        'image' => '/Images/PAWS-FOR-COFFEE.JPEG',
-        'header' => 'Patas para café',
-        'subtitle' => 'Reúnase con nosotros para tomar café y conversación sobre sus superpoderes voluntarios',
+        'image' => '/images/patas-para-cafe.jpeg',
+        'header' => 'Patas para el café',
+        'subtitle' => 'Reúnase con nosotros para tomar un café y conversar sobre sus superpoderes como voluntario',
         'paragraphs' => [
             "We won't ask you to bite off more than you can chew, but we'd love to meet with you for a virtual or in-person coffee to review our many projects in need of animal-loving volunteers.",
             "<a href='mailto:info@FAANEcuador.org'>Contact Us</a> to arrange the meetign!"
         ]
     ],
     'welfare' => [
-        'image' => '/Images/Kindness.jpeg',
-        'caption' => 'Enséñeles a ser amables con los animales. Crecerán también amables con las personas.',
+        'image' => '/images/bondad.jpeg',
+        'caption' => 'Enséñales a ser amables con los animales. También crecerán amables con la gente.',
         'header' => 'FAAN se centra en el bienestar animal a través de la educación',
         'paragraphs' => [
             "FAAN volunteers have begun the work on developing an education program and curriculum on animal welfare in Ecuador. The program will target early grade education as well as key points of influence in animal welfare within communities including veterinarians, pet stores, and youth groups.",
@@ -66,7 +66,7 @@ return [
         ]
     ],
     'faan-atics' => [
-        'header' => "¡Únete a los faan-cats! Somos voluntarios de amantes de los animales en Cuenca y en todo el mundo que están marcando la diferencia a través del voluntariado en el sitio y virtual. Puede trabajar con nuestros perros o trabajar en nuestra oficina de negocios y medios.",
+        'header' => "¡Únete a FAAN-ATICS! Somos voluntarios amantes de los animales en Cuenca y alrededor del mundo que estamos marcando la diferencia a través del voluntariado presencial y virtual. Puede trabajar con nuestros perros o trabajar en nuestra oficina comercial y de medios.",
         'images' => [
             '/page-images/volunteering/faan-banner.jpeg',
             '/page-images/volunteering/coloring-book.jpeg',

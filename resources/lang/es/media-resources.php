@@ -1,14 +1,17 @@
 <?php
+
+use GrahamCampbell\Markdown\Facades\Markdown;
+
 return [
     'meta' => [
-        'title' => 'Medios/Recursos -Rescate y adopción',
-        'description' => 'Medios/Recursos - Fundación Faan Familia Amor Animale, Rescate y Adopción de Animales',
-        'keywords' => 'Rescate y adopción de animales, Ecuador',
-        'ogTitle' => 'Medios - Fundación Faan, Familia Amor y Animale -animal Rescate y adopción',
-        'ogDescription' => 'Medios/Recursos - Fundación Faan Familia Amor Animale, Rescate y Adopción de Animales',
-        'ogLocale' => 'EN_US'
+        'title' => 'Medios/Recursos -Rescate y adopción de animales',
+        'description' => 'Medios/Recursos - fundación faan familia amor animale,Rescate y Adopción de Animales',
+        'keywords' => 'Rescate y Adopción de Animales,Ecuador',
+        'ogTitle' => 'Medios - Fundación FAAN, Familia Amor y Animale-Rescate y Adopción de Animales',
+        'ogDescription' => 'Medios/Recursos - fundación faan familia amor animale,Rescate y Adopción de Animales',
+        'ogLocale' => 'es_US'
     ],
-    'linkHeader' => 'Multimedia en línea',
+    'linkHeader' => 'multimedia en línea',
     'top' => [
         'header' => 'Medios y recursos',
         'paragraphs' => [
@@ -38,9 +41,9 @@ return [
         ]
     ],
     'supporter' => [
-        'header' => '¡Sea un seguidor de perros faan-ácido!',
-        'subtitle' => '¡Únete hoy a nosotros y sé un partidario de FAAN-anat!',
-        'bullet' => '/Images/list-paw.png',
+        'header' => '¡Sea un partidario de perros FAAN-atic!',
+        'subtitle' => '¡Únase a nosotros y sea un partidario de FAAN-atic hoy!',
+        'bullet' => '/images/list-paw.png',
         'items' => [
             'Volunteer',
             'Adopt',
@@ -50,22 +53,22 @@ return [
         ]
     ],
     'media-release' => [
-        'title' => 'Comunicado de Prensa: 6 de Octubre, 2025',
-        'caption' => 'Haz clic en la imagen para leer el comunicado completo',
-        'image' => '/images/12-noon-social-media.jpg',
+        'title' => 'Comunicado de prensa: 6 de octubre de 2025',
+        'caption' => 'Haga clic en la imagen para leer el comunicado completo',
+        'image' => '/images/12-mediodía-social-media.jpg',
         'body' => file_get_contents(__DIR__ . '/media-resources/release-2025-10-06.html')
     ],
     'link-sections' => [
         'social' => [
             'order' => 1,
-            'header' => 'Redes sociales',
+            'header' => 'Redes Sociales',
             'links' => [
                 [
                     'label' => 'Página de Facebook',
                     'url' => 'https://www.facebook.com/familiaamoranimal',
                 ],
                 [
-                    'label' => 'Grupo de Facebook',
+                    'label' => 'grupo de facebook',
                     'url' => 'https://www.facebook.com/groups/736258083116570/',
                 ],
                 [
@@ -77,65 +80,65 @@ return [
         ],
         'magazines' => [
             'order' => 2,
-            'header' => 'Revistas de faan',
+            'header' => 'Revistas FAAN',
             'links' => [
                 [
-                    'label' => 'Abril de 2024',
-                    'url' => "/downloadable/magazines/2024-04.pdf",
+                    'label' => 'abril 2024',
+                    'url' => "/descargable/revistas/2024-04.pdf",
                 ],
                 [
                     'label' => 'Enero de 2024: Informe anual y hoja de ruta',
-                    'url' => "/downloadable/magazines/2024-01-16-faan_annual_report_and_roadmap.pdf",
+                    'url' => "/descargable/magazines/2024-01-16-FAAN_annual_report_and_roadmap.pdf",
                 ],
                 [
-                    'label' => 'Diciembre de 2023',
-                    'url' => "/downloadable/magazines/2023-12-newsletter.pdf",
+                    'label' => 'diciembre 2023',
+                    'url' => "/descargable/revistas/2023-12-newsletter.pdf",
                 ],
                 [
-                    'label' => 'Junio de 2023',
-                    'url' => "/downloadable/magazines/specialedition23.pdf",
+                    'label' => 'junio 2023',
+                    'url' => "/descargable/revistas/especialedition23.pdf",
                 ],
                 [
-                    'label' => 'Mayo de 2023',
-                    'url' => "/downloadable/magazines/faanmay2023.pdf",
+                    'label' => 'mayo 2023',
+                    'url' => "/descargable/revistas/FAANMay2023.pdf",
                 ],
                 [
-                    'label' => 'Marzo de 2023',
-                    'url' => "/downloadable/magazines/faanmar2023magazinev1.pdf",
+                    'label' => 'marzo 2023',
+                    'url' => "/descargable/revistas/FAANMar2023MagazineV1.pdf",
                 ],
                 [
-                    'label' => 'Febrero de 2023',
-                    'url' => '/View-PDF? PDF Link =/Downloadable/Magazines/Feb 2023.pdf',
+                    'label' => 'febrero 2023',
+                    'url' => "/descargable/revistas/feb2023.pdf",
                 ],
                 [
-                    'label' => 'Enero de 2023',
-                    'url' => '/View-PDF? PDF Link =/Downloadable/Magazines/Jan 2023.pdf',
+                    'label' => 'enero 2023',
+                    'url' => "/descargable/magazines/jan2023.pdf",
                 ],
                 [
-                    'label' => 'Actualización de progreso de FAAN (enero de 2023)',
-                    'url' => "/downloadable/magazines/progressupdatej1823.pdf",
+                    'label' => 'Actualización de progreso de la FAAN (enero de 2023)',
+                    'url' => "/descargable/magazines/progressupdatej1823.pdf",
                 ],
                 [
-                    'label' => 'Diciembre de 2022',
-                    'url' => "/downloadable/magazines/dec2022.pdf",
+                    'label' => 'diciembre 2022',
+                    'url' => "/descargable/revistas/dec2022.pdf",
                 ],
                 [
-                    'label' => 'Noviembre de 2022',
-                    'url' => "/downloadable/magazines/midnov2022.pdf",
+                    'label' => 'noviembre 2022',
+                    'url' => "/descargable/magazines/midnov2022.pdf",
                 ]
             ]
         ],
         'specialDocuments' => [
             'order' => 3,
-            'header' => 'Documentos de información y recursos especiales',
+            'header' => 'Documentos informativos y recursos especiales',
             'links' => [
                 [
-                    'label' => 'Lista de deseos de perrito',
-                    'url' => "/downloadable/doggie-wish-list.pdf",
+                    'label' => 'Lista de deseos para perros',
+                    'url' => "/descargable/lista-de-deseos-de-perritos.pdf",
                 ],
                 [
                     'label' => 'Libro para colorear y actividades (bilingüe)',
-                    'url' => "/downloadable/bekindbiling.pdf",
+                    'url' => "/descargable/bekindbiling.pdf",
                 ]
             ]
         ],
@@ -144,71 +147,71 @@ return [
             'header' => 'Artículos extraídos',
             'links' => [
                 [
-                    'label' => 'Un día - Una historia de Sandra Beaumont -Aug 2023',
-                    'url' => "/downloadable/extracted-articles/oneday2023.pdf",
+                    'label' => 'Un día: una historia de Sandra Beaumont, agosto de 2023',
+                    'url' => "/descargable/artículos-extraídos/oneday2023.pdf",
                 ],
                 [
-                    'label' => 'Dodi \'s Dogs - A ReHoming Love Story-June 2023',
-                    'url' => "/downloadable/extracted-articles/dodisdogs.pdf",
+                    'label' => 'Dodi\'s Dogs - A ReHoming Love Story-June 2023',
+                    'url' => "/descargable/artículos-extraídos/dodisdogs.pdf",
                 ],
                 [
                     'label' => 'Adopciones-junio 2023',
-                    'url' => "/downloadable/extracted-articles/adoptionsJune2023.pdf",
+                    'url' => "/descargable/artículos-extraídos/adopcionesjunio2023.pdf",
                 ],
                 [
-                    'label' => 'FAAN HECHS-¿DID SABES? -JUNE 2023',
-                    'url' => "/downloadable/extracted-articles/faanfactsjune2023.pdf",
+                    'label' => 'Datos FAAN-¿Sabías que?-Junio ​​2023',
+                    'url' => "/descargable/artículos-extraídos/faanfactsjune2023.pdf",
                 ],
                 [
-                    'label' => 'Usted adoptó, ¿ahora qué? -June 2023',
-                    'url' => "/downloadable/extracted-articles/ruleof3June2023.pdf",
+                    'label' => 'Adoptaste-¿Y ahora qué?-Junio ​​2023',
+                    'url' => "/descargable/artículos-extraídos/ruleof3june2023.pdf",
                 ],
                 [
-                    'label' => 'Heredero del perro-mayo 2023',
-                    'url' => "/downloadable/extracted-articles/heirofthedog/heirofthedog.pdf",
+                    'label' => 'Heredero del Perro-Mayo 2023',
+                    'url' => "/descargable/artículos-extraídos/heirofthedog/heirofthedog.pdf",
                 ],
                 [
-                    'label' => '5 cosas que los perros nos enseñan a mayo 2023',
-                    'url' => "/downloadable/extracted-articles/thingsdogsteachus/thingsdogsteachus.pdf",
+                    'label' => '5 cosas que nos enseñan los perros: mayo de 2023',
+                    'url' => "/descargable/artículos-extraídos/thingsdogsteachus/thingsdogsteachus.pdf",
                 ],
                 [
-                    'label' => 'Celebrando la vida emocional de los perros-mayo 2023',
-                    'url' => "/downloadable/extracted-articles/emotionallives/emotionallives.pdf",
+                    'label' => 'Celebrando la vida emocional de los perros: mayo de 2023',
+                    'url' => "/descargable/artículos-extraídos/emotionallives/emotionallives.pdf",
                 ],
                 [
-                    'label' => 'Faan habla con Yapa Tree: Nov 2023',
+                    'label' => 'FAAN Conversa con Yapa Tree: Nov 2023',
                     'url' => 'https://yapatree.com/cuenca-dog-problem-what-you-can-do/',
                 ]
             ]
         ],
         'worldAnimalDay' => [
             'order' => 5,
-            'header' => 'Faan celebra el Día Mundial de los Animales',
+            'header' => 'FAAN celebra el Día Mundial de los Animales',
             'links' => [
                 [
-                    'label' => 'Yapa Tree Características Faan',
+                    'label' => 'Características del árbol de Yapa FAAN',
                     'url' => 'https://yapatree.com/faan-celebrate-world-animal-day/',
                 ],
                 [
-                    'label' => 'Visite nuestro santuario temporal',
+                    'label' => 'Visita nuestro Santuario Temporal',
                     'url' => 'https://www.youtube.com/watch?v=kAZDjqn3U5Y&t=168s&ab_channel=TravelWithUsbyWarren%26Julie',
                 ]
             ]
         ],
         'featured' => [
             'order' => 6,
-            'header' => 'Artículos con faan',
+            'header' => 'Artículos que presentan FAAN',
             'links' => [
                 [
-                    'label' => 'Cuenca High Life Pt.1',
+                    'label' => 'Cuenca alta vida parte 1',
                     'url' => 'https://cuencahighlife.com/discovering-a-pawsome-volunteer-purpose-expat-couple-joins-effort-to-rescue-cuenca-street-dogs/',
                 ],
                 [
-                    'label' => 'Cuenca High Life Pt.2',
+                    'label' => 'Cuenca alta vida parte 2',
                     'url' => 'https://cuencahighlife.com/faans-dream-of-providing-a-better-life-for-homeless-dogs-in-cuenca/',
                 ],
                 [
-                    'label' => 'Cuenca High Life Pt.3',
+                    'label' => 'Cuenca alta vida pt.3',
                     'url' => 'https://cuencahighlife.com/cuenca-expats-raise-their-paws-to-build-a-new-animal-shelter-heres-how-you-can-help/',
                 ]
             ]
@@ -222,11 +225,11 @@ return [
                     'url' => '/multimedia/videos/faan-video-reel-2024-03-21.mp4',
                 ],
                 [
-                    'label' => 'Yapa Tree Características Faan',
+                    'label' => 'Características del árbol de Yapa FAAN',
                     'url' => 'https://yapatree.com/faan-celebrate-world-animal-day/',
                 ],
                 [
-                    'label' => 'Visite nuestro santuario temporal',
+                    'label' => 'Visita nuestro Santuario Temporal',
                     'url' => 'https://www.youtube.com/watch?v=kAZDjqn3U5Y&t=168s&ab_channel=TravelWithUsbyWarren%26Julie',
                 ],
                 [
@@ -235,19 +238,19 @@ return [
                 ],
                 [
                     'label' => 'Nuestros logros',
-                    'url' => '/multimedia/videos/march25.mp4',
+                    'url' => '/multimedia/videos/marzo25.mp4',
                 ],
                 [
-                    'label' => 'Espectáculo de diapositivas voluntarias de FAAN-cats',
-                    'url' => '/faan-cats-volteer-slide-show',
+                    'label' => 'Presentación de diapositivas voluntaria FAAN-atics',
+                    'url' => '/presentación-de-diapositivas-voluntaria-de-faan-atics',
                 ],
                 [
-                    'label' => 'Día mundial de animales sin hogar: ¡Únete a Michael y a sus invitados, Rosemary Rein y Sandra Beaumont mientras discutimos la importancia de apoyar a los animales callejeros!',
+                    'label' => 'Día Mundial de los Animales Sin Hogar: ¡Únase a Michael y sus invitados, Rosemary Rein y Sandra Beaumont mientras discutimos la importancia de apoyar a los animales callejeros!',
                     'url' => 'https://www.youtube.com/live/KSFuyyd4xCQ?feature',
                 ],
                 [
-                    'label' => '¡Recordando el 2023 GALAFAAN-TASTA!',
-                    'url' => '/multimedia/videos/gala-thanks-vid.mp4',
+                    'label' => '¡Recordando la GalaFAAN-TASTICA 2023!',
+                    'url' => '/multimedia/videos/gala-gracias-vid.mp4',
                 ]
             ]
         ]

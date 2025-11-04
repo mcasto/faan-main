@@ -191,7 +191,8 @@ class MondayService
             ->map(function ($column) {
                 return [
                     'id' => $column->id,
-                    'field' => $column->id == 'name' ? 'id' : Str::snake($column->title)
+                    'field' => $column->id == 'name' ? 'id' : Str::snake($column->title),
+                    'type' => $column->type  // Add this line
                 ];
             })->filter(function ($column) use ($item) {
                 return $column['field'] != 'id' && in_array($column['field'], array_keys($item));
@@ -207,6 +208,13 @@ class MondayService
                 ];
                 continue;
             }
+
+            // Use the type from column_builder
+            if (isset($column['type']) && $column['type'] == 'long_text') {
+                $column_values[$column['id']] = ['text' => $item[$column['field']]];
+                continue;
+            }
+
             $column_values[$column['id']] = $item[$column['field']] ?? null;
         }
 

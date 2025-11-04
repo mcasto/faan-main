@@ -4,21 +4,21 @@ return [
     // Navigation
     'navigation' => [
         'home' => 'Hogar',
-        'sanctuary_project' => 'Proyecto santuario',
+        'sanctuary_project' => 'Proyecto Santuario',
         'upcoming' => 'Próximo',
-        'adoptions' => 'Adopción',
+        'adoptions' => 'Adopciones',
         'donations' => 'Donaciones',
-        'legacy_giving' => 'Legacy Deding',
+        'legacy_giving' => 'Donación de legado',
         'volunteering' => 'Voluntariado',
         'media_resources' => 'Media/Resources',
-        'gala_faantastica' => 'Gala-faantástica',
-        'meet_faantastics' => 'Conoce a los temas de los faan',
+        'gala_faantastica' => 'GALA-FAANTÁSTICA',
+        'meet_faantastics' => 'Conoce los FAAN-TASTICS',
         'contact_us' => 'Contáctenos',
         'donate' => 'Donar',
-        'faan_events' => 'Eventos de faan',
+        'faan_events' => 'Eventos FAAN',
         'past' => 'Pasado',
-        'faan_holiday_store' => 'Tienda de vacaciones faan',
-        'faan_atics_slideshow' => 'Espectáculo de diapositivas voluntarias de FAAN-cats',
+        'faan_holiday_store' => 'Tienda navideña FAAN',
+        'faan_atics_slideshow' => 'Presentación de diapositivas para voluntarios de FAAN-atics',
         'view_pdf' => 'Ver PDF',
     ],
 
@@ -48,8 +48,8 @@ return [
 
     // Meta information
     'meta' => [
-        'default_title' => 'Fundación FAAN - Rescate y adopción de animales en Ecuador',
-        'default_description' => 'Ahorre, adopte y ayude a los animales en Ecuador, una organización para el rescate de animales, la donación y la adopción',
-        'keywords' => 'Rescate de animales, adopción, Fundación Faan Ecuador, Rescate de Animales, Donate, Save Animals, Save Dogs',
+        'default_title' => 'Fundación FAAN - Rescate y Adopción de Animales en Ecuador',
+        'default_description' => 'Salva, Adopta y Ayuda a Animales en Ecuador, una Organización de Rescate, Donación y Adopción de Animales',
+        'keywords' => 'Rescate Animal,Adopción,Fundación FAAN Ecuador,Rescate Animal,donar,salvar animales,salvar perros',
     ],
 ];

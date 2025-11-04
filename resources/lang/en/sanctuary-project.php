@@ -11,49 +11,7 @@ return [
     ],
     'header' => "FAAN's Current Sanctuary Project & Goals",
     'subtitle' => 'Keeping Animals Safe in Cuenca, Ecuador',
-    'overview' => "We did it! We raised funds to purchase permanent land for the dogs of FAAN who were facing eviction. We are now entering building construction so that our dogs will have a safe and modern sanctuary that, hand in hand with education, prevention, and adoption, will make a real difference in Cuenca's care and kindness for abandoned, rescued, and vulnerable dogs.",
-    'project_header' => "Project Goals",
-    'phases' => [
-        [
-            'title' => 'Phase 1',
-            'items' => [
-                [
-                    'title' => 'Purchase the land',
-                    'completed' => true,
-                    'children' => [
-                        ['title' => 'Secure permits and create road access', 'completed' => true],
-                        ['title' => 'Complete soil test to determine building location', 'completed' => true],
-                        ['title' => 'Identify architect for detailed plan and specifications', 'completed' => true],
-                        ['title' => 'Launch Capital Campaign to build the sanctuary', 'completed' => true],
-                    ]
-                ],
-                [
-                    'title' => 'Create the needed infrastructure for building the new dog sanctuary (where we are now)',
-                    'completed' => false
-                ]
-            ]
-        ],
-        [
-            'title' => 'Phase 2',
-            'items' => [
-                ['title' => 'Construction of the basic sanctuary structure', 'completed' => false],
-                [
-                    'title' => 'Moving our loving animals, particularly those at our upper sanctuary, who are now at imminent risk due to recent landslides at their temporary location',
-                    'completed' => false
-                ]
-            ]
-        ],
-        [
-            'title' => 'Phase 3',
-            'items' => [
-                ['title' => 'Construction of the outer buildings', 'completed' => false],
-                [
-                    'title' => 'Completion of the sanctuary, including our adoption center, special areas for visiting vets/spay and neutering, grooming area for the dogs, and a community education room',
-                    'completed' => false
-                ]
-            ]
-        ]
-    ],
+    'overview' => file_get_contents(__DIR__ . '/sanctuary-project/overview.html'),
     'community' => file_get_contents(__DIR__ . '/sanctuary-project/community.html'),
-    'preview' => file_get_contents(__DIR__ . '/sanctuary-project/preview.html')
+    'video' => '/storage/videos/superdogs.mp4'
 ];

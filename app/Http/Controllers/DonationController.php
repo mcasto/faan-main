@@ -61,6 +61,7 @@ class DonationController extends Controller
             'email' => 'required|email|max:255',
             'amount' => 'required|numeric|min:1',
             'donation_method' => 'required|string|in:cc,transfer,pickup',
+            'comments' => 'nullable|string'
         ]);
 
         // 2. Verify reCAPTCHA
@@ -84,8 +85,8 @@ class DonationController extends Controller
             // insert into local db
             $valid['recaptcha_score'] = $recaptchaResult['score'];
 
-            $inserted = Donation::create($valid);
-            $rec = Donation::find($inserted->id);
+            $rec = Donation::create($valid);
+
 
             $monday = new MondayService();
             $item = [
@@ -96,7 +97,8 @@ class DonationController extends Controller
                 'donation_method' => $rec->donation_method,
                 'donation_type' => $rec->type,
                 'recaptcha_score' => $rec->recaptcha_score,
-                'id' => $rec->id
+                'id' => $rec->id,
+                'donor_comments' => $rec->comments
             ];
 
             $response = $monday->addItem('Web Donations', $item);
