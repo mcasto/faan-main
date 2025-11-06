@@ -1,0 +1,37 @@
+[
+  {
+    "phase": "1",
+    "name": "Safe Haven",
+    "description": "Urgent move and infrastructure including fencing, kennels, kitchen, office and movement of the dogs",
+    "theme": "Every hero needs a home building the foundation to move our dogs out of the current temporary shelter.",
+    "building_cost": "$127,000.00"
+  },
+  {
+    "phase": "2",
+    "name": "Heart & Healing Center",
+    "description": "Main building for Clinic, Grooming, Adoption Area, Caretaker Apartment, Visitor Areas",
+    "theme": "The beating heart of compassion and healing for every Superdog. This is the main building of the Sanctuary where our dogs are cared for and meet adopters.",
+    "building_cost": "\n$92,000"
+  },
+  {
+    "phase": "3",
+    "name": "Playground of Joy",
+    "description": "Include a fenced in playground for training/walks and even a swim.",
+    "theme": "A space where our rescued dogs rediscover happiness.",
+    "building_cost": "$32,000.00"
+  },
+  {
+    "phase": "4",
+    "name": "Garden of Love & Legacy",
+    "description": "Includes our renovated Adobe House/Chapel & Memorial Garden for the ashes of departed pets. A Community room for group education, merchandising, pet supplies",
+    "theme": "Honoring those pets who have passed over the rainbow bridge and teaching compassion.",
+    "building_cost": "$25,000.00"
+  },
+  {
+    "phase": "5",
+    "name": "Sanctuary Experience",
+    "description": "Consists of Glamping and Hiking area/2 domes, each accommodating 4 persons.",
+    "theme": "Where visitors live , dream, rest and reflect and can connect with our dogs.",
+    "building_cost": "$20,000.00"
+  }
+]

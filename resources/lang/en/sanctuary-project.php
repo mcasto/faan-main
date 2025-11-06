@@ -13,5 +13,9 @@ return [
     'subtitle' => 'Keeping Animals Safe in Cuenca, Ecuador',
     'overview' => file_get_contents(__DIR__ . '/sanctuary-project/overview.html'),
     'community' => file_get_contents(__DIR__ . '/sanctuary-project/community.html'),
+    'budget' => [
+        'header' => file_get_contents(__DIR__ . '/sanctuary-project/budget.html'),
+        'items' => json_decode(file_get_contents(__DIR__ . '/sanctuary-project/budget.json'))
+    ],
     'video' => '/storage/videos/superdogs.mp4'
 ];
