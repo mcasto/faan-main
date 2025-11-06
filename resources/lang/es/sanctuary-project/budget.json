@@ -1,0 +1,37 @@
+[
+  {
+    "phase": "1",
+    "name": "Refugio seguro",
+    "description": "Traslado urgente e infraestructura, incluyendo cercas, perreras, cocina, oficina y traslado de los perros.",
+    "theme": "Todo héroe necesita un hogar: construyamos los cimientos para sacar a nuestros perros del refugio temporal actual.",
+    "building_cost": "$127,000.00"
+  },
+  {
+    "phase": "2",
+    "name": "Centro del corazón y la sanación",
+    "description": "Edificio principal para clínica, peluquería, área de adopción, apartamento del cuidador, área de visitantes.s",
+    "theme": "El corazón palpitante de la compasión y la sanación para cada Superperro. Este es el edificio principal del Santuario, donde se cuida a nuestros perros y donde se reúnen con sus adoptantes.",
+    "building_cost": "$92,000"
+  },
+  {
+    "phase": "3",
+    "name": "Parque infantil de la alegría",
+    "description": "Incluye un área de juegos cercada para entrenar/pasear e incluso nadar.",
+    "theme": "Un espacio donde nuestros perros rescatados vuelven a encontrar la felicidad.",
+    "building_cost": "$32,000.00"
+  },
+  {
+    "phase": "4",
+    "name": "Jardín del Amor y el Legado",
+    "description": "Incluye nuestra casa/capilla Adobe renovada y el jardín conmemorativo para las cenizas de las mascotas fallecidas. Una sala comunitaria para educación grupal, comercialización y suministros para mascotas.",
+    "theme": "Honrar a aquellas mascotas que han cruzado el puente del arcoíris y enseñar compasión.",
+    "building_cost": "$25,000.00"
+  },
+  {
+    "phase": "5",
+    "name": "Experiencia en el santuario",
+    "description": "Consta de una zona de glamping y senderismo/2 cúpulas, cada una con capacidad para 4 personas.",
+    "theme": "Donde los visitantes viven, sueñan, descansan, reflexionan y pueden conectar con nuestros perros.",
+    "building_cost": "$20,000.00"
+  }
+]

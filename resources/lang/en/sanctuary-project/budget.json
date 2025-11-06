@@ -11,7 +11,7 @@
     "name": "Heart & Healing Center",
     "description": "Main building for Clinic, Grooming, Adoption Area, Caretaker Apartment, Visitor Areas",
     "theme": "The beating heart of compassion and healing for every Superdog. This is the main building of the Sanctuary where our dogs are cared for and meet adopters.",
-    "building_cost": "\n$92,000"
+    "building_cost": "$92,000"
   },
   {
     "phase": "3",
@@ -31,7 +31,7 @@
     "phase": "5",
     "name": "Sanctuary Experience",
     "description": "Consists of Glamping and Hiking area/2 domes, each accommodating 4 persons.",
-    "theme": "Where visitors live , dream, rest and reflect and can connect with our dogs.",
+    "theme": "Where visitors live, dream, rest and reflect and can connect with our dogs.",
     "building_cost": "$20,000.00"
   }
 ]
