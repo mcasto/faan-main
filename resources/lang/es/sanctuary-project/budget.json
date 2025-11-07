@@ -1,37 +1,70 @@
 [
   {
-    "phase": "1",
-    "name": "Refugio seguro",
-    "description": "Traslado urgente e infraestructura, incluyendo cercas, perreras, cocina, oficina y traslado de los perros.",
-    "theme": "Todo héroe necesita un hogar: construyamos los cimientos para sacar a nuestros perros del refugio temporal actual.",
-    "building_cost": "$127,000.00"
+    "phase": { "label": "Fase", "value": "1" },
+    "name": { "label": "Nombre", "value": "Refugio Seguro" },
+    "description": {
+      "label": "Descripción",
+      "value": "Traslado urgente e infraestructura que incluye cercas, perreras, cocina, oficina y movimiento de los perros."
+    },
+    "theme": {
+      "label": "Tema",
+      "value": "Todo héroe necesita un hogar: construyendo la base para trasladar a nuestros perros del refugio temporal actual."
+    },
+    "building_cost": {
+      "label": "Costo de Construcción",
+      "value": "$127,000.00"
+    }
   },
   {
-    "phase": "2",
-    "name": "Centro del corazón y la sanación",
-    "description": "Edificio principal para clínica, peluquería, área de adopción, apartamento del cuidador, área de visitantes.s",
-    "theme": "El corazón palpitante de la compasión y la sanación para cada Superperro. Este es el edificio principal del Santuario, donde se cuida a nuestros perros y donde se reúnen con sus adoptantes.",
-    "building_cost": "$92,000"
+    "phase": { "label": "Fase", "value": "2" },
+    "name": { "label": "Nombre", "value": "Centro de Corazón y Sanación" },
+    "description": {
+      "label": "Descripción",
+      "value": "Edificio principal para clínica, peluquería, área de adopción, apartamento del cuidador y áreas para visitantes."
+    },
+    "theme": {
+      "label": "Tema",
+      "value": "El corazón palpitante de compasión y sanación para cada Superdog. Este es el edificio principal del Santuario donde se cuida a nuestros perros y se encuentran con sus adoptantes."
+    },
+    "building_cost": { "label": "Costo de Construcción", "value": "$92,000.00" }
   },
   {
-    "phase": "3",
-    "name": "Parque infantil de la alegría",
-    "description": "Incluye un área de juegos cercada para entrenar/pasear e incluso nadar.",
-    "theme": "Un espacio donde nuestros perros rescatados vuelven a encontrar la felicidad.",
-    "building_cost": "$32,000.00"
+    "phase": { "label": "Fase", "value": "3" },
+    "name": { "label": "Nombre", "value": "Patio de Juegos de la Alegría" },
+    "description": {
+      "label": "Descripción",
+      "value": "Incluye un área cercada para entrenamiento, paseos e incluso para nadar."
+    },
+    "theme": {
+      "label": "Tema",
+      "value": "Un espacio donde nuestros perros rescatados redescubren la felicidad."
+    },
+    "building_cost": { "label": "Costo de Construcción", "value": "$32,000.00" }
   },
   {
-    "phase": "4",
-    "name": "Jardín del Amor y el Legado",
-    "description": "Incluye nuestra casa/capilla Adobe renovada y el jardín conmemorativo para las cenizas de las mascotas fallecidas. Una sala comunitaria para educación grupal, comercialización y suministros para mascotas.",
-    "theme": "Honrar a aquellas mascotas que han cruzado el puente del arcoíris y enseñar compasión.",
-    "building_cost": "$25,000.00"
+    "phase": { "label": "Fase", "value": "4" },
+    "name": { "label": "Nombre", "value": "Jardín del Amor y el Legado" },
+    "description": {
+      "label": "Descripción",
+      "value": "Incluye nuestra Casa de Adobe/Capilla renovada y el Jardín Conmemorativo para las cenizas de mascotas fallecidas. También una sala comunitaria para educación grupal, venta de productos y suministros para mascotas."
+    },
+    "theme": {
+      "label": "Tema",
+      "value": "Honrando a las mascotas que han cruzado el puente del arcoíris y enseñando compasión."
+    },
+    "building_cost": { "label": "Costo de Construcción", "value": "$25,000.00" }
   },
   {
-    "phase": "5",
-    "name": "Experiencia en el santuario",
-    "description": "Consta de una zona de glamping y senderismo/2 cúpulas, cada una con capacidad para 4 personas.",
-    "theme": "Donde los visitantes viven, sueñan, descansan, reflexionan y pueden conectar con nuestros perros.",
-    "building_cost": "$20,000.00"
+    "phase": { "label": "Fase", "value": "5" },
+    "name": { "label": "Nombre", "value": "Experiencia del Santuario" },
+    "description": {
+      "label": "Descripción",
+      "value": "Consiste en un área de glamping y senderismo / 2 domos, cada uno con capacidad para 4 personas."
+    },
+    "theme": {
+      "label": "Tema",
+      "value": "Donde los visitantes viven, sueñan, descansan y reflexionan, y pueden conectar con nuestros perros."
+    },
+    "building_cost": { "label": "Costo de Construcción", "value": "$20,000.00" }
   }
 ]

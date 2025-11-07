@@ -1,37 +1,67 @@
 [
   {
-    "phase": "1",
-    "name": "Safe Haven",
-    "description": "Urgent move and infrastructure including fencing, kennels, kitchen, office and movement of the dogs",
-    "theme": "Every hero needs a home building the foundation to move our dogs out of the current temporary shelter.",
-    "building_cost": "$127,000.00"
+    "phase": { "label": "Phase", "value": "1" },
+    "name": { "label": "Name", "value": "Safe Haven" },
+    "description": {
+      "label": "Description",
+      "value": "Urgent move and infrastructure including fencing, kennels, kitchen, office and movement of the dogs"
+    },
+    "theme": {
+      "label": "Theme",
+      "value": "Every hero needs a home building the foundation to move our dogs out of the current temporary shelter."
+    },
+    "building_cost": { "label": "Building Cost", "value": "$127,000.00" }
   },
   {
-    "phase": "2",
-    "name": "Heart & Healing Center",
-    "description": "Main building for Clinic, Grooming, Adoption Area, Caretaker Apartment, Visitor Areas",
-    "theme": "The beating heart of compassion and healing for every Superdog. This is the main building of the Sanctuary where our dogs are cared for and meet adopters.",
-    "building_cost": "$92,000"
+    "phase": { "label": "Phase", "value": "2" },
+    "name": { "label": "Name", "value": "Heart & Healing Center" },
+    "description": {
+      "label": "Description",
+      "value": "Main building for Clinic, Grooming, Adoption Area, Caretaker Apartment, Visitor Areas"
+    },
+    "theme": {
+      "label": "Theme",
+      "value": "The beating heart of compassion and healing for every Superdog. This is the main building of the Sanctuary where our dogs are cared for and meet adopters."
+    },
+    "building_cost": { "label": "Building Cost", "value": "$92,000" }
   },
   {
-    "phase": "3",
-    "name": "Playground of Joy",
-    "description": "Include a fenced in playground for training/walks and even a swim.",
-    "theme": "A space where our rescued dogs rediscover happiness.",
-    "building_cost": "$32,000.00"
+    "phase": { "label": "Phase", "value": "3" },
+    "name": { "label": "Name", "value": "Playground of Joy" },
+    "description": {
+      "label": "Description",
+      "value": "Include a fenced in playground for training/walks and even a swim."
+    },
+    "theme": {
+      "label": "Theme",
+      "value": "A space where our rescued dogs rediscover happiness."
+    },
+    "building_cost": { "label": "Building Cost", "value": "$32,000.00" }
   },
   {
-    "phase": "4",
-    "name": "Garden of Love & Legacy",
-    "description": "Includes our renovated Adobe House/Chapel & Memorial Garden for the ashes of departed pets. A Community room for group education, merchandising, pet supplies",
-    "theme": "Honoring those pets who have passed over the rainbow bridge and teaching compassion.",
-    "building_cost": "$25,000.00"
+    "phase": { "label": "Phase", "value": "4" },
+    "name": { "label": "Name", "value": "Garden of Love & Legacy" },
+    "description": {
+      "label": "Description",
+      "value": "Includes our renovated Adobe House/Chapel & Memorial Garden for the ashes of departed pets. A Community room for group education, merchandising, pet supplies"
+    },
+    "theme": {
+      "label": "Theme",
+      "value": "Honoring those pets who have passed over the rainbow bridge and teaching compassion."
+    },
+    "building_cost": { "label": "Building Cost", "value": "$25,000.00" }
   },
   {
-    "phase": "5",
-    "name": "Sanctuary Experience",
-    "description": "Consists of Glamping and Hiking area/2 domes, each accommodating 4 persons.",
-    "theme": "Where visitors live, dream, rest and reflect and can connect with our dogs.",
-    "building_cost": "$20,000.00"
+    "phase": { "label": "Phase", "value": "5" },
+    "name": { "label": "Name", "value": "Sanctuary Experience" },
+    "description": {
+      "label": "Description",
+      "value": "Consists of Glamping and Hiking area/2 domes, each accommodating 4 persons."
+    },
+    "theme": {
+      "label": "Theme",
+      "value": "Where visitors live, dream, rest and reflect and can connect with our dogs."
+    },
+    "building_cost": { "label": "Building Cost", "value": "$20,000.00" }
   }
 ]

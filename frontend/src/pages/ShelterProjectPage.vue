@@ -34,46 +34,57 @@
     <div v-html="store.sanctuary.budget.header"></div>
 
     <q-table
+      class="budget-table"
       :rows="store.sanctuary.budget.items"
-      hide-bottom
-      :pagination="{ rowsPerPage: 0 }"
-      class="q-mb-md"
-      :columns="columns"
-      dense
+      hide-header
+      separator="cell"
     >
-      <template #body-cell-tools="props">
-        <q-td class="text-right">
-          <q-btn
-            icon="info"
-            flat
-            round
-            @click="
-              rowInfo = {
-                visible: true,
-                title: props.row.name,
-                theme: props.row.theme,
-                description: props.row.description,
-              }
-            "
-          ></q-btn>
-        </q-td>
+      <template #body="{ row: item }">
+        <q-tr>
+          <q-td class="col-1">
+            <div class="cell-content text-caption">
+              {{ item.phase.label }}: {{ item.phase.value }}
+            </div>
+            <div class="cell-content text-h6">
+              {{ item.name.value }}
+            </div>
+            <div class="cell-content text-subtitle1">
+              {{ item.building_cost.value }}
+            </div>
+          </q-td>
+
+          <q-td class="col-2">
+            <div class="cell-content text-h6">
+              {{ item.theme.label }}
+            </div>
+            <div class="cell-content">
+              {{ item.theme.value }}
+            </div>
+          </q-td>
+
+          <q-td class="col-3">
+            <div class="cell-content text-h6">
+              {{ item.description.label }}
+            </div>
+            <div class="cell-content">
+              {{ item.description.value }}
+            </div>
+          </q-td>
+        </q-tr>
+      </template>
+      <template #bottom>
+        <div class="flex justify-end text-right full-width">
+          <div v-html="store.sanctuary.total"></div>
+        </div>
       </template>
     </q-table>
   </div>
-
-  <budget-dialog
-    v-model="rowInfo.visible"
-    :title="rowInfo.title"
-    :theme="rowInfo.theme"
-    :description="rowInfo.description"
-  ></budget-dialog>
 </template>
 
 <script setup>
 import { Screen } from "quasar";
 import { useStore } from "src/stores/store";
 import { computed, ref } from "vue";
-import BudgetDialog from "src/components/BudgetDialog.vue";
 
 const store = useStore();
 
@@ -85,32 +96,6 @@ const rowInfo = ref({
 });
 
 console.log({ sanctuary: store.sanctuary });
-
-const columns = [
-  {
-    label: "PHASE",
-    name: "phase",
-    field: "phase",
-    align: "left",
-  },
-  {
-    label: "NAME",
-    name: "name",
-    field: "name",
-    align: "left",
-  },
-  {
-    label: "BUILDING COST",
-    name: "building_cost",
-    field: "building_cost",
-    align: "left",
-  },
-  {
-    label: "",
-    name: "tools",
-    align: "right",
-  },
-];
 
 const vid = computed(() => {
   const originalWidth = 854;
@@ -135,12 +120,35 @@ const superdogsSrc = computed(() => {
 </script>
 
 <style scoped>
-/* Optional styling for better visual hierarchy */
-.q-item {
-  border-left: 3px solid transparent;
+/* 🔒 Step 1: force real table layout behavior */
+.budget-table .q-table__middle table {
+  table-layout: fixed !important;
+  width: 100% !important;
 }
-.q-item:hover {
-  border-left: 3px solid #1976d2;
-  background-color: rgba(25, 118, 210, 0.04);
+
+/* 🔒 Step 2: hard-assign widths */
+.budget-table .q-table__middle td.col-1 {
+  width: 20% !important;
+}
+.budget-table .q-table__middle td.col-2 {
+  width: 40% !important;
+}
+.budget-table .q-table__middle td.col-3 {
+  width: 40% !important;
+}
+
+/* 🔒 Step 3: prevent content from blowing out the cell */
+.budget-table .cell-content {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.budget-table .cell-content {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 </style>

@@ -20,6 +20,7 @@ class ShelterProjectController extends Controller
             'overview' => __('sanctuary-project.overview'),
             'community' => __('sanctuary-project.community'),
             'budget' => __('sanctuary-project.budget'),
+            'total' => __('sanctuary-project.total'),
             'video' => __('sanctuary-project.video')
         ]);
     }

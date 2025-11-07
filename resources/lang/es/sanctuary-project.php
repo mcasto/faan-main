@@ -15,7 +15,9 @@ return [
     'community' => file_get_contents(__DIR__ . '/sanctuary-project/community.html'),
     'budget' => [
         'header' => file_get_contents(__DIR__ . '/sanctuary-project/budget.html'),
-        'items' => json_decode(file_get_contents(__DIR__ . '/sanctuary-project/budget.json'))
+        'items' => json_decode(file_get_contents(__DIR__ . '/sanctuary-project/budget.json')),
+
     ],
+    'total' => file_get_contents(__DIR__ . '/sanctuary-project/total.html'),
     'video' => '/storage/videos/superdogs.mp4'
 ];
