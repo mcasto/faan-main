@@ -95,8 +95,6 @@ const rowInfo = ref({
   description: null,
 });
 
-console.log({ sanctuary: store.sanctuary });
-
 const vid = computed(() => {
   const originalWidth = 854;
   const originalHeight = 480;
