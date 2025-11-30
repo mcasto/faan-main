@@ -25,8 +25,6 @@
                 class="q-mx-md"
               />
             </template>
-
-            {{ form.donation_method }}
           </div>
           <q-separator spaced></q-separator>
           <div class="column q-gutter-y-sm">
