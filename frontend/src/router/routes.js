@@ -3,8 +3,23 @@ import callApi from "src/assets/call-api";
 import { useStore } from "src/stores/store";
 
 const routes = [
+  // Handle /es with or without trailing path
   {
-    path: "/",
+    path: "/es/:pathMatch(.*)*",
+    redirect: (to) => {
+      const store = useStore();
+      store.language = "es";
+
+      const targetPath = to.params.pathMatch || "";
+      return {
+        path: `/${targetPath}`,
+        query: to.query,
+        hash: to.hash,
+      };
+    },
+  },
+  {
+    path: "",
     component: () => import("layouts/MainLayout.vue"),
     beforeEnter: async () => {
       const store = useStore();

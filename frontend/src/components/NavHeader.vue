@@ -31,7 +31,7 @@
       class="text-blue-10"
       :class="{ 'text-bold': store.language == 'es' }"
     >
-      Spanish
+      Español
     </a>
   </div>
   <q-separator color="black"></q-separator>
