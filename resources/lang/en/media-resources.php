@@ -88,7 +88,7 @@ return [
                 ],
                 [
                     'label' => 'January 2024: Annual Report and Roadmap',
-                    'url' => "/downloadable/magazines/2024-01-16-FAAN_annual_report_and_roadmap.pdf",
+                    'url' => "/downloadable/magazines/2024-01-16-annual_report_and_roadmap.pdf",
                 ],
                 [
                     'label' => 'December 2023',
