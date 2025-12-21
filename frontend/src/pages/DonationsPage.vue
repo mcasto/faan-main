@@ -18,6 +18,7 @@
           {{ store.donations.joinHeader }}
         </div>
         <div v-html="store.donations.joinBullets"></div>
+        <div v-html="store.donations.matchingGrant"></div>
         <div>
           <donation-form></donation-form>
         </div>
