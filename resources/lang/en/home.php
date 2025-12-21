@@ -9,5 +9,10 @@ return [
         'ogDescription' => 'Save, adopt and Help Animals in Ecuador, an Organization for Animal Rescue, Donation and Adoption',
         'ogLocale' => 'en_US'
     ],
+    'banner' => [
+        'header' => 'Now Through December 31st',
+        'text' => 'Double Your Impact and Investment in the
+SuperDogs Sanctuary through a $5,000 Matching Grant'
+    ],
     'footer' => file_get_contents(__DIR__ . '/home/footer.html'),
 ];
