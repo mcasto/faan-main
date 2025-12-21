@@ -1,22 +1,23 @@
 <?php
 return [
     'meta' => [
-        'title' => 'Rescate y Adopción de Animales, donaciones para salvar animales',
-        'description' => 'Donaciones - Dona para Salvar Animales en Ecuador',
-        'keywords' => 'dona para ayudar a salvar animales en Ecuador,FAAN Ecuador',
-        'ogTitle' => 'Rescate y Adopción de Animales, donaciones para salvar animales',
-        'ogDescription' => 'dona para ayudar a salvar animales en Ecuador,FAAN Ecuador',
-        'ogLocale' => 'es_US'
+        'title' => 'Animal Rescue and Adoption, donations to save animals',
+        'description' => 'Donations -  Donate to Save Animals in Ecuador',
+        'keywords' => 'donate to help save animals in Ecuador,FAAN Ecuador',
+        'ogTitle' => 'Animal Rescue and Adoption, donations to save animals',
+        'ogDescription' => 'donate to help save animals in Ecuador,FAAN Ecuador',
+        'ogLocale' => 'en_US'
     ],
-    'header' => 'Ayuda a los animales de Cuenca, Ecuador',
-    'subtitle' => 'Por favor, haga una donación a FAAN (Funcdación Familia Amor Animal) y ayude a nuestros perros a obtener una "nueva correa para la vida" y a construir el nuevo y moderno Santuario de Súper Perros, ¡donde los desamparados se convierten en súper perros!',
-    'contribution-header' => 'Damos la bienvenida a todas y cada una de las contribuciones...',
+    'header' => 'Help the Animals of Cuenca, Ecuador',
+    'subtitle' => 'Please donate to FAAN (Funcdación Familia Amor Animal) and help our dogs get a "New Leash On Life" and build the new and modern Super Dogs Sanctuary, where Underdogs Become Super dogs!',
+    'contribution-header' => 'We welcome any and all contributions ...',
     'contribution-info' => file_get_contents(__DIR__ . '/donations/contribution-info.html'),
-    'join-header' => 'Considerar:',
+    'join-header' => 'Consider:',
     'join-bullets' => file_get_contents(__DIR__ . '/donations/join-bullets.html'),
+    'matching-grant' => file_get_contents(__DIR__ . '/donations/matching-grant.html'),
     'red-carpet' => [
         'image' => '/images/paws-on-red-carpet.jpeg',
-        'caption' => 'En 2025, nuestros donantes serán reconocidos en la Gala FAAN-TASTICA, Old Hollywood como "Paws on the Red Carpet". ¡Su reconocimiento será honrado en el nuevo santuario!',
+        'caption' => 'In 2025, our donors will be recognized at Gala FAAN-TASTICA, Old Hollywood as "Paws on the Red Carpet." Your recognition will then be honored at the new sanctuary!',
     ],
     'paw-images' => [
         '/images/paws-bronze.png',
@@ -24,25 +25,25 @@ return [
         '/images/paws-gold.png',
         '/images/paws-platinum.png'
     ],
-    'form-header' => "Todas las donaciones a FAAN, a menos que se designen específicamente, se aplican al fondo general de FAAN que apoya tanto la construcción del nuevo santuario como el apoyo y la atención médica de los aproximadamente 150 animales bajo nuestro cuidado.",
-    'form-title' => 'Formulario de donación',
-    'form-disclaimer' => "Este formulario es sólo para los registros de la FAAN. Necesitamos esta información para realizar un seguimiento adecuado de las donaciones que recibimos.",
-    'donation-method-header' => 'Elige tu método de donación',
+    'form-header' => "All donations to FAAN, unless specifically designated, are applied to the FAAN General fund which supports both the building of the new sanctuary and the support and medical care of the approximately 150 animals in our care.",
+    'form-title' => 'Donation Form',
+    'form-disclaimer' => "This form is only for FAAN's records. We need this information to properly track the donations we receive.",
+    'donation-method-header' => 'Choose your donation method',
     'donation-methods' => [
-        ['label' => 'Tarjeta de crédito/PayPal', 'value' => 'cc'],
-        ['label' => 'Transferencia bancaria', 'value' => 'transfer'],
-        ['label' => 'Recogida por voluntario FAAN', 'value' => 'pickup'],
+        ['label' => 'Credit Card / PayPal', 'value' => 'cc'],
+        ['label' => 'Bank Transfer', 'value' => 'transfer'],
+        ['label' => 'Pickup by FAAN Volunteer', 'value' => 'pickup'],
     ],
     'form-fields' => [
-        'name' => 'Nombre',
-        'email' => 'Correo Electrónico',
-        'amount' => 'Monto de la donación',
-        'comments' => 'Comentarios / Mensajes',
-        'consent' => 'Doy mi consentimiento para que este sitio web conserve mis datos personales únicamente con fines de comunicación y entiendo que no se compartirán con terceros.'
+        'name' => 'Name',
+        'email' => 'Email',
+        'amount' => 'Donation Amount',
+        'comments' => 'Comments / Messages',
+        'consent' => 'I consent to have this website hold my personal data solely for communication purposes and understand that it will not be shared with any third parties.'
     ],
     'form-buttons' => [
-        'cancel' => 'Cancelar',
-        'continue' => 'Continuar'
+        'cancel' => 'Cancel',
+        'continue' => 'Continue'
     ],
     'recaptcha-disclaimer' => file_get_contents(__DIR__ . '/donations/recaptcha-disclaimer.html'),
     'credit-dialog' => file_get_contents(__DIR__ . '/donations/donation-credit.html'),

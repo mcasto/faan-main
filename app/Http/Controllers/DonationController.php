@@ -31,6 +31,7 @@ class DonationController extends Controller
                 'contributionInfo' => __('donations.contribution-info'),
                 'joinHeader' => __('donations.join-header'),
                 'joinBullets' => __('donations.join-bullets'),
+                'matchingGrant' => __('donations.matching-grant'),
                 'redCarpet' => __('donations.red-carpet'),
                 'pawImages' => __('donations.paw-images'),
                 'formHeader' => __('donations.form-header'),

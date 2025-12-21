@@ -14,6 +14,7 @@ return [
     'contribution-info' => file_get_contents(__DIR__ . '/donations/contribution-info.html'),
     'join-header' => 'Consider:',
     'join-bullets' => file_get_contents(__DIR__ . '/donations/join-bullets.html'),
+    'matching-grant' => file_get_contents(__DIR__ . '/donations/matching-grant.html'),
     'red-carpet' => [
         'image' => '/images/paws-on-red-carpet.jpeg',
         'caption' => 'In 2025, our donors will be recognized at Gala FAAN-TASTICA, Old Hollywood as "Paws on the Red Carpet." Your recognition will then be honored at the new sanctuary!',
