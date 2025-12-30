@@ -2,7 +2,11 @@
   <div class="flex flex-center" style="height: 100vh;">
     <q-img src="images/home-splash.jpg" height="100vh" width="100vw">
       <!-- Matching Grant Banner -->
-      <div class="absolute-top q-pa-md" style="z-index: 1;">
+      <div
+        class="absolute-top q-pa-md"
+        style="z-index: 1;"
+        v-if="store.home.banner"
+      >
         <q-card
           class="matching-grant-banner q-pa-md text-center"
           style="
@@ -56,5 +60,4 @@
 import { useStore } from "src/stores/store";
 
 const store = useStore();
-console.log(store.home);
 </script>
