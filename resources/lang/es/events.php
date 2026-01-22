@@ -22,5 +22,6 @@ return [
     'new-volunteers-orientation-2024-04' => file_get_contents(__DIR__ . '/events/new-volunteers-orientation-2024-04.html'),
     'perros-de-esperanza-2024-04' => file_get_contents(__DIR__ . '/events/perros-de-esperanza-2024-04.html'),
     'ungala-2023' => file_get_contents(__DIR__ . '/events/ungala-2023.html'),
-    'wine-to-the-rescue-2023' => file_get_contents(__DIR__ . '/events/wine-to-the-rescue-2023.html')
+    'wine-to-the-rescue-2023' => file_get_contents(__DIR__ . '/events/wine-to-the-rescue-2023.html'),
+    'volunteer-and-adopter-field-trip' => file_get_contents(__DIR__ . '/events/volunteer-and-adopter-field-trip.html'),
 ];

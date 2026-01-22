@@ -18,7 +18,8 @@ class Event extends Model
         'expires',
         'hide_dates',
         'is_active',
-        'slug'
+        'slug',
+        'language',
     ];
 
     protected $casts = [

@@ -15,8 +15,9 @@ use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(EventController::class)
+    ->middleware('auth:sanctum')
     ->group(function () {
-        Route::post('/events/{language}/image', 'uploadImage');
+        Route::post('/en/events', 'store');
     });
 
 Route::group(['prefix' => '{language}'], function () {

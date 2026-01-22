@@ -22,15 +22,13 @@
             Event Details
           </div>
 
-          <!-- English Title & Subtitle -->
-          <div class="text-caption text-grey-7 q-mb-xs">English</div>
           <div class="row q-col-gutter-md q-mb-md">
             <div class="col-12 col-md-6">
               <q-input
-                v-model="form.title.en"
-                label="Title (EN) *"
+                v-model="form.title"
+                label="Title *"
                 outlined
-                :rules="[(val) => !!val || 'English title is required']"
+                :rules="[(val) => !!val || 'Title is required']"
                 @update:model-value="defaultSlug"
                 :debounce="300"
               >
@@ -40,31 +38,7 @@
               </q-input>
             </div>
             <div class="col-12 col-md-6">
-              <q-input v-model="form.subtitle.en" label="Subtitle (EN)" outlined>
-                <template #prepend>
-                  <q-icon name="short_text" color="grey-7" />
-                </template>
-              </q-input>
-            </div>
-          </div>
-
-          <!-- Spanish Title & Subtitle -->
-          <div class="text-caption text-grey-7 q-mb-xs">Spanish</div>
-          <div class="row q-col-gutter-md q-mb-md">
-            <div class="col-12 col-md-6">
-              <q-input
-                v-model="form.title.es"
-                label="Title (ES) *"
-                outlined
-                :rules="[(val) => !!val || 'Spanish title is required']"
-              >
-                <template #prepend>
-                  <q-icon name="title" color="grey-7" />
-                </template>
-              </q-input>
-            </div>
-            <div class="col-12 col-md-6">
-              <q-input v-model="form.subtitle.es" label="Subtitle (ES)" outlined>
+              <q-input v-model="form.subtitle" label="Subtitle" outlined>
                 <template #prepend>
                   <q-icon name="short_text" color="grey-7" />
                 </template>
@@ -98,27 +72,11 @@
             Event Content
           </div>
 
-          <div>
-            <div class="col-12 col-md-6">
-              <div class="text-caption text-grey-7 q-mb-xs">English</div>
-              <q-editor
-                v-model="form.body.en"
-                :toolbar="editorToolbar"
-                min-height="200px"
-              />
-            </div>
-
-            <q-separator spaced></q-separator>
-
-            <div class="col-12 col-md-6">
-              <div class="text-caption text-grey-7 q-mb-xs">Spanish</div>
-              <q-editor
-                v-model="form.body.es"
-                :toolbar="editorToolbar"
-                min-height="200px"
-              />
-            </div>
-          </div>
+          <q-editor
+            v-model="form.body"
+            :toolbar="editorToolbar"
+            min-height="200px"
+          />
         </q-card-section>
 
         <q-separator inset />
@@ -235,6 +193,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { Notify } from "quasar";
 import { kebabCase } from "lodash-es";
+import callApi from "src/assets/call-api";
 
 const router = useRouter();
 
@@ -264,45 +223,39 @@ const editorToolbar = [
 ];
 
 const form = ref({
-  title: {
-    en: null,
-    es: null,
-  },
-  subtitle: {
-    en: null,
-    es: null,
-  },
+  title: null,
+  subtitle: null,
   starts: null,
   expires: null,
   hide_dates: false,
   is_active: true,
   slug: null,
-  body: {
-    en: "",
-    es: "",
-  },
+  body: "",
 });
 
 const loading = ref(false);
 
 const defaultSlug = () => {
-  form.value.slug = kebabCase(form.value.title.en);
+  form.value.slug = kebabCase(form.value.title);
 };
 
 const onSubmit = async () => {
   loading.value = true;
 
   try {
-    // TODO: Add API call here
-
-    console.log({ submit: form.value });
+    const response = await callApi({
+      path: "/events",
+      method: "post",
+      payload: form.value,
+      useAuth: true,
+    });
 
     Notify.create({
       type: "positive",
       message: "Event created successfully!",
     });
 
-    // router.push({ name: "admin-dashboard" });
+    router.push({ name: "admin-dashboard" });
   } catch (error) {
     Notify.create({
       type: "negative",
