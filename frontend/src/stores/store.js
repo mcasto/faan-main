@@ -22,6 +22,8 @@ export const useStore = defineStore(
       meetFaantastics: ref(null),
       meta: ref(null),
       sanctuary: ref(null),
+      token: ref(null),
+      user: ref(null),
     };
     const getters = {};
     const actions = {

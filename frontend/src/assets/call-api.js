@@ -1,6 +1,7 @@
 import { useStore } from "src/stores/store";
 import { Notify } from "quasar";
 import wretch from "wretch";
+import { startsWith } from "lodash-es";
 
 export default ({
   path,
@@ -11,10 +12,13 @@ export default ({
 }) => {
   const store = useStore();
 
+  // initialize language
+  const language = startsWith("/admin", path) ? "en" : store.language;
+
   // Initialize the base request
   let request = useAuth
-    ? wretch(`/api/${store.language}`).auth(`Bearer ${store.token}`)
-    : wretch(`/api/${store.language}`);
+    ? wretch(`/api/${language}`).auth(`Bearer ${store.token}`)
+    : wretch(`/api/${language}`);
 
   // Handle GET vs. other methods
   if (method === "get" && payload) {

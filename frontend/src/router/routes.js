@@ -3,6 +3,40 @@ import callApi from "src/assets/call-api";
 import { useStore } from "src/stores/store";
 
 const routes = [
+  // Admin routes
+  {
+    path: "/admin/login",
+    component: () => import("pages/admin/Login.vue"),
+    name: "admin-login",
+    meta: { visible: false },
+  },
+  {
+    path: "/admin",
+    component: () => import("layouts/AdminLayout.vue"),
+    name: "admin-layout",
+    meta: { visible: false },
+    beforeEnter: () => {
+      const store = useStore();
+      if (!store.token || !store.user) {
+        return { name: "admin-login" };
+      }
+    },
+    children: [
+      {
+        path: "",
+        name: "admin-dashboard",
+        component: () => import("pages/admin/IndexPage.vue"),
+        meta: { visible: false },
+      },
+      {
+        path: "add-event",
+        name: "admin-add-event",
+        component: () => import("pages/admin/AddEvent.vue"),
+        meta: { visible: false },
+      },
+    ],
+  },
+
   // Handle /es with or without trailing path
   {
     path: "/es/:pathMatch(.*)*",

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdoptionController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventController;
@@ -13,7 +14,17 @@ use App\Http\Controllers\VolunteeringController;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 
+Route::controller(EventController::class)
+    ->group(function () {
+        Route::post('/events/{language}/image', 'uploadImage');
+    });
+
 Route::group(['prefix' => '{language}'], function () {
+    Route::controller(AuthController::class)
+        ->group(function () {
+            Route::post('/admin/login', 'login');
+        });
+
     Route::get('home', [HomeController::class, 'show'])
         ->name('home');
 

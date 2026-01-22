@@ -49,6 +49,11 @@ class EventController extends Controller
         return response()->json($events);
     }
 
+    public function store(Request $request)
+    {
+        logger()->info($request->all());
+    }
+
     /**
      * Display the specified resource.
      */
@@ -61,14 +66,6 @@ class EventController extends Controller
         $event->html = __('events.' . $slug);
 
         return response()->json($event);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
     }
 
     /**
