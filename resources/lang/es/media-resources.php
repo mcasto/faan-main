@@ -84,7 +84,7 @@ return [
             'links' => [
                 [
                     'label' => 'enero 2026',
-                    'url' => 'https://firebasestorage.googleapis.com/v0/b/gala-staff.firebasestorage.app/o/campaign%2F202601-faan.pdf?alt=media&token=5f287f46-ab9f-4fc6-b20e-50e2421aea76'
+                    'url' => 'https://firebasestorage.googleapis.com/v0/b/gala-staff.firebasestorage.app/o/campaign%2F202601-faan.pdf?alt=media&token=5f287f46-ab9f-4fc6-b20e-50e2421aea76' //ggignore
                 ],
                 [
                     'label' => 'abril 2024',
