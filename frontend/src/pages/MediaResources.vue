@@ -165,8 +165,6 @@ import { computed, onMounted, ref } from "vue";
 
 const store = useStore();
 
-console.log(store.mediaResources);
-
 const linkSections = computed(() => {
   const keys = Object.keys(store.mediaResources.linkSections);
   return keys

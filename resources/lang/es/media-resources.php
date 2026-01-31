@@ -83,11 +83,15 @@ return [
             'header' => 'Revistas FAAN',
             'links' => [
                 [
+                    'label' => 'enero 2026',
+                    'url' => 'https://firebasestorage.googleapis.com/v0/b/gala-staff.firebasestorage.app/o/campaign%2F202601-faan.pdf?alt=media&token=5f287f46-ab9f-4fc6-b20e-50e2421aea76'
+                ],
+                [
                     'label' => 'abril 2024',
                     'url' => "/descargable/revistas/2024-04.pdf",
                 ],
                 [
-                    'label' => 'Enero de 2024: Informe anual y hoja de ruta',
+                    'label' => 'enero 2024: Informe anual y hoja de ruta',
                     'url' => "/descargable/magazines/2024-01-16-FAAN_annual_report_and_roadmap.pdf",
                 ],
                 [
@@ -159,11 +163,11 @@ return [
                     'url' => "/descargable/artículos-extraídos/adopcionesjunio2023.pdf",
                 ],
                 [
-                    'label' => 'Datos FAAN-¿Sabías que?-Junio ​​2023',
+                    'label' => 'Datos FAAN-¿Sabías que?-Junio 2023',
                     'url' => "/descargable/artículos-extraídos/faanfactsjune2023.pdf",
                 ],
                 [
-                    'label' => 'Adoptaste-¿Y ahora qué?-Junio ​​2023',
+                    'label' => 'Adoptaste-¿Y ahora qué?-Junio 2023',
                     'url' => "/descargable/artículos-extraídos/ruleof3june2023.pdf",
                 ],
                 [

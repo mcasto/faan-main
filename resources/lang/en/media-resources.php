@@ -83,6 +83,10 @@ return [
             'header' => 'FAAN Magazines',
             'links' => [
                 [
+                    'label' => 'January 2026',
+                    'url' => 'https://firebasestorage.googleapis.com/v0/b/gala-staff.firebasestorage.app/o/campaign%2F202601-faan.pdf?alt=media&token=5f287f46-ab9f-4fc6-b20e-50e2421aea76'
+                ],
+                [
                     'label' => 'April 2024',
                     'url' => "/downloadable/magazines/2024-04.pdf",
                 ],
