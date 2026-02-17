@@ -242,6 +242,8 @@ const routes = [
             path: "/media-resources",
             method: "get",
           });
+
+          console.log({ resources: store.mediaResources });
         },
         meta: { label: { en: "Media/Resources", es: "Medios/Recursos" } },
         name: "media-resources",

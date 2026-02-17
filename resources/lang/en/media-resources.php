@@ -29,6 +29,9 @@ return [
             '/images/2024-best-charity-event.jpg',
             '/images/2024-best-local-hero.jpg',
             '/images/2024-best-volunteer-opportunity.jpg'
+        ],
+        '2026' => [
+            '/images/2026-best-animal-rescue.jpg'
         ]
     ],
     'benefits' => [

@@ -36,6 +36,16 @@
           </div>
         </div>
 
+        <div class="col-12 row justify-center">
+          <div
+            class="col-6 col-md-3"
+            v-for="image of store.mediaResources.images['2026']"
+            :key="image"
+          >
+            <q-img :src="image" />
+          </div>
+        </div>
+
         <div class="col-12">
           <q-separator spaced></q-separator>
         </div>
