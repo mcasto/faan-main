@@ -13,7 +13,7 @@ export default ({
   const store = useStore();
 
   // initialize language
-  const language = startsWith("/admin", path) ? "en" : store.language;
+  const language = startsWith(path, "/admin") ? "en" : store.language;
 
   // Initialize the base request
   let request = useAuth

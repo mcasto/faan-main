@@ -119,7 +119,12 @@ const handleLogin = async () => {
         message: "Login successful!",
       });
 
-      router.push({ name: "admin-index" });
+      router.push({ name: "admin-dashboard" });
+    } else if (response && response.error) {
+      Notify.create({
+        type: "negative",
+        message: response.error.json?.message || "Invalid credentials",
+      });
     } else if (response && response.status === "error") {
       Notify.create({
         type: "negative",
